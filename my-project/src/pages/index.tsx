@@ -1,17 +1,21 @@
-import React from "react";
-import Link from "next/link";
+import React, {useState} from "react";
+// import Link from "next/link";
 import '@/styles/global.css';
 import { LuArrowDownRight } from "react-icons/lu";
 import { IoArrowDown } from "react-icons/io5";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Article from "@/components/Article";
+import Menu from "@/components/Modal/Menu";
+import { useModalStore } from "@/store/useModalStore";
 
 export default function Home() {
+
+    const {isOpen, closeModal} = useModalStore();
+
     return (
         <>
         {/* Header de la page */}
-            
         <Header />
 
             <main className="">
@@ -57,6 +61,8 @@ export default function Home() {
                     <Footer />
                 </div>
             </main>
+
+            {isOpen && <Menu closeModal={closeModal}/>}
         </>
     );
 }

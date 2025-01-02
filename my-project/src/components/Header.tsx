@@ -1,14 +1,21 @@
+"use client";
+
+import Link from "next/link";
 import React from "react";
+import { useModalStore } from "@/store/useModalStore";
+
 
 export default function Header() {
-
+    const { openModal } = useModalStore();
     return(
         <header className="flex justify-between items-center p-4">
-                <div>
+                <Link href="/">
                     <span className="text-[#FDFAD5] text-2xl">Kylian </span> 
                     <strong className="text-[#F97316] text-2xl uppercase">zamy</strong>
-                </div>
-                <nav className="text-[#FDFAD5]">Menu</nav>
+                </Link>
+                <nav className="text-[#FDFAD5]" onClick={openModal}><button className="cursor-pointer">Menu</button></nav>
         </header>
+
+         
     )
 }
