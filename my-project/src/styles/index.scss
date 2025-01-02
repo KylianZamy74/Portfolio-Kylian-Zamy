@@ -1,0 +1,15 @@
+
+
+.borderclass {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.2); ;
+    
+}
+
+.borderclass::after {
+    content: '';
+    display: block;
+    bottom: 0;
+    height: 18px;
+}
