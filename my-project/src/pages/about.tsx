@@ -2,7 +2,7 @@
 import '@/styles/global.css';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useModalStore } from "@/store/useModalStore";
+import { useModalStore } from "@/store/ModalStore/useModalStore";
 import Menu from "@/components/Modal/Menu";
 import Image from "next/image";
 export default function About() {

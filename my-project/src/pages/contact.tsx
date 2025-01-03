@@ -1,7 +1,7 @@
 import React from "react";
 import '@/styles/global.css';
 import Header from "@/components/Header";
-import { useModalStore } from "@/store/useModalStore";
+import { useModalStore } from "@/store/ModalStore/useModalStore";
 import Menu from "@/components/Modal/Menu";
 export default function Contact() {
 

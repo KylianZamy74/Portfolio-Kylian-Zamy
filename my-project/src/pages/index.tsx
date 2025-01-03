@@ -7,11 +7,14 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Article from "@/components/Article";
 import Menu from "@/components/Modal/Menu";
-import { useModalStore } from "@/store/useModalStore";
+import { useModalStore } from "@/store/ModalStore/useModalStore";
+import Project from "@/components/Modal/Project";
+import { useProjectModalStore } from "@/store/ModalStore/useProjectModalStore";
 
 export default function Home() {
 
     const { isOpen } = useModalStore();
+    const { isProjectOpen } = useProjectModalStore();
 
     return (
         <>
@@ -68,6 +71,7 @@ export default function Home() {
             </main>
 
             {isOpen && <Menu />}
+            {isProjectOpen && <Project />}
         </>
     );
 }

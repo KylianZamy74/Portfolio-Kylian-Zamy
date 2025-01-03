@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { useModalStore } from "@/store/useModalStore";
+import { useModalStore } from "@/store/ModalStore/useModalStore";
 
 
 export default function Header() {

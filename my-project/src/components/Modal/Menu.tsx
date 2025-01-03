@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useModalStore } from "@/store/useModalStore";
+import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
