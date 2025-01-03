@@ -3,7 +3,7 @@ import { IoArrowDown } from "react-icons/io5";
 export default function Article() {
 
     return(
-        <section className=" text-left text-5xl pt-4 bg-[#FDFAD5] p-4 pt-8 w-full">
+        <section id="my-work" className=" text-left text-5xl pt-4 bg-[#FDFAD5] p-4 pt-8 w-full">
                             <span className="font-semibold">My<span className="text-[#F97316]"> work</span></span>
                             <article className="flex justify-center mt-12 flex-col items-center">
                                 <div>

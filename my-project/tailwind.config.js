@@ -16,6 +16,9 @@ module.exports = {
       colors: {
         labelYellow: 'rgba(253, 250, 213, 0.60)',
         fadedYellow: 'rgba(253, 250, 213, 0.30)',
+      },
+      backgroundColor: {
+        modal: 'rgba(0, 0, 0, 0.80)',
       }
     },
   },
