@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
 
@@ -14,7 +15,7 @@ export default function Footer() {
             </div>
 
             <div className="border-2 border-[#FDFAD5] mt-28 p-2 rounded w-1/3 text-center hover:bg-[#FDFAD5] hover:text-[#1E1E1E] duration-200">
-                <span>Get in touch</span>
+                <Link href="/contact">Get in touch</Link>
             </div>
 
             <div className="flex justify-between mt-20 ">

@@ -9,8 +9,9 @@ export default function Menu() {
         <>
         <nav>
             <li>Projects</li>
+            <li><Link href={'/'}>Home</Link></li>
             <li><Link href={'/contact'}>Contact</Link></li>
-            <li><Link href={'/about'}>about</Link></li>
+            <li><Link href={'/about'}>About</Link></li>
             <button onClick={closeModal}>Fermer</button>
         </nav>
         </>

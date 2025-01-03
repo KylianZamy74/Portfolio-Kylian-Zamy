@@ -12,6 +12,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Aileron', 'sans-serif'],
+      },
+      colors: {
+        labelYellow: 'rgba(253, 250, 213, 0.60)',
+        fadedYellow: 'rgba(253, 250, 213, 0.30)',
       }
     },
   },

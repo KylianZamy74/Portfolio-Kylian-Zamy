@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 // import Link from "next/link";
 import '@/styles/global.css';
 import { LuArrowDownRight } from "react-icons/lu";
@@ -11,24 +11,24 @@ import { useModalStore } from "@/store/useModalStore";
 
 export default function Home() {
 
-    const {isOpen, closeModal} = useModalStore();
+    const { isOpen } = useModalStore();
 
     return (
         <>
-        {/* Header de la page */}
-        <Header />
+            {/* Header de la page */}
+            <Header />
 
-            <main className="">
+            <main >
                 {/* Section d'introduction */}
                 <div className="flex-col flex justify-center h-screen p-4">
-                    <span className="text-[#FDFAD5] text-6xl">Freelance Developer.</span>
+                    <h1 className="text-[#FDFAD5] text-6xl">Freelance Developer.</h1>
                     <em className="text-[#F97316] font-light">Fullstack.</em>
                 </div>
 
                 <div className="text-right text-3xl p-4 pb-24">
-                    <p className="text-[#FDFAD5]">With every line, i plant the 
-                        <span className="text-[#A3B46A]"> seed</span>, crafting 
-                        <span className="text-[#668DCF]"> solutions</span> to match 
+                    <p className="text-[#FDFAD5]">With every line, i plant the
+                        <span className="text-[#A3B46A]"> seed</span>, crafting
+                        <span className="text-[#668DCF]"> solutions</span> to match
                         <span className="text-[#F97316]"> your need</span>.
                     </p>
                 </div>
@@ -36,11 +36,16 @@ export default function Home() {
                 <div className="w-full">
                     <section className="bg-[#FDFAD5] h-screen text-3xl flex justify-center items-center p-4 flex-col">
                         <div className="mt-24">
-                            <em>
-                                I&apos;m a passionate web developer eager to craft sleek, elegant, and functional solutions.
-                                Let&apos;s grow your ideas together and turn them into
-                                <span className="text-[#F97316]"> success</span>.
-                            </em>
+                            <p>
+                                <em>
+                                    I&apos;m a passionate web developer eager to craft sleek, elegant, and functional solutions.
+                                </em>
+                            </p>
+                            <p>
+                                <em>Let&apos;s grow your ideas together and turn them into
+                                    <span className="text-[#F97316]"> success</span>.
+                                </em>
+                            </p>
                         </div>
                         <div>
                             <LuArrowDownRight className="h-12 w-12 mt-4" />
@@ -55,14 +60,14 @@ export default function Home() {
                         </div>
                     </section>
 
-            {/* Section My work */}
+                    {/* Section My work */}
                     <Article />
-            {/* footer de la page */}
+                    {/* footer de la page */}
                     <Footer />
                 </div>
             </main>
 
-            {isOpen && <Menu closeModal={closeModal}/>}
+            {isOpen && <Menu />}
         </>
     );
 }
