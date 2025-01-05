@@ -3,10 +3,17 @@ import '@/styles/global.css';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
-import Menu from "@/components/Modal/Menu";
+import Menu from "@/components/Modal/MenuModal";
 import Image from "next/image";
+import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
+import { useScrollService } from "@/services/useScrollService";
+import MenuOpen from '@/components/Modal/OpenMenuOnScroll';
+import {motion} from "framer-motion";
 export default function About() {
     const { isOpen } = useModalStore();
+    const showMenu = useScrollMenuStore((state) => state.showMenu);
+    useScrollService();
+
     return (
         <>
             <Header />
@@ -57,6 +64,15 @@ export default function About() {
             </section>
             <Footer />
             {isOpen && <Menu />}
+            {showMenu && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <MenuOpen />
+                </motion.div>
+            )}
         </>
     )
 }

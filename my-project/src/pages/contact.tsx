@@ -2,10 +2,16 @@ import React from "react";
 import '@/styles/global.css';
 import Header from "@/components/Header";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
-import Menu from "@/components/Modal/Menu";
+import Menu from "@/components/Modal/MenuModal";
+import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
+import { useScrollService } from "@/services/useScrollService";
+import {motion} from "framer-motion";
+import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 export default function Contact() {
 
     const { isOpen } = useModalStore();
+    const showMenu = useScrollMenuStore((state) => state.showMenu);
+    useScrollService();
 
 
     return (
@@ -70,6 +76,15 @@ export default function Contact() {
                 </div>
             </footer>
             {isOpen && <Menu />}
+            {showMenu && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <MenuOpen />
+                </motion.div>
+            )}
         </>
     )
 }
