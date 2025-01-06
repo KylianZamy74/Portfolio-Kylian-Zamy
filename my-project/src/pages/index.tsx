@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import "@/styles/global.css";
 import { LuArrowDownRight } from "react-icons/lu";
-import { IoArrowDown } from "react-icons/io5";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Article from "@/components/Article";
@@ -22,13 +21,9 @@ export default function Home() {
 
     const showMenu = useScrollMenuStore((state) => state.showMenu);
     useScrollService();
-
- 
-
+    
     return (
         <>
-            <Header />
-
             <main>
                 {/* Section d'introduction */}
                 <div className="flex-col flex justify-center h-screen p-4">
@@ -47,8 +42,8 @@ export default function Home() {
 
                 {/* Section de présentation */}
                 <div className="w-full">
-                    <section className="bg-[#FDFAD5] h-screen text-3xl flex justify-center items-center p-4 flex-col">
-                        <div className="mt-24">
+                    <section className=" lg:flex-row bg-[#FDFAD5] h-screen text-3xl flex justify-center items-center p-4 flex-col">
+                        <div className="mt-24 flex-col flex">
                             <p>
                                 <em>
                                     I&apos;m a passionate web developer eager to craft sleek, elegant, and functional solutions.
@@ -60,8 +55,9 @@ export default function Home() {
                                     <span className="text-[#F97316]"> success</span>.
                                 </em>
                             </p>
+                            
                         </div>
-                        <div>
+                        <div className="lg:hidden">
                             <LuArrowDownRight className="h-12 w-12 mt-4" />
                         </div>
                         <Link className="w-full text-right mt-8" href="/about">
@@ -69,10 +65,8 @@ export default function Home() {
                                 About <span className="text-[#F97316]">me</span>
                             </em>
                         </Link>
-                        <div className="w-full">
-                            <IoArrowDown className="h-12 w-12 mt-8" />
-                        </div>
                     </section>
+                    
 
                     {/* Section My work */}
                     <Article />
@@ -80,7 +74,7 @@ export default function Home() {
                 </div>
             </main>
 
-            {/* Affiche les modaux */}
+           
             {isOpen && <Menu />}
             {isProjectOpen && <Project />}
 

@@ -2,28 +2,11 @@ import Link from "next/link";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
+import  useDirectToProjectService  from "@/services/useDirectToProjectService";
 
 export default function Menu() {
   const { closeModal, isOpen } = useModalStore();
-  const router = useRouter();
-
-  const goToProjects = async () => {
-    // Ferme le menu
-    closeModal();
-
-    
-    if (router.pathname !== "/") {
-     
-      await router.push("/");
-    }
-
-
-    const target = document.getElementById("my-work");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const { goToProjects } = useDirectToProjectService();
 
   // Variantes pour l'animation du menu
   const menuOpen = {
@@ -54,7 +37,6 @@ export default function Menu() {
               className="relative bg-[#828282] h-2/3 flex flex-col justify-center items-center space-y-2 text-xl"
               variants={menuOpen}
               animate={isOpen ? "closed" : "open"}
-               // Animation à utiliser lors du démontage
             >
               <li>
                 <button onClick={goToProjects}>Projects</button>

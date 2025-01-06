@@ -16,7 +16,7 @@ export default function Contact() {
 
     return (
         <>
-            <Header />
+           
             <div className="flex-col flex justify-center h-screen p-4">
                 <h1 className="text-[#FDFAD5] text-6xl">Let&apos;s begin a <strong className="text-[#F97316]">project.</strong></h1>
             </div>

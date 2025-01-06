@@ -16,7 +16,7 @@ export default function About() {
 
     return (
         <>
-            <Header />
+           
 
             <section>
                 <h2 className="flex-col flex justify-center h-screen p-4 font-bold px-4">

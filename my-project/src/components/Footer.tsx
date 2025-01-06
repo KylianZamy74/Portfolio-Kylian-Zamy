@@ -18,11 +18,11 @@ export default function Footer() {
                 <Link href="/contact">Get in touch</Link>
             </div>
 
-            <div className="flex justify-between mt-48 ">
+            <div className="flex justify-between mt-16 ">
                 <span className="mt-6">Annecy, France</span>
                 <div className="flex flex-col">
-                    <span>LinkedIn</span>
-                    <span>Github</span>
+                    <a href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a>
+                    <a href="https://github.com/KylianZamy74">Github</a>
                 </div>
             </div>
         </footer>

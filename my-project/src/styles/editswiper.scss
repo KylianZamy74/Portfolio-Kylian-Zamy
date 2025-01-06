@@ -1,0 +1,18 @@
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: #ECC68F;
+    
+}
+
+.swiper-pagination-bullet {
+    background-color: #ECC68F !important; 
+    margin-top: 1rem !important; 
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #ECC68F !important; 
+    transform: scale(1.5);
+}

@@ -6,9 +6,9 @@ export default function MenuOpen() {
     const { isOpen, openModal } = useModalStore();
     return (
         <>
-            <div className="fixed top-20 right-0 bg-[#51514F] p-4 rounded-full" onClick={openModal}>
+            <button className="fixed top-20 right-0 bg-[#51514F] p-4 rounded-full lg:hidden" onClick={openModal}>
                 <span className="text-[#F97316]"><FaArrowLeftLong /></span>
-            </div>
+            </button>
             {isOpen && <Menu />}
         </>
         

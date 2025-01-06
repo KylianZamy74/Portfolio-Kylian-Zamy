@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { IoArrowDown } from "react-icons/io5";
 import { useProjectModalStore } from "@/store/ModalStore/useProjectModalStore";
+import { motion } from "framer-motion";
+
 
 export default function Article() {
 
@@ -17,10 +19,18 @@ export default function Article() {
                             </article>
                             
                             <article className="flex justify-center mt-12 flex-col items-center w-full">
-                                <div onClick={openProjectModal}>
-                                    <Image src="/Images/Cinedelices.webp" width={350} height={200} alt="Image sequentiel"></Image>
-                                </div>
-                                <span className="text-left w-full mt-4 borderclass">Ciné<span className="text-[#F97316]">delices</span></span>
+                            <motion.div
+                            onClick={openProjectModal} 
+
+                            >
+                            <Image
+                                src="/Images/Cinedelices.webp"
+                                width={350}
+                                height={200}
+                                alt="Image séquentielle"
+                            />
+                            </motion.div>
+                                <span className="text-left w-full mt-4 borderclass">Ciné<span className="text-[#C85A52]">delices</span></span>
                                 <span className="text-sm text-left w-full mt-4">Design, developpment & collaboration Project - 2024</span>
                             </article>
 
