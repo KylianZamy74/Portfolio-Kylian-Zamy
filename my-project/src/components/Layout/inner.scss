@@ -1,0 +1,17 @@
+.inner {
+    background-color: black;
+    .page{
+        background-color: #51514F;
+    }
+    .slide {
+        position: fixed;
+        z-index: 3;
+        top:0;
+        left:0;
+        background-color: #51514F;
+        width: 100vw;
+        height: 100vh;
+        }
+    }
+
+    
