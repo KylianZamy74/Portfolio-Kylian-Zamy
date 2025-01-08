@@ -7,34 +7,36 @@ import { useScrollService } from "@/services/useScrollService";
 import {motion} from "framer-motion";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import Inner from "@/components/Layout/Inner";
+import { useAnimationGsapService, splitTextIntoChar } from "@/services/useGsapAnimationService";
 export default function Contact() {
 
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
     useScrollService();
+    useAnimationGsapService();
 
 
     return (
         <>
            
             <Inner>
-                <div className="flex-col flex justify-center h-screen p-4">
-                    <h1 className="text-[#FDFAD5] text-6xl">Let&apos;s begin a <strong className="text-[#F97316]">project.</strong></h1>
+                <div className="flex-col flex justify-center h-screen p-4 intro">
+                    <h1 className="text-[#FDFAD5] text-6xl">{splitTextIntoChar("Let's begin a")} <strong className="text-[#F97316]">{splitTextIntoChar("project.")}</strong></h1>
                 </div>
                 
                 <section className="text-[#FDFAD5] font-bold px-4">
                     <div className="flex-col flex text-lg">
                         <h3 className="text-labelYellow mb-2">Informations</h3>
                         <div className="w-full flex-col flex justify">
-                            <button className="text-left">Kylian.74940@gmail.com</button>
-                            <button className="text-left">+33684722698</button>
+                            <button className="text-left"><a href="mailto:Kylian.74940@gmail.com">Kylian.74940@gmail.com</a></button>
+                            <button className="text-left"><a href="tel:+33684722698">+33684722698</a></button>
                         </div>
                     </div>
                     <div className="mt-8 text-lg">
                         <h3 className="text-labelYellow mb-2">Useful links</h3>
                         <div className="flex-col flex">
-                            <button className="text-left">LinkedIn</button>
-                            <button className="text-left">Github</button>
+                            <button className="text-left"><a className="text-left" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
+                            <button className="text-left"><a  href="https://github.com/KylianZamy">Github</a></button>
                         </div>
                     </div>
                 </section>
@@ -70,8 +72,8 @@ export default function Contact() {
                         <span>Annecy, France</span>
                     </div>
                     <div className="flex-col flex">
-                        <button>LinkedIn</button>
-                        <button>Github</button>
+                        <button><a href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
+                        <button><a href="https://github.com/KylianZamy">Github</a></button>
                     </div>
                 </footer>
             </Inner>

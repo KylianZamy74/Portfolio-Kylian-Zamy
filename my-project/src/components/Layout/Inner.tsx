@@ -1,9 +1,15 @@
-import {motion} from "framer-motion";
+import {motion, MotionProps, Variants} from "framer-motion";
 import "./inner.scss";
 import Header from "../Header";
-export default function Inner({children}) {
 
-    const anim = (variants) => {
+interface InnerProps {
+    children: React.ReactNode
+}
+
+
+export default function Inner({children}: InnerProps) {
+
+    const anim = (variants: Variants): MotionProps => {
         return{
             initial: "initial",
             animate: "enter",

@@ -9,20 +9,23 @@ import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import { useScrollService } from "@/services/useScrollService";
 import MenuOpen from '@/components/Modal/OpenMenuOnScroll';
 import {motion} from "framer-motion";
+import { useAnimationGsapService, splitTextIntoChar } from '@/services/useGsapAnimationService';
+import Footer from '@/components/Footer';
 export default function About() {
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
     useScrollService();
+    useAnimationGsapService();
 
     return (
         <>
            
 
             <Inner>
-                <section>
+                <section className='intro'>
                     <h2 className="flex-col flex justify-center h-screen p-4 font-bold px-4">
-                        <p className="text-[#FDFAD5]  text-3xl">I&apos;m glad you&apos;re interested in learning more about me.</p>
-                        <p className="text-[#FDFAD5]  text-3xl">Let&apos;s <span className="text-[#F97316]">explore</span> what we can <span className="text-[#F97316]">create</span> in collaboration below.</p>
+                        <p className="text-[#FDFAD5]  text-3xl">{splitTextIntoChar("I'm glad you're interested in learning more about me.")}</p>
+                        <p className="text-[#FDFAD5]  text-3xl">{splitTextIntoChar("Let's")} <span className="text-[#F97316]">{splitTextIntoChar("explore")}</span> {splitTextIntoChar("what we can") }<span className="text-[#F97316]">{splitTextIntoChar("create")}</span> {splitTextIntoChar("in collaboration below.")}</p>
                     </h2>
                 </section>
                 <section className="bg-[#FDFAD5] min-h-screen flex justify-between items-center flex-col text-3xl px-4 py-8">
@@ -61,6 +64,7 @@ export default function About() {
                     <p className="text-sm pt-4 pb-16">I create dynamic, user-centric web apps, including custom online portfolios and interactive platforms, tailored yo your unique needs.</p>
                 </article>
                 </section>
+                <Footer />
             </Inner>
             
             {isOpen && <Menu />}
