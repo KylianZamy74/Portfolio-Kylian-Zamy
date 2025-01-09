@@ -28,7 +28,7 @@ export default function About() {
                         <p className="text-[#FDFAD5]  text-3xl">{splitTextIntoChar("Let's")} <span className="text-[#F97316]">{splitTextIntoChar("explore")}</span> {splitTextIntoChar("what we can") }<span className="text-[#F97316]">{splitTextIntoChar("create")}</span> {splitTextIntoChar("in collaboration below.")}</p>
                     </h2>
                 </section>
-                <section className="bg-[#FDFAD5] min-h-screen flex justify-between items-center flex-col text-3xl px-4 py-8">
+                <section className="bg-[#FDFAD5] min-h-screen flex justify-center items-center flex-col text-3xl px-4">
                     <div className="mt-8">
                         <Image src="/Images/linkedimage.webp" width={350} height={220} alt="Image linkedIn de Kylian"></Image>
                     </div>

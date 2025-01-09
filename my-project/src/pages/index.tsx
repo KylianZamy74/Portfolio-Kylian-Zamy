@@ -7,8 +7,6 @@ import Inner from "@/components/Layout/Inner";
 import Article from "@/components/Article";
 import Menu from "@/components/Modal/MenuModal";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
-import Project from "@/components/Modal/Project";
-import { useProjectModalStore } from "@/store/ModalStore/useProjectModalStore";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import { useScrollService } from "@/services/useScrollService";
@@ -19,7 +17,6 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
     const { isOpen } = useModalStore();
-    const { isProjectOpen } = useProjectModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
 
     useScrollService();
@@ -31,7 +28,7 @@ export default function Home() {
         <>
             {/* Section d'introduction */}
             <Inner>
-                <div className="intro flex-col flex justify-center h-screen p-4">
+                <div className="intro flex-col flex justify-center h-screen p-4 lg:px-24">
                     <h1 className="text-[#FDFAD5] text-6xl">
                         {splitTextIntoChar("Freelance Developer.")}
                     </h1>
@@ -39,29 +36,29 @@ export default function Home() {
                         {splitTextIntoChar("Fullstack.")}
                     </em>
                 </div>
-                <div className="text-right text-3xl p-4 pb-24 text-[#FDFAD5] ">
+                <div className="text-right text-3xl p-4 pb-24 text-[#FDFAD5] lg:px-24 ">
                     <p className="trigger">
                         <span>{splitTextIntoChar("With every line, I plant the")}</span>
                         <span className="text-[#A3B46A]"> {splitTextIntoChar("seed")}</span>
                         <span>{splitTextIntoChar(", crafting")}</span>
-                        <span className="text-[#668DCF]"> {splitTextIntoChar("solutions")}</span>
+                        <span className="text-[#668DCF]"> {splitTextIntoChar("solutions ")}</span>
                         <span>{splitTextIntoChar("to match")}</span>
                         <span className="text-[#F97316]"> {splitTextIntoChar("your need.")}</span>
                     </p>
                 </div>
                 {/* Section de présentation */}
                 <div className="w-full">
-                    <section className="lg:flex-row bg-[#FDFAD5] h-screen text-3xl flex justify-center items-center p-4 flex-col trigger">
+                    <section className="lg:flex-row bg-[#FDFAD5] h-screen lg:h-2/3 text-3xl flex justify-center items-center p-4 flex-col fromBotToTop lg:px-24">
                         <div className="mt-24 flex-col flex">
                             <p>
-                                <em className="trigger">
+                                <em className="fromBotToTop">
                                     {splitTextIntoChar(
                                         "I'm a passionate web developer eager to craft sleek, elegant, and functional solutions."
                                     )}
                                 </em>
                             </p>
                             <p>
-                                <em className="trigger">
+                                <em className="fromBotToTop">
                                     {splitTextIntoChar("Let's grow your ideas together and turn them into")}
                                     <span className="text-[#F97316]"> {splitTextIntoChar("success.")}</span>
                                 </em>
@@ -86,7 +83,6 @@ export default function Home() {
             </Inner>
 
             {isOpen && <Menu />}
-            {isProjectOpen && <Project />}
 
             {showMenu && (
                 <motion.div

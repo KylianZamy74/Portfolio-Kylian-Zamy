@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "framer-motion";
-import  useDirectToProjectService  from "@/services/useDirectToProjectService";
+import { AnimatePresence, motion } from "framer-motion";
+import useDirectToProjectService from "@/services/useDirectToProjectService";
 
 export default function Menu() {
   const { closeModal, isOpen } = useModalStore();
@@ -27,40 +27,53 @@ export default function Menu() {
         damping: 15,
       },
     },
+    exit: {
+      width: "0%", 
+      borderTopLeftRadius: "0",
+      borderBottomLeftRadius: "0",
+      transition: {
+        duration: 1.5, 
+        ease: "easeIn",
+      },
+    },
   };
 
   return (
     <nav>
       <div className="fixed top-0 right-0 w-screen h-screen list-none text-[#FDFAD5] bg-modal flex flex-col justify-center items-end space-y-2">
-          
-            <motion.div
-              className="relative bg-[#828282] h-2/3 flex flex-col justify-center items-center space-y-2 text-xl"
-              variants={menuOpen}
-              animate={isOpen ? "closed" : "open"}
-            >
-              <li>
-                <button onClick={goToProjects}>Projects</button>
-              </li>
-              <li>
-                <Link href={"/"} onClick={closeModal}>
-                  Home
-                </Link>
-              </li>
-              <li className="flex">
-                <Link href={"/contact"} onClick={closeModal}>
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href={"/about"} onClick={closeModal}>
-                  About
-                </Link>
-              </li>
-              <button onClick={closeModal} className="text-[#F97316]">Close</button>
-              <button onClick={closeModal}>
-                <FaArrowRight className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-2 text-[#F97316]" />
-              </button>
-            </motion.div>
+        <AnimatePresence>
+          <motion.div
+            className="relative bg-[#828282] h-2/3 flex flex-col justify-center items-center space-y-2 text-xl"
+            variants={menuOpen}
+            animate={isOpen ? "closed" : "open"}
+            exit="exit" 
+          >
+            <li>
+              <button onClick={goToProjects}>Projects</button>
+            </li>
+            <li>
+              <Link href={"/"} onClick={closeModal}>
+                Home
+              </Link>
+            </li>
+            <li className="flex">
+              <Link href={"/contact"} onClick={closeModal}>
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href={"/about"} onClick={closeModal}>
+                About
+              </Link>
+            </li>
+            <button onClick={closeModal} className="text-[#F97316]">
+              Close
+            </button>
+            <button onClick={closeModal}>
+              <FaArrowRight className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-2 text-[#F97316]" />
+            </button>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </nav>
   );

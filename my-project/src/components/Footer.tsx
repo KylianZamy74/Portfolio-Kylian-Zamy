@@ -5,7 +5,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-[#1E1E1E] text-[#FDFAD5] py-12 px-4">
-        <div className="max-w-screen-lg mx-auto">
+        <div className="lg:mx-auto">
             {/* Informations de contact */}
             <div className="flex flex-col sm:flex-row sm:justify-start items-start mb-8">
                 <span className="text-lg mb-2 sm:mb-0 sm:mr-8">Email: <a href="mailto:Kylian.74940@gmail.com" className="text-[#F97316] hover:text-[#FDFAD5]">Kylian.74940@gmail.com</a></span>

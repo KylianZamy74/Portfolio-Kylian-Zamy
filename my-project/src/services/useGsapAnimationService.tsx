@@ -9,8 +9,7 @@ export const useAnimationGsapService = () => {
             const { ScrollTrigger } = await import("gsap/ScrollTrigger");
             gsap.registerPlugin(ScrollTrigger);
             gsap.set(".intro .char", { clearProps: "all" });
-    
-            // Animation au chargement pour "Freelance Developer" et "Fullstack"
+
             gsap.fromTo(
                 ".intro .char",
                 { opacity: 0 },
@@ -22,10 +21,9 @@ export const useAnimationGsapService = () => {
                 }
             );
     
-            // Animation pour les autres sections (avec trigger)
             gsap.fromTo(
                 ".trigger .char",
-                { opacity: 0 }, // Styles de départ
+                { opacity: 0 }, 
                 {
                   opacity: 1,
                   stagger: 0.02,
@@ -38,6 +36,24 @@ export const useAnimationGsapService = () => {
                  
                 }
               );
+
+              gsap.fromTo(
+                ".fromBotToTop .char",
+                { opacity: 0, y: 100 }, 
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration:2,
+                  ease: "sine.out",
+                  scrollTrigger: {
+                    trigger: ".fromBotToTop",
+                    start: "top 80%",
+                  },
+                 
+                }
+              );
+
+              
               
         };
     
@@ -48,8 +64,27 @@ export const useAnimationGsapService = () => {
 
 export const splitTextIntoChar = (text: string) => {
     return text.split("").map((char, index) => (
-        <span className="char" key={index}>
+        <span className="char " key={index}>
             {char}
         </span>
     ));
 };
+// export const splitTextIntoChar = (text: string) => {
+//     const words = text.split(" "); // Divise le texte en mots
+
+//     return words.map((word, index) => (
+//         <span className="char inline-block" key={index}>
+//             {word} {/* Affiche chaque mot */}
+//             {/* Ajoute un espace non sécable après chaque mot sauf le dernier */}
+//             {index < words.length - 1 && "\u00A0"}
+//         </span>
+//     ));
+// };
+
+// export const splitTextIntoChar = (text: string) => {
+//     return text.split("").map((char, index) => (
+//         <span className="char inline-block" key={index}>
+//             {char === " " ? "\u00A0" : char}  
+//         </span>
+//     ));
+// };
