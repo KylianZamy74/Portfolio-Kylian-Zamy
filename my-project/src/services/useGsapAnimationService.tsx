@@ -64,7 +64,7 @@ export const useAnimationGsapService = () => {
 
 export const splitTextIntoChar = (text: string) => {
     return text.split("").map((char, index) => (
-        <span className="char " key={index}>
+        <span className="char" key={index}>
             {char}
         </span>
     ));
@@ -83,7 +83,7 @@ export const splitTextIntoChar = (text: string) => {
 
 // export const splitTextIntoChar = (text: string) => {
 //     return text.split("").map((char, index) => (
-//         <span className="char inline-block" key={index}>
+//         <span className="char inline block" key={index}>
 //             {char === " " ? "\u00A0" : char}  
 //         </span>
 //     ));

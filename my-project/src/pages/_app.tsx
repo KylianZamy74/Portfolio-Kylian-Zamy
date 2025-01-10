@@ -5,7 +5,7 @@ import "@/styles/global.css";
 import { useEffect } from "react";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
- // Utilisation du router pour récupérer la route
+
 
  useEffect(() => {
   
@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       }
     )()
  }, []);
+ 
 
   return (
     <>

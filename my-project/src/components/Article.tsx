@@ -98,8 +98,7 @@ export default function Article() {
                                 </motion.div>
                             )}
                         </AnimatePresence>
-
-
+                        
                         <span className="text-left w-full mt-4 borderclass">
                             Ciné<span className="text-[#C85A52]">delices</span>
                         </span>

@@ -8,35 +8,38 @@ import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; 
-import "swiper/css/navigation"; 
-import "swiper/css/pagination"; 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { useAnimationGsapService } from "@/services/useGsapAnimationService";
+import { useScrollService } from "@/services/useScrollService";
 
 export default function Project() {
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
-    useAnimationGsapService()
+    useAnimationGsapService();
+    useScrollService();
 
     const image = {
         img_1: "/Images/cinedelices.webp",
         img_2: "/Images/Cinedelice_Home_page.webp",
         img_3: "/Images/detail.webp",
         img_4: "/Images/recipes.webp",
+        img_5: "/Images/movies_series.webp",
     };
 
-  
+
     function splitParagraph(text: string) {
-        const sentences = text.split("."); 
+        const sentences = text.split(".");
         return sentences
-            .filter((sentence) => sentence.trim() !== "") 
-            .map((sentence) => sentence.trim() + "."); 
+            .filter((sentence) => sentence.trim() !== "")
+            .map((sentence) => sentence.trim() + ".");
     }
 
-   
-    const carouselRef = useRef(null); 
-    const isInView = useInView(carouselRef, { margin: "-50% 0px" }); 
+
+    const carouselRef = useRef(null);
+    const isInView = useInView(carouselRef, { margin: "-50% 0px" });
     const controls = useAnimation();
 
     useEffect(() => {
@@ -63,8 +66,8 @@ export default function Project() {
                     <Image
                         src="/Images/cinedelices.webp"
                         alt="Project"
-                        width={1200}
-                        height={800}
+                        width={800}
+                        height={600}
                     />
                 </div>
                 <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger">
@@ -81,33 +84,44 @@ export default function Project() {
                         ))}
                     </em>
                 </div>
-                <section className="bg-[#51514F]">
+                <section className="bg-[#51514F] md:hidden min-h-screen flex justify-center items-center flex-col m-12">
+                    <h2 className="text-3xl text-[#FDFAD5] pb-4">Pictures</h2>
+                    <div className="py-4">
+                        <Image src={image.img_2} alt="Project" width={1200} height={800} />
+
+                    </div>
+                    <div className="py-4">
+                        <Image src={image.img_3} alt="Project" width={1200} height={800} />
+
+                    </div>
+                    <div className="py-4">
+                        <Image src={image.img_4} alt="Project" width={1200} height={800} />
+
+                    </div>
+                    <div className="py-4">
+                        <Image src={image.img_5} alt="Project" width={1200} height={800} />
+
+                    </div>
+                </section>
+                <section className="bg-[#51514F] hidden md:block h-[80vh]">
                     <div className="px-24 w-full text-left mt-32 text-3xl text-[#FDFAD5] ">
                         <h2>
-                            <strong>Images du projet</strong>
+                            <strong>Pictures</strong>
                         </h2>
                     </div>
                     <motion.div
-                        className=" h-[80vh] flex justify-center items-center md:px-12 lg:px-24"
+                        className=" h-[80vh] flex justify-center items-center px-12 md:px-12 lg:px-24 "
                         ref={carouselRef}
-                        animate={controls} 
+                        animate={controls}
                         initial={{ scale: 1 }}
                     >
                         <Swiper
-                            spaceBetween={50} 
-                            slidesPerView={3} 
-                            navigation 
+                            spaceBetween={50}
+                            slidesPerView={3}
+                            navigation
                             pagination={{ clickable: true }}
-                            modules={[Navigation, Pagination]} 
+                            modules={[Navigation, Pagination]}
                         >
-                            <SwiperSlide>
-                                <Image
-                                    src={image.img_1}
-                                    alt="Project"
-                                    width={400}
-                                    height={300}
-                                />
-                            </SwiperSlide>
                             <SwiperSlide>
                                 <Image
                                     src={image.img_2}
@@ -132,17 +146,41 @@ export default function Project() {
                                     height={300}
                                 />
                             </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={image.img_5}
+                                    alt="Project"
+                                    width={400}
+                                    height={300}
+                                />
+                            </SwiperSlide>
                         </Swiper>
                     </motion.div>
                 </section>
-                <section className="h-[80vh] bg-[#FDFAD5] flex justify-center items-center">
+                <section className="min-h-[80vh] bg-[#FDFAD5] flex justify-between items-center flex-col text-center py-12 md:px-12 lg:px-24">
                     <div className="w-full">
-                        <h2>enterprise</h2>
-                        <p></p>
+                        <h2 className="font-bold  text-left px-12 text-3xl py-4">Enterprise</h2>
+                        <em>
+                            {splitParagraph(
+                                "This collaborative project was undertaken as part of our training program to prepare for the final exam. Its primary goals were to evaluate our individual strengths and weaknesses, enhance our technical expertise, and foster strong teamwork and communication skills. It also served as an opportunity to strengthen our collaboration and problem-solving abilities under real-world conditions."
+                            ).map((paragraph, index) => (
+                                <p
+                                    key={index}
+                                    className="text-lg px-12 lg:text-3xl md:text-2xl text-left"
+                                >
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </em>
                     </div>
-                    <div>
-                        <h2>Stack</h2>
-                        <span>React</span>
+                    <div className="flex-col flex my-14 text-left px-12 w-full">
+                        <h2 className="font-bold text-3xl py-4">Stack</h2>
+                        <em><span className="text-lg lg:text-3xl md:text-2xl ">React</span></em>
+                        <em><span className="text-lg lg:text-3xl md:text-2xl">PostgreSQL</span></em>
+                        <em><span className="text-lg lg:text-3xl md:text-2xl">Sequelize</span></em>
+                        <em><span className="text-lg lg:text-3xl md:text-2xl">Sass</span></em>
+                        <em><span className="text-lg lg:text-3xl md:text-2xl">NodeJS</span></em>
+                        <em><span className="text-lg lg:text-3xl md:text-2xl">ExpressJs</span></em>
                     </div>
                 </section>
                 <Footer />

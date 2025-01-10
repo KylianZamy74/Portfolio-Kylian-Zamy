@@ -49,7 +49,7 @@ export default function Home() {
                 {/* Section de présentation */}
                 <div className="w-full">
                     <section className="lg:flex-row bg-[#FDFAD5] h-screen lg:h-2/3 text-3xl flex justify-center items-center p-4 flex-col fromBotToTop lg:px-24">
-                        <div className="mt-24 flex-col flex">
+                        <div className="mt-24 flex-col flex ">
                             <p>
                                 <em className="fromBotToTop">
                                     {splitTextIntoChar(
