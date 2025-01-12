@@ -1,20 +1,33 @@
 import Image from "next/image";
 import { IoArrowDown } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useGetProjectsStore } from "@/store/FetchStore/getProjectsStore";
 
 export default function Article() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [hoveredProjectId, setHoveredProjectId] = useState<number | null>(null); 
+    const { projects, fetchProjects } = useGetProjectsStore();
 
-    const handleMouseMove = (e) => {
+    useEffect(() => {
+        fetchProjects();
+    }, [fetchProjects]);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
         setMousePosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
     };
 
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
+    const handleMouseEnter = (id: number) => {
+        setHoveredProjectId(id);  
+        setIsHovering(true);
+    };
 
+    const handleMouseLeave = () => {
+        setHoveredProjectId(null);  
+        setIsHovering(false);
+    };
 
     const hoverVariants = {
         initial: { scale: 0, opacity: 0 },
@@ -31,47 +44,32 @@ export default function Article() {
     };
 
     return (
-        <>
-            <section
-                id="my-work"
-                className="text-left text-5xl pt-4 bg-[#FDFAD5] p-4 pt-8 lg:py-24 lg:px-24 w-full"
-            >
-                <span className="font-semibold">
-                    My<span className="text-[#F97316]"> work</span>
-                </span>
-                <article className="flex justify-center mt-12 flex-col items-center">
-                    <Image
-                        src="/Images/Sequentiel.webp"
-                        width={350}
-                        height={200}
-                        alt="Image sequentiel"
-                        className="lg:hidden rounded-lg"
-                    />
-                    <span className="text-left w-full mt-4 borderclass">Séquentiel</span>
-                    <span className="text-sm text-left w-full mt-4">
-                        Implementation & full developpment - 2024
-                    </span>
-                </article>
-
-                <Link href={"/Project"}>
+        <section
+            id="my-work"
+            className="text-left text-5xl pt-4 bg-[#FDFAD5] p-4 pt-8 lg:py-24 lg:px-24 w-full"
+        >
+            <span className="font-semibold">
+                My<span className="text-[#F97316]"> work</span>
+            </span>
+            
+            {projects.map((project) => (
+                <Link href={`/Project/${project.id}`} key={project.id}>
                     <motion.article
                         className="relative flex flex-col items-center mt-12 w-full"
                         onMouseMove={handleMouseMove}
-                        onMouseEnter={handleMouseEnter}
+                        onMouseEnter={() => handleMouseEnter(project.id)}  
                         onMouseLeave={handleMouseLeave}
                     >
-
                         <Image
-                            src="/Images/Cinedelices.webp"
+                            src={project.images?.[0]?.url}
                             width={350}
                             height={200}
-                            alt="Image Cinedelices"
+                            alt={`Image de ${project.title}`}
                             className="lg:hidden rounded-lg shadow-lg"
                         />
 
-
                         <AnimatePresence mode="wait">
-                            {isHovering && (
+                            {hoveredProjectId === project.id && isHovering && ( 
                                 <motion.div
                                     key="hover-image"
                                     className="absolute pointer-events-none"
@@ -86,33 +84,28 @@ export default function Article() {
                                     animate="animate"
                                     exit="exit"
                                 >
-                                    <Link href="/Project">
+                                    <Link href={`/Project/${project.id}`}>
                                         <Image
-                                            src="/Images/Cinedelices.webp"
+                                            src={project.images?.[0]?.url}
                                             width={350}
                                             height={200}
-                                            alt="Image hover"
-                                            className="rounded-lg shadow-lg "
+                                            alt={`Hover ${project.title}`}
+                                            className="rounded-lg shadow-lg"
                                         />
                                     </Link>
                                 </motion.div>
                             )}
                         </AnimatePresence>
-                        
-                        <span className="text-left w-full mt-4 borderclass">
-                            Ciné<span className="text-[#C85A52]">delices</span>
-                        </span>
-                        <span className="text-sm text-left w-full mt-4">
-                            Design, developpment & collaboration Project - 2024
-                        </span>
+
+                        <span className="text-left w-full mt-4 borderclass">{project.title}</span>
+                        <span className="text-sm text-left w-full mt-4">{project.role_date}</span>
                     </motion.article>
-                    </Link>
+                </Link>
+            ))}
 
-
-                    <div className="w-full">
-                        <IoArrowDown className="h-12 w-12 mt-8" />
-                    </div>
-            </section>
-        </>
+            <div className="w-full">
+                <IoArrowDown className="h-12 w-12 mt-8" />
+            </div>
+        </section>
     );
 }
