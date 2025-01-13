@@ -7,7 +7,7 @@ interface ProtectedRoutesProps {
     requiredRole: string;
 }
 
-export const ProtectedRoute =({children, requiredRole}: ProtectedRoutesProps) => {
+const ProtectedRoute =({children, requiredRole}: ProtectedRoutesProps) => {
     
     const {data: session, status} = useSession();
     const router = useRouter();
@@ -18,7 +18,7 @@ export const ProtectedRoute =({children, requiredRole}: ProtectedRoutesProps) =>
         }
 
         if(!session || session.user.role !== requiredRole) {
-            router.push("auth/signin");
+            router.push("/auth/signin");
         }
     }, [status, session, requiredRole, router]);
 
@@ -27,6 +27,6 @@ export const ProtectedRoute =({children, requiredRole}: ProtectedRoutesProps) =>
     }
 };
 
-
+export default ProtectedRoute;
 
 

@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import "@/styles/global.css"; 
 import { useEffect } from "react";
+import { SessionProvider } from "next-auth/react";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
 
@@ -21,10 +22,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <>
-     
+     <SessionProvider session={pageProps.session}>
     <AnimatePresence mode="wait">  
         <Component key={router.route} {...pageProps} />  
     </AnimatePresence>
+    </SessionProvider>
 
     </>
   );
