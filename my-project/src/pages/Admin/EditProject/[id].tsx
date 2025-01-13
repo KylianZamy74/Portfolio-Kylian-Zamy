@@ -1,8 +1,8 @@
-import ProtectedRoutes from "../../components/ProtectedRoutes/ProtectedRoutes";
+import ProtectedRoutes from "../../../components/ProtectedRoutes/ProtectedRoutes";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export default function NewProject() {
+export default function EditProject() {
 
     // page d'admin pour créer un nouveau projet
 
@@ -76,7 +76,7 @@ export default function NewProject() {
                             type="submit" 
                             className="w-full py-3 px-6 bg-[#F97316] text-white font-medium rounded-md shadow-sm hover:bg-orange-600 focus:ring-2 focus:ring-[#F97316] focus:ring-offset-2"
                         >
-                            Créer le projet
+                           Editer le projet
                         </button>
                     </div>
                 </form>

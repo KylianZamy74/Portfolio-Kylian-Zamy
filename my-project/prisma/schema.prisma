@@ -15,12 +15,31 @@ generator client {
 
 model User {
     id  Int  @id @default(autoincrement())
-    name String  
+    name String  @unique
     password String 
     role  Role  @default(admin)
     project Project[]
+    accounts  Account[]
 }
 
+model Account {
+    id                Int     @id @default(autoincrement()) // Utilisation de autoincrement pour PostgreSQL
+    type              String
+    provider          String
+    providerAccountId String
+    token_type        String?
+    refresh_token     String?
+    access_token      String?
+    id_token          String?
+    scope             String?
+    session_state     String?
+    expires_at        Int?
+
+    userId            Int     // Utilisation d'Int pour la clé étrangère
+    user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([provider, providerAccountId])
+}
 
 model Project {
     id  Int  @id @default(autoincrement())

@@ -21,10 +21,12 @@ const ProtectedRoute =({children, requiredRole}: ProtectedRoutesProps) => {
             router.push("/auth/signin");
         }
     }, [status, session, requiredRole, router]);
-
+    
     if(session?.user?.role === requiredRole) {
         return <>{children}</>;
     }
+
+    return null;
 };
 
 export default ProtectedRoute;

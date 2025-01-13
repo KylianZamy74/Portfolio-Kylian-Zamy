@@ -35,8 +35,7 @@ export default NextAuth({
         if (!credentials?.name || !credentials?.password) {
           throw new Error("Nom et mot de passe requis");
         }
-
-        const user = await prisma.user.findFirst({
+        const user = await prisma.user.findUnique({
           where: { name: credentials.name },
         });
 
@@ -66,7 +65,7 @@ export default NextAuth({
       if (token) {
         session.user = {
           id: token.id as number,
-          name: session.user?.name || null,
+          name: token.name as string,
           role: token.role as Role,
         };
       }
@@ -75,6 +74,7 @@ export default NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.name = user.name;
         token.role = user.role;
       }
       return token;
@@ -84,4 +84,10 @@ export default NextAuth({
     signIn: "/auth/signin",
   },
   secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt", 
+    maxAge: 24 * 60 * 60, 
+  },
+
 });
+
