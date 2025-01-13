@@ -9,6 +9,10 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
         const project = await prisma.project.findUnique({
             where:{
                 id: Number(id)
+            },
+            include: {
+                images: true,
+                stacks: true
             }
         });
         if(!project){

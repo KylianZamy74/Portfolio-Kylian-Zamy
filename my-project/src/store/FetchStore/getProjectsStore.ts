@@ -1,11 +1,15 @@
 import { create } from "zustand";
-import { Project } from "@prisma/client";
+import { Project as PrismaProject, Image, Stack } from "@prisma/client";
 
+interface ProjectWithRelations extends PrismaProject {
+    images: Image[]; 
+    stacks: Stack[]; 
+  }
 interface getProjectsStore {
-    projects: Project[];
-    setProjects: (projects: Project[]) => void;
-    project: Project | null;
-    setProject: (project: Project) => void;
+    projects: ProjectWithRelations[];
+    setProjects: (projects: ProjectWithRelations[]) => void;
+    project: ProjectWithRelations | null;
+    setProject: (project: ProjectWithRelations) => void;
     fetchProjects: () => Promise<void>;
 }
 
@@ -28,7 +32,7 @@ export const useGetProjectsStore = create<getProjectsStore>((set) => ({
 
     fetchProject: async (id: number) => {
         try {
-            const response = await fetch(`${process.env.API_URL}/project/${id}`);
+            const response = await fetch(`http://localhost:3000/api/project/${id}`);
             const data = await response.json();
             set({ project: data });
         } catch (error) {

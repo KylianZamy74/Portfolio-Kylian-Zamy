@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
-import  useDirectToProjectService  from "@/services/useDirectToProjectService";
+import  useDirectToProjectService  from "@/services/animationServices/useDirectToProjectService";
 
 
 export default function Header() {

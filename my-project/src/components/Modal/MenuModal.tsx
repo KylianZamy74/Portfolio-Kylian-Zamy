@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { FaArrowRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
-import useDirectToProjectService from "@/services/useDirectToProjectService";
+import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
 
 export default function Menu() {
   const { closeModal, isOpen } = useModalStore();

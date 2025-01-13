@@ -139,8 +139,8 @@ async function main() {
                     {url: "/Images/sequentiel.webp"},
                     {url: "/Images/edit_sequentiel.webp"},
                     {url: "/Images/calendarview.webp"},
-                    {url: "/Imaes/sequentiel_issue.webp"},
-                    {url: "sequentiel_avalider.webp"}
+                    {url: "/Images/sequentiel_issue.webp"},
+                    {url: "/Images/sequentiel_avalider.webp"}
                 ]
             },
             user: {

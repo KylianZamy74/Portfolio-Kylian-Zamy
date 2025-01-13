@@ -12,23 +12,28 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
-import { useAnimationGsapService } from "@/services/useGsapAnimationService";
-import { useScrollService } from "@/services/useScrollService";
+import { useAnimationGsapService } from "@/services/animationServices/useGsapAnimationService";
+import { useScrollService } from "@/services/animationServices/useScrollService";
+import { useGetProjectsStore } from "@/store/FetchStore/getProjectsStore";
+import { useRouter } from "next/router";
+
 
 export default function Project() {
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
     useAnimationGsapService();
     useScrollService();
+    const router = useRouter();
+    const { id } = router.query;
 
-    const image = {
-        img_1: "/Images/cinedelices.webp",
-        img_2: "/Images/Cinedelice_Home_page.webp",
-        img_3: "/Images/detail.webp",
-        img_4: "/Images/recipes.webp",
-        img_5: "/Images/movies_series.webp",
-    };
+    const { project, fetchProject } = useGetProjectsStore();
 
+
+    useEffect(() => {
+        if (id) {
+            fetchProject(Number(id));
+        }
+    }, [id, fetchProject]);
 
     function splitParagraph(text: string) {
         const sentences = text.split(".");
@@ -60,11 +65,11 @@ export default function Project() {
         <>
             <Inner>
                 <h1 className="text-[#FDFAD5] w-full text-6xl text-center p-8">
-                    Ciné<strong className="text-[#C85A52]">délices</strong>
+                    {project?.title}
                 </h1>
                 <div className="flex justify-center h-1/2 py-12 mb-24">
                     <Image
-                        src="/Images/cinedelices.webp"
+                        src={project?.images[0].url}
                         alt="Project"
                         width={800}
                         height={600}
@@ -73,7 +78,7 @@ export default function Project() {
                 <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger">
                     <em>
                         {splitParagraph(
-                            "This project is a responsive web application built with React, NodeJs, PostgreSQL, and Sequelize. Users can explore a catalog of movies and TV shows, discovering recipes inspired by dishes seen in the films. Visitors can also create and share their own recipes linked to their favorite movies. With a user-friendly interface, the app offers a seamless experience across all devices. The backend is powered by NodeJs, with efficient database management through Sequelize and PostgreSQL."
+                            project?.description || "No description"
                         ).map((paragraph, index) => (
                             <p
                                 key={index}
@@ -86,22 +91,11 @@ export default function Project() {
                 </div>
                 <section className="bg-[#51514F] md:hidden min-h-screen flex justify-center items-center flex-col m-12">
                     <h2 className="text-3xl text-[#FDFAD5] pb-4">Pictures</h2>
-                    <div className="py-4">
-                        <Image src={image.img_2} alt="Project" width={1200} height={800} />
-
+                    {project?.images.map((image, index) => (
+                    <div className="py-4" key={index}>
+                        <Image src={image.url} alt="Project" width={1200} height={800} />
                     </div>
-                    <div className="py-4">
-                        <Image src={image.img_3} alt="Project" width={1200} height={800} />
-
-                    </div>
-                    <div className="py-4">
-                        <Image src={image.img_4} alt="Project" width={1200} height={800} />
-
-                    </div>
-                    <div className="py-4">
-                        <Image src={image.img_5} alt="Project" width={1200} height={800} />
-
-                    </div>
+                    ))}
                 </section>
                 <section className="bg-[#51514F] hidden md:block h-[80vh]">
                     <div className="px-24 w-full text-left mt-32 text-3xl text-[#FDFAD5] ">
@@ -122,38 +116,16 @@ export default function Project() {
                             pagination={{ clickable: true }}
                             modules={[Navigation, Pagination]}
                         >
-                            <SwiperSlide>
-                                <Image
-                                    src={image.img_2}
-                                    alt="Project"
-                                    width={400}
-                                    height={300}
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={image.img_3}
-                                    alt="Project"
-                                    width={400}
-                                    height={300}
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={image.img_4}
-                                    alt="Project"
-                                    width={400}
-                                    height={300}
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={image.img_5}
-                                    alt="Project"
-                                    width={400}
-                                    height={300}
-                                />
-                            </SwiperSlide>
+                            {project?.images?.map((img, index) => (
+                                <SwiperSlide key={index}>
+                                    <Image
+                                        src={img.url}
+                                        alt={`Project image ${index + 1}`}
+                                        width={400}
+                                        height={300}
+                                    />
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                     </motion.div>
                 </section>
@@ -162,7 +134,7 @@ export default function Project() {
                         <h2 className="font-bold  text-left px-12 text-3xl py-4">Enterprise</h2>
                         <em>
                             {splitParagraph(
-                                "This collaborative project was undertaken as part of our training program to prepare for the final exam. Its primary goals were to evaluate our individual strengths and weaknesses, enhance our technical expertise, and foster strong teamwork and communication skills. It also served as an opportunity to strengthen our collaboration and problem-solving abilities under real-world conditions."
+                                project?.enterprise || "No enterprise"
                             ).map((paragraph, index) => (
                                 <p
                                     key={index}
@@ -175,12 +147,11 @@ export default function Project() {
                     </div>
                     <div className="flex-col flex my-14 text-left px-12 w-full">
                         <h2 className="font-bold text-3xl py-4">Stack</h2>
-                        <em><span className="text-lg lg:text-3xl md:text-2xl ">React</span></em>
-                        <em><span className="text-lg lg:text-3xl md:text-2xl">PostgreSQL</span></em>
-                        <em><span className="text-lg lg:text-3xl md:text-2xl">Sequelize</span></em>
-                        <em><span className="text-lg lg:text-3xl md:text-2xl">Sass</span></em>
-                        <em><span className="text-lg lg:text-3xl md:text-2xl">NodeJS</span></em>
-                        <em><span className="text-lg lg:text-3xl md:text-2xl">ExpressJs</span></em>
+                        {project?.stacks?.map((stack, index) => (
+                            <em key={index}>
+                                <span className="text-lg lg:text-3xl md:text-2xl ">{stack.name}</span>
+                            </em>
+                        ))}
                     </div>
                 </section>
                 <Footer />

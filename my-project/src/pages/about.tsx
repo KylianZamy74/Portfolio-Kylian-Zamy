@@ -6,10 +6,10 @@ import { useModalStore } from "@/store/ModalStore/useModalStore";
 import Menu from "@/components/Modal/MenuModal";
 import Image from "next/image";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
-import { useScrollService } from "@/services/useScrollService";
+import { useScrollService } from "@/services/animationServices/useScrollService";
 import MenuOpen from '@/components/Modal/OpenMenuOnScroll';
 import { motion } from "framer-motion";
-import { useAnimationGsapService, splitTextIntoChar } from '@/services/useGsapAnimationService';
+import { useAnimationGsapService, splitTextIntoChar } from '@/services/animationServices/useGsapAnimationService';
 import Footer from '@/components/Footer';
 export default function About() {
     const { isOpen } = useModalStore();

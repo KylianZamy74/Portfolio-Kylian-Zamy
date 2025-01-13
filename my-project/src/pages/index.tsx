@@ -9,9 +9,9 @@ import Menu from "@/components/Modal/MenuModal";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
-import { useScrollService } from "@/services/useScrollService";
+import { useScrollService } from "@/services/animationServices/useScrollService";
 import Link from "next/link";
-import { useAnimationGsapService, splitTextIntoChar } from "@/services/useGsapAnimationService";
+import { useAnimationGsapService, splitTextIntoChar } from "@/services/animationServices/useGsapAnimationService";
 import Footer from "@/components/Footer";
 
 

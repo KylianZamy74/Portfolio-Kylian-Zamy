@@ -51,9 +51,9 @@ export default function Article() {
             <span className="font-semibold">
                 My<span className="text-[#F97316]"> work</span>
             </span>
-            
+
             {projects.map((project) => (
-                <Link href={`/Project/${project.id}`} key={project.id}>
+                <Link href={`/project/${project.id}`} key={project.id}>
                     <motion.article
                         className="relative flex flex-col items-center mt-12 w-full"
                         onMouseMove={handleMouseMove}

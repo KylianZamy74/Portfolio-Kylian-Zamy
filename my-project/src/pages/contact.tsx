@@ -3,11 +3,11 @@ import '@/styles/global.css';
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import Menu from "@/components/Modal/MenuModal";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
-import { useScrollService } from "@/services/useScrollService";
+import { useScrollService } from "@/services/animationServices/useScrollService";
 import {motion} from "framer-motion";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import Inner from "@/components/Layout/Inner";
-import { useAnimationGsapService, splitTextIntoChar } from "@/services/useGsapAnimationService";
+import { useAnimationGsapService, splitTextIntoChar } from "@/services/animationServices/useGsapAnimationService";
 export default function Contact() {
 
     const { isOpen } = useModalStore();
