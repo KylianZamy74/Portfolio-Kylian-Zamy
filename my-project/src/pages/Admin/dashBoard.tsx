@@ -31,7 +31,7 @@ export default function Home() {
                 <div className="flex w-full py-12 px-12 h-screen">
                     {/* Section Ajouter un projet */}
                     <div className="w-1/3 border-r border-[#FDFAD5] px-8">
-                        <Link href={"/Admin/NewProject"} className="cursor-pointer">
+                        <Link href={"/Admin/addProject"} className="cursor-pointer">
                             <h2 className="text-lg text-[#FDFAD5] bg-[#1E1E1E] text-center rounded w-full py-2 text-sm hover:bg-[#F97316] duration-200">
                                 Ajouter un nouveau projet
                             </h2>
@@ -58,10 +58,10 @@ export default function Home() {
                                     <span>{project.title}</span>
                                     
                                     <span className="cursor-pointer flex gap-4">
-                                        <Link href={`/Admin/EditProject/${project.id}`}>
+                                        <Link href={`/Admin/editProject/${project.id}`}>
                                             <CiEdit className="text-[#F97316] text-2xl" />
                                         </Link>
-                                        <Link href={`/Admin/EditProject/${project.id}`}>
+                                        <Link href={`/Admin/editProject/${project.id}`}>
                                             <MdDelete className="text-[#F97316] text-2xl" />
                                         </Link>
                                     </span>

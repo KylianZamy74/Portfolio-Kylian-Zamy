@@ -29,7 +29,7 @@ export default function Signin() {
         } else if (res?.ok) {
             
             if (session?.user) {
-                router.push("/Admin/Home");
+                router.push("/Admin/dashBoard");
             }
         }
     };
