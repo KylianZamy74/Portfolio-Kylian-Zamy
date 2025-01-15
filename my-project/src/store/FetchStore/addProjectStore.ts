@@ -1,4 +1,4 @@
-import {create} from "zustand";
+import { create } from "zustand";
 import { Stack } from "@prisma/client";
 
 interface ProjectStore {
@@ -6,20 +6,21 @@ interface ProjectStore {
     title: string;
     description: string;
     enterprise: string;
-    stacks: Stack[];
-    selectedStacks: string[];
+    stacks: Stack[];  
+    selectedStacks: string[]; 
     role_date: string;
-    
+
     setImages: (images: File[]) => void;
     setTitle: (title: string) => void;
     setDescription: (description: string) => void;
     setEnterprise: (enterprise: string) => void;
     setStacks: (stacks: Stack[]) => void;
     setRoleDate: (role_date: string) => void;
+    setSelectedStacks: (stacks: string[]) => void; 
+    addNewStack: (stack: string) => void;  
     submitProject: () => Promise<void>;
 
     fetchStacks: () => Promise<void>;
-    addNewStack: (stack: string) => Promise<void>;
 }
 
 export const useAddProjectStore = create<ProjectStore>((set) => ({
@@ -27,8 +28,8 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
     title: "",
     description: "",
     enterprise: "",
-    stacks: [],
-    selectedStacks: [],
+    stacks: [],  
+    selectedStacks: [],  
     role_date: "",
 
     setImages: (images: File[]) => set({ images }),
@@ -39,47 +40,58 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
     setRoleDate: (role_date: string) => set({ role_date }),
     setSelectedStacks: (stacks: string[]) => set({ selectedStacks: stacks }),
 
-    fetchStacks: async() => {
+  
+    fetchStacks: async () => {
         try {
             const response = await fetch(`http://localhost:3000/api/stack`);
-            if(!response.ok) {
-                throw new Error("Erreur survenue lors de la récupération des stacks")
+            if (!response.ok) {
+                throw new Error("Erreur survenue lors de la récupération des stacks");
             }
-
             const data: Stack[] = await response.json();
-            set({stacks:data})
+            set({ stacks: data });
         } catch (error) {
-            console.error("Nous n'avons pas pu récuperer vos stacks:", error);
+            console.error("Nous n'avons pas pu récupérer vos stacks:", error);
         }
     },
 
-    addNewStack: async(stack: string) => {
+
+    addNewStack: (stack: string) => {
         set((state) => ({
-            stacks: [...state.stacks, { id: state.stacks.length + 1, name: stack }],
-        }))
+            selectedStacks: [...state.selectedStacks, stack], 
+        }));
     },
 
+ 
     submitProject: async () => {
         const formData = new FormData();
 
-        // Ajoute les champs de texte
+
         formData.append("title", useAddProjectStore.getState().title);
         formData.append("description", useAddProjectStore.getState().description);
         formData.append("enterprise", useAddProjectStore.getState().enterprise);
         formData.append("role_date", useAddProjectStore.getState().role_date);
 
-        // Sérialise les stacks avant de les ajouter à FormData
-        formData.append("stacks", JSON.stringify(useAddProjectStore.getState().stacks));
+        
+        formData.append("stacks", JSON.stringify(useAddProjectStore.getState().selectedStacks));
 
-        // Ajoute les fichiers (images)
-        useAddProjectStore.getState().images.forEach((image) => {
-            formData.append("images", image);
-        });
+
+        const images = useAddProjectStore.getState().images;
+
+    
+        if (Array.isArray(images)) {
+            images.forEach((image) => {
+                formData.append("images", image);
+            });
+        } else {
+            console.error("Images n'est pas un tableau :", images);
+            return; 
+        }
 
         try {
             const response = await fetch(`http://localhost:3000/api/manageProject/addProject`, {
                 method: "POST",
                 body: formData,
+                credentials: "include",
             });
 
             if (!response.ok) {
@@ -88,13 +100,13 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
 
             await response.json();
 
-            // Réinitialisation de l'état après soumission réussie (facultatif)
             set({
                 images: [],
                 title: "",
                 description: "",
                 enterprise: "",
                 stacks: [],
+                selectedStacks: [],
                 role_date: "",
             });
 

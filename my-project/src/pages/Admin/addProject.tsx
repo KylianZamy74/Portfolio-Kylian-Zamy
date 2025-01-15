@@ -2,11 +2,10 @@ import ProtectedRoutes from "../../components/ProtectedRoutes/ProtectedRoutes";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
-import { useAddProjectStore } from "@/store/FetchStore/addProjectStore"; // Assurez-vous que le chemin est correct
+import { useAddProjectStore } from "@/store/FetchStore/addProjectStore";
 
 export default function NewProject() {
     const [images, setImages] = useState<File[]>([]);
-    const [newStack, setNewStack] = useState<string>("");
 
     const {
         setImages: setStoreImages,
@@ -15,54 +14,63 @@ export default function NewProject() {
         selectedStacks,
         setSelectedStacks,
         fetchStacks,
-        addNewStack,
     } = useAddProjectStore();
 
     useEffect(() => {
-        fetchStacks(); // Récupérer les stacks existantes à l'initialisation
+        fetchStacks(); 
     }, [fetchStacks]);
 
     const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files) {
-            const newFiles = Array.from(event.target.files).slice(0, 5 - images.length); // Limite totale à 5 fichiers
+            const newFiles = Array.from(event.target.files)
+                .slice(0, 5 - images.length)
+                .filter((file) => file instanceof File); 
+    
+            
             setImages((prevImages) => [...prevImages, ...newFiles]);
-            setStoreImages((prevImages) => [...prevImages, ...newFiles]); // Mettre à jour le store
+    
+         
+            setStoreImages([...images, ...newFiles]);
         }
     };
+    
 
     const renderImagePreviews = () => {
         return images.map((file, index) => (
             <div key={index} className="flex items-center space-x-2">
-                <img 
-                    src={URL.createObjectURL(file)} 
-                    alt={`Preview ${index + 1}`} 
-                    className="w-16 h-16 object-cover rounded-md" 
+                <img
+                    src={URL.createObjectURL(file)}
+                    alt={`Preview ${index + 1}`}
+                    className="w-16 h-16 object-cover rounded-md"
                 />
                 <p className="text-sm">{file.name}</p>
             </div>
         ));
     };
 
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault();
-        await submitProject(); // Appel à la fonction du store pour envoyer les données
-    };
+    const handleStackSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedValue = event.target.value;
 
-    const handleStackChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const selected = Array.from(event.target.selectedOptions, option => option.value);
-        setSelectedStacks(selected);
-    };
-
-    const handleNewStackSubmit = () => {
-        if (newStack) {
-            addNewStack(newStack); // Ajout de la nouvelle stack dans le store et la base de données
-            setSelectedStacks((prevStacks) => [...prevStacks, newStack]); // Ajouter la nouvelle stack aux stacks sélectionnées
-            setNewStack(""); // Réinitialise le champ
+     
+        if (Array.isArray(selectedStacks) && !selectedStacks.includes(selectedValue)) {
+            setSelectedStacks([...selectedStacks, selectedValue]);
         }
     };
 
-    const removeStack = (stackName: string) => {
-        setSelectedStacks(prevStacks => prevStacks.filter(stack => stack !== stackName));
+    const handleStackRemoval = (stack: string) => {
+    
+        setSelectedStacks(selectedStacks.filter((s) => s !== stack));
+    };
+
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+
+        if (selectedStacks.length === 0) {
+            alert("Veuillez sélectionner au moins une stack technique.");
+            return;
+        }
+
+        await submitProject();
     };
 
     return (
@@ -79,7 +87,7 @@ export default function NewProject() {
                             className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E]"
                             required
                         />
-                    </div>   
+                    </div>
                     <div>
                         <label htmlFor="description" className="block text-sm font-medium text-[#FDFAD]">Description du projet</label>
                         <textarea
@@ -115,50 +123,36 @@ export default function NewProject() {
                         <select
                             id="stack"
                             name="stack"
-                            multiple
-                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E] overflow-y-auto"
-                            value={selectedStacks}
-                            onChange={handleStackChange}
+                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E]"
+                            onChange={handleStackSelection}
+                            defaultValue=""
                         >
+                            <option value="" disabled>
+                                -- Sélectionnez une stack --
+                            </option>
                             {stacks.map((stack) => (
                                 <option key={stack.id} value={stack.name}>
                                     {stack.name}
                                 </option>
                             ))}
                         </select>
-                        <div className="mt-4 flex items-center">
-                            <input
-                                type="text"
-                                placeholder="Ajouter une nouvelle stack"
-                                value={newStack}
-                                onChange={(e) => setNewStack(e.target.value)}
-                                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E]"
-                            />
-                            <button
-                                type="button"
-                                onClick={handleNewStackSubmit}
-                                className="ml-2 px-4 py-2 bg-[#F97316] text-white rounded-md"
-                            >
-                                Ajouter
-                            </button>
-                        </div>
-                        {/* Afficher les stacks sélectionnées sous forme de tags (côte à côte) */}
-                        <div className="mt-4 flex flex-wrap gap-2">
-                            {selectedStacks.map((stack, index) => (
-                                <span key={index} className="inline-flex items-center px-3 py-1 bg-[#F97316] text-white rounded-full">
-                                    {stack}
-                                    <button
-                                        type="button"
-                                        onClick={() => removeStack(stack)}
-                                        className="ml-2 text-sm text-white hover:text-gray-300"
-                                    >
-                                        x
-                                    </button>
-                                </span>
-                            ))}
+                        <div className="mt-4 space-y-2">
+                            {Array.isArray(selectedStacks) &&
+                                selectedStacks.map((stack, index) => (
+                                    <div key={index} className="flex items-center justify-between p-2 border border-gray-300 rounded-md">
+                                        <span>{stack}</span>
+                                        <button
+                                            type="button"
+                                            onClick={() => handleStackRemoval(stack)}
+                                            className="px-2 py-1 text-sm bg-red-600 text-white rounded-md"
+                                        >
+                                            Supprimer
+                                        </button>
+                                    </div>
+                                ))}
                         </div>
                     </div>
-                    {/* Nouveau champ pour téléchargement des images */}
+                   
                     <div>
                         <label htmlFor="images" className="block text-sm font-medium text-[#FDFAD]">Images du projet (5 max)</label>
                         <div className="mt-2 flex items-center space-x-4">
@@ -166,7 +160,7 @@ export default function NewProject() {
                                 type="file"
                                 id="images"
                                 name="images"
-                                accept="image/*"
+                                accept="image/webp"
                                 multiple
                                 onChange={handleImageUpload}
                                 className="hidden"
@@ -178,7 +172,7 @@ export default function NewProject() {
                                 Charger des images
                             </label>
                         </div>
-                        {/* Zone des aperçus */}
+                       
                         <div className="mt-4 flex flex-wrap gap-4">
                             {renderImagePreviews()}
                         </div>

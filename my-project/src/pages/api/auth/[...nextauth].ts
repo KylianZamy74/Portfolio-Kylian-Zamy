@@ -69,6 +69,7 @@ export default NextAuth({
           role: token.role as Role,
         };
       }
+      console.log("Session after JWT callback:", session);
       return session;
     },
     async jwt({ token, user }) {
@@ -87,6 +88,17 @@ export default NextAuth({
   session: {
     strategy: "jwt", 
     maxAge: 24 * 60 * 60, 
+  },
+  cookies: {
+    sessionToken: {
+      name: "next-auth.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",  
+        path: "/",
+        secure: process.env.NODE_ENV === "production", 
+      },
+    },
   },
 
 });

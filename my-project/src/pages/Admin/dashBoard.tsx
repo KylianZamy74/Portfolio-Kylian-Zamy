@@ -7,12 +7,15 @@ import { useGetProjectsStore } from "@/store/FetchStore/getProjectsStore";
 import Link from "next/link";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
 
     // Récupérer les projets
     const { projects, fetchProjects } = useGetProjectsStore();
    
+    const { data: session } = useSession();
+
     useEffect(() => {
         fetchProjects();
     }, [fetchProjects]);
@@ -26,7 +29,7 @@ export default function Home() {
         <>
             <ProtectedRoutes requiredRole="admin">
                 <Header />
-                <h1 className="text-3xl text-[#FDFAD5] p-16 w-full text-center">Yo mon Kiki !</h1>
+                <h1 className="text-3xl text-[#FDFAD5] p-16 w-full text-center">Yo mon {session?.user?.name}</h1>
 
                 <div className="flex w-full py-12 px-12 h-screen">
                     {/* Section Ajouter un projet */}

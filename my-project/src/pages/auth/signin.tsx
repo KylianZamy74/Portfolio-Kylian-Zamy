@@ -10,13 +10,14 @@ export default function Signin() {
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
-    const { data: session } = useSession();  // Utilisation de useSession
+    const { status } = useSession();  // Utilisation de useSession pour vérifier l'état
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
 
+        // Effectuer la soumission de l'authentification
         const res = await signIn("credentials", {
             redirect: false,
             name,
@@ -24,15 +25,19 @@ export default function Signin() {
         });
 
         setLoading(false);
+
         if (res?.error) {
             setError(res.error);
         } else if (res?.ok) {
-            
-            if (session?.user) {
-                router.push("/Admin/dashBoard");
-            }
+            // Après un succès de la connexion, redirigez vers le dashboard
+            router.push("/Admin/dashBoard");
         }
     };
+
+    // Vérifiez si la session existe et redirigez si elle est déjà active
+    if (status === "authenticated") {
+        router.push("/Admin/dashBoard");
+    }
 
     return (
         <>
