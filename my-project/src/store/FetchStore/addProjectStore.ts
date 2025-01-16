@@ -63,55 +63,47 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
 
  
     submitProject: async () => {
+        const state = useAddProjectStore.getState();
         const formData = new FormData();
-
-
-        formData.append("title", useAddProjectStore.getState().title);
-        formData.append("description", useAddProjectStore.getState().description);
-        formData.append("enterprise", useAddProjectStore.getState().enterprise);
-        formData.append("role_date", useAddProjectStore.getState().role_date);
-
-        
-        formData.append("stacks", JSON.stringify(useAddProjectStore.getState().selectedStacks));
-
-
-        const images = useAddProjectStore.getState().images;
-
     
-        if (Array.isArray(images)) {
-            images.forEach((image) => {
-                formData.append("images", image);
-            });
-        } else {
-            console.error("Images n'est pas un tableau :", images);
-            return; 
-        }
-
+        // Ajoutez les champs texte
+        formData.append("title", state.title);
+        formData.append("description", state.description);
+        formData.append("enterprise", state.enterprise);
+        formData.append("role_date", state.role_date);
+        state.selectedStacks.forEach((stack) => {
+            formData.append("stacks", stack);
+        });
+        // Ajoutez les fichiers
+        state.images.forEach((image) => {
+            formData.append("images", image);
+        });
+    
         try {
             const response = await fetch(`http://localhost:3000/api/manageProject/addProject`, {
                 method: "POST",
                 body: formData,
-                credentials: "include",
             });
-
+    
             if (!response.ok) {
                 throw new Error("Erreur lors de la création du projet");
             }
-
+    
             await response.json();
-
+    
+            // Réinitialiser le state après succès
             set({
-                images: [],
                 title: "",
                 description: "",
                 enterprise: "",
                 stacks: [],
                 selectedStacks: [],
                 role_date: "",
+                images: [],
             });
-
         } catch (error) {
             console.error("Erreur lors de la création du projet :", error);
         }
-    }
+    },
+    
 }));

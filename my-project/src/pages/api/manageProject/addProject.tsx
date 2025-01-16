@@ -1,107 +1,105 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
-import multer from "multer";
-import { promisify } from "util";
+import { IncomingForm } from "formidable";
 import path from "path";
-import { getServerSession } from "next-auth/next"
+import { getServerSession } from "next-auth/next";
 import NextAuth from "../auth/[...nextauth]";
 
 const prisma = new PrismaClient();
-const uploadDir = "./public/uploads";
+const uploadDir = path.join(process.cwd(), "public/uploads");
 
-// Configuration de multer
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir); 
-  },
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname).toLowerCase();
-    const baseName = path.basename(file.originalname, ext).replace(/\s+/g, "_");
-
-    if (ext !== ".webp") {
-      return cb(new Error("Seuls les fichiers au format .webp sont autorisés"), false);
-    }
-    cb(null, `${baseName}-${Date.now()}${ext}`);
-  },
-});
-
-const upload = multer({
-  storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5, // Limite à 5MB
-  },
-});
-
-// Middleware pour transformer multer en promesse
-const uploadMiddleware = promisify(upload.array("images", 5));
-
-interface NextApiRequestWithFiles extends NextApiRequest {
-  files: Express.Multer.File[];
-  body: { title: string; description: string; enterprise: string; stacks: string[]; role_date: string }; 
-}
-
-export default async function handler(req: NextApiRequestWithFiles, res: NextApiResponse) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: `Méthode '${req.method}' non autorisée` });
-  }
-
-  
-  await uploadMiddleware(req, res);
-
-  const { title, description, enterprise, stacks, role_date } = req.body;
-
-
- const session = await getServerSession(req, res, NextAuth);
-  console.log("Cookies dans la requête:", req.headers.cookie);
-  
-  console.log("Cookies: ", req.headers.cookie); 
-  console.log("Session: ", session);
-
-  if (!session?.user?.name) {
-    return res.status(401).json({ error: "Utilisateur non authentifié" });
-  }
-  const stacksArray = Array.isArray(stacks) ? stacks : JSON.parse(stacks);
-  if (!Array.isArray(stacksArray)) {
-    return res.status(400).json({ error: "Le champ 'stacks' doit être un tableau." });
-  }
-  try {
-   
-    const project = await prisma.project.create({
-      data: {
-        title,
-        description,
-        enterprise,
-        role_date,
-        userId: session.user.id,
-        stacks: {
-          connect: stacks.map((stack: string) => ({ id: stack })),
-        },
-      },
-    });
-
-    
-    if (req.files && Array.isArray(req.files)) {
-      const imagesData = req.files.map((file) => ({
-        url: `/uploads/${file.filename}`,
-        projectId: project.id,
-      }));
-
-      await prisma.image.createMany({
-        data: imagesData,
-      });
-    }
-
-    
-    res.status(201).json({ message: "Projet créé avec succès.", project });
-  } catch (error) {
-    console.error("Erreur lors de la création du projet:", error);
-    res.status(500).json({ error: "Erreur lors de la création du projet." });
-  }
-}
-
-
+// Désactiver le bodyParser de Next.js pour laisser Formidable gérer la requête brute
 export const config = {
   api: {
     bodyParser: false,
   },
 };
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: `Méthode '${req.method}' non autorisée` });
+  }
+
+  // Création de l'instance de Formidable pour gérer le téléchargement des fichiers
+  const form = new IncomingForm({
+    uploadDir: uploadDir,
+    keepExtensions: true,
+    maxFileSize: 1024 * 1024 * 5, // Limite de taille à 5MB
+  });
+
+  // Traitement des données du formulaire
+  form.parse(req, async (err, fields, files) => {
+    if (err) {
+      console.error("Erreur lors de la réception des fichiers:", err);
+      return res.status(500).json({ error: "Erreur lors du téléchargement des fichiers" });
+    }
+
+    const { title, description, enterprise, stacks, role_date } = fields;
+    const session = await getServerSession(req, res, NextAuth);
+    console.log("Session:", session);
+    console.log("fields", fields);
+
+    // Vérification de l'authentification de l'utilisateur
+    if (!session?.user?.name) {
+      return res.status(401).json({ error: "Utilisateur non authentifié" });
+    }
+
+    // Validation des stacks
+    const validStacks = Array.isArray(stacks)
+    ? stacks.map((stack: string) => {
+          const parsedId = Number(stack);
+          return isNaN(parsedId) ? null : parsedId;
+      }).filter((id): id is number => id !== null)
+    : [];
+
+    try {
+      // Création du projet dans la base de données
+      const project = await prisma.project.create({
+        data: {
+          title: String(title),
+          description: String(description),
+          enterprise: String(enterprise),
+          role_date: String(role_date),
+          userId: session.user.id,
+          stacks: {
+            connect: validStacks.map((id) => ({ id })),
+          },
+        },
+      });
+
+      // Gestion des fichiers téléchargés
+      const imageFiles = Array.isArray(files?.images) ? files.images : [files?.images];
+      if (imageFiles && imageFiles.length > 0) {
+        const imagesData = imageFiles.map((file: any) => {
+          const ext = path.extname(file.newFilename).toLowerCase();
+
+          // Filtrage pour accepter uniquement les fichiers .webp
+          if (ext !== ".webp") {
+            return { error: "Seuls les fichiers au format .webp sont autorisés" };
+          }
+
+          return {
+            url: `/uploads/${file.newFilename}`,
+            projectId: project.id,
+          };
+        });
+
+        // Vérification si une erreur s'est produite lors du téléchargement des fichiers
+        const errorImage = imagesData.find((image) => 'error' in image);
+        if (errorImage) {
+          return res.status(400).json({ error: errorImage.error });
+        }
+
+        // Sauvegarde des images associées au projet
+        await prisma.image.createMany({
+          data: imagesData as any, // On peut être sûr qu'il n'y a pas d'erreur ici
+        });
+      }
+
+      return res.status(201).json({ message: "Projet créé avec succès.", project });
+    } catch (error) {
+      console.error("Erreur lors de la création du projet:", error);
+      return res.status(500).json({ error: "Erreur lors de la création du projet." });
+    }
+  });
+}

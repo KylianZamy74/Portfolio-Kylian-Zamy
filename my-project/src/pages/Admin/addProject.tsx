@@ -14,6 +14,11 @@ export default function NewProject() {
         selectedStacks,
         setSelectedStacks,
         fetchStacks,
+        setTitle,       
+        setDescription,     
+        setEnterprise,      
+        setRoleDate,
+        setStacks
     } = useAddProjectStore();
 
     useEffect(() => {
@@ -24,12 +29,8 @@ export default function NewProject() {
         if (event.target.files) {
             const newFiles = Array.from(event.target.files)
                 .slice(0, 5 - images.length)
-                .filter((file) => file instanceof File); 
-    
-            
+                .filter((file) => file instanceof File);       
             setImages((prevImages) => [...prevImages, ...newFiles]);
-    
-         
             setStoreImages([...images, ...newFiles]);
         }
     };
@@ -50,15 +51,13 @@ export default function NewProject() {
 
     const handleStackSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
-
-     
         if (Array.isArray(selectedStacks) && !selectedStacks.includes(selectedValue)) {
             setSelectedStacks([...selectedStacks, selectedValue]);
+            setStacks(stacks.filter((stack) => stack.name !== selectedValue));
         }
     };
 
     const handleStackRemoval = (stack: string) => {
-    
         setSelectedStacks(selectedStacks.filter((s) => s !== stack));
     };
 
@@ -69,7 +68,6 @@ export default function NewProject() {
             alert("Veuillez sélectionner au moins une stack technique.");
             return;
         }
-
         await submitProject();
     };
 
@@ -86,6 +84,7 @@ export default function NewProject() {
                             name="title"
                             className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E]"
                             required
+                            onChange={(e) => setTitle(e.target.value)}
                         />
                     </div>
                     <div>
@@ -96,6 +95,7 @@ export default function NewProject() {
                             rows={4}
                             className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E]"
                             required
+                            onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
                     <div>
@@ -106,6 +106,7 @@ export default function NewProject() {
                             rows={2}
                             className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm text-[#1E1E1E]"
                             required
+                            onChange={(e) => setEnterprise(e.target.value)}
                         />
                     </div>
                     <div>
@@ -116,6 +117,7 @@ export default function NewProject() {
                             name="role_date"
                             className="text-[#1E1E1E] mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#F97316] focus:border-[#F97316] sm:text-sm"
                             required
+                            onChange={(e)=> setRoleDate(e.target.value)}
                         />
                     </div>
                     <div>
