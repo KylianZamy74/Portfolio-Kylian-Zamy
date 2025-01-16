@@ -3,9 +3,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import { useAddProjectStore } from "@/store/FetchStore/addProjectStore";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function NewProject() {
     const [images, setImages] = useState<File[]>([]);
+    const [stackError, setStackError] = useState<string | null>(null); 
+    const { data: session } = useSession();
+    const router  = useRouter();
 
     const {
         setImages: setStoreImages,
@@ -14,12 +19,19 @@ export default function NewProject() {
         selectedStacks,
         setSelectedStacks,
         fetchStacks,
-        setTitle,       
-        setDescription,     
-        setEnterprise,      
+        setTitle,
+        setDescription,
+        setEnterprise,
         setRoleDate,
-        setStacks
+        setStacks,
+        setUserId,
     } = useAddProjectStore();
+
+    useEffect(() => {
+        if (session?.user.id) {
+            setUserId(session.user.id); 
+        }
+    }, [session, setUserId]);
 
     useEffect(() => {
         fetchStacks(); 
@@ -65,10 +77,13 @@ export default function NewProject() {
         event.preventDefault();
 
         if (selectedStacks.length === 0) {
-            alert("Veuillez sélectionner au moins une stack technique.");
+            setStackError("Veuillez sélectionner au moins une stack technique."); 
             return;
         }
+
+        setStackError(null); 
         await submitProject();
+        router.push("/Admin/addProjectValidated");
     };
 
     return (
@@ -138,6 +153,9 @@ export default function NewProject() {
                                 </option>
                             ))}
                         </select>
+                        {stackError && (
+                            <p className="text-red-500 text-sm mt-2">{stackError}</p> 
+                        )}
                         <div className="mt-4 space-y-2">
                             {Array.isArray(selectedStacks) &&
                                 selectedStacks.map((stack, index) => (
@@ -154,7 +172,6 @@ export default function NewProject() {
                                 ))}
                         </div>
                     </div>
-                   
                     <div>
                         <label htmlFor="images" className="block text-sm font-medium text-[#FDFAD]">Images du projet (5 max)</label>
                         <div className="mt-2 flex items-center space-x-4">

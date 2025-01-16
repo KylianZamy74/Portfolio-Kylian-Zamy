@@ -9,6 +9,7 @@ interface ProjectStore {
     stacks: Stack[];  
     selectedStacks: string[]; 
     role_date: string;
+    userId: number;
 
     setImages: (images: File[]) => void;
     setTitle: (title: string) => void;
@@ -19,6 +20,7 @@ interface ProjectStore {
     setSelectedStacks: (stacks: string[]) => void; 
     addNewStack: (stack: string) => void;  
     submitProject: () => Promise<void>;
+    setUserId: (userId: number) => void;
 
     fetchStacks: () => Promise<void>;
 }
@@ -31,6 +33,7 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
     stacks: [],  
     selectedStacks: [],  
     role_date: "",
+    userId: 0,
 
     setImages: (images: File[]) => set({ images }),
     setTitle: (title: string) => set({ title }),
@@ -39,6 +42,7 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
     setEnterprise: (enterprise: string) => set({ enterprise }),
     setRoleDate: (role_date: string) => set({ role_date }),
     setSelectedStacks: (stacks: string[]) => set({ selectedStacks: stacks }),
+    setUserId: (userId: number) => set({ userId }),
 
   
     fetchStacks: async () => {
@@ -64,34 +68,54 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
  
     submitProject: async () => {
         const state = useAddProjectStore.getState();
-        const formData = new FormData();
     
-        // Ajoutez les champs texte
-        formData.append("title", state.title);
-        formData.append("description", state.description);
-        formData.append("enterprise", state.enterprise);
-        formData.append("role_date", state.role_date);
-        state.selectedStacks.forEach((stack) => {
-            formData.append("stacks", stack);
-        });
-        // Ajoutez les fichiers
+        
+        const projectData = {
+            title: state.title,
+            description: state.description,
+            enterprise: state.enterprise,
+            role_date: state.role_date,
+            stacks: state.selectedStacks,
+            userId: state.userId
+        };
+    
+     
+        const formData = new FormData();
         state.images.forEach((image) => {
             formData.append("images", image);
         });
     
         try {
-            const response = await fetch(`http://localhost:3000/api/manageProject/addProject`, {
+         
+            const projectResponse = await fetch(`http://localhost:3000/api/manageProject/addProject`, {
                 method: "POST",
-                body: formData,
+                headers: {
+                    "Content-Type": "application/json",
+                    "credentials": "include",
+                },
+                body: JSON.stringify(projectData), 
             });
     
-            if (!response.ok) {
-                throw new Error("Erreur lors de la création du projet");
+            if (!projectResponse.ok) {
+                throw new Error("Erreur lors de l'envoi des données textuelles");
             }
     
-            await response.json();
+            const { projectId } = await projectResponse.json();
     
-            // Réinitialiser le state après succès
+          
+            if (state.images.length > 0) {
+                formData.append("projectId", projectId); 
+                const imageResponse = await fetch(`http://localhost:3000/api/manageProject/uploadImages`, {
+                    method: "POST",
+                    body: formData,
+                });
+    
+                if (!imageResponse.ok) {
+                    throw new Error("Erreur lors de l'envoi des images");
+                }
+            }
+    
+           
             set({
                 title: "",
                 description: "",
@@ -101,9 +125,12 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
                 role_date: "",
                 images: [],
             });
+    
+            console.log("Projet créé avec succès !");
         } catch (error) {
             console.error("Erreur lors de la création du projet :", error);
         }
     },
+    
     
 }));

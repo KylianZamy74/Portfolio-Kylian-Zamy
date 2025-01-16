@@ -78,6 +78,7 @@ export default NextAuth({
         token.name = user.name;
         token.role = user.role;
       }
+      console.log("JWT token:", token);
       return token;
     },
   },
