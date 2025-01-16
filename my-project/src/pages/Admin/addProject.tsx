@@ -46,7 +46,6 @@ export default function NewProject() {
             setStoreImages([...images, ...newFiles]);
         }
     };
-    
 
     const renderImagePreviews = () => {
         return images.map((file, index) => (
@@ -57,8 +56,22 @@ export default function NewProject() {
                     className="w-16 h-16 object-cover rounded-md"
                 />
                 <p className="text-sm">{file.name}</p>
+                <button
+                    type="button"
+                    onClick={() => handleRemoveImage(index)}
+                    className="ml-2 text-red-500 hover:text-red-700"
+                >
+                    &times; {/* Icône pour supprimer */}
+                </button>
             </div>
         ));
+    };
+
+    const handleRemoveImage = (index: number) => {
+        const newImages = [...images];
+        newImages.splice(index, 1); 
+        setImages(newImages);
+        setStoreImages(newImages); 
     };
 
     const handleStackSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
