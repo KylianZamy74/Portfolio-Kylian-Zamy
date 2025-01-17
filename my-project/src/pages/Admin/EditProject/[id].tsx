@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 import { useEditProjectStore } from "@/store/FetchStore/editProjectStore";
 import { useRouter } from "next/router";
 
+
 export default function EditProject() {
-    const [images, setImages] = useState<File[]>([]); 
-    const [stackError, setStackError] = useState<string | null>(null); 
+    const [images, setImages] = useState<File[]>([]);
+    const [stackError, setStackError] = useState<string | null>(null);
     const router = useRouter();
     const { id } = router.query;
 
@@ -17,20 +18,28 @@ export default function EditProject() {
         enterprise,
         role_date,
         selectedStacks,
-        stacks, 
-        images: imageUrls, 
+        images: imageUrls,
         setTitle,
         setDescription,
         setEnterprise,
         setRoleDate,
-        setSelectedStacks,
+        setStacks,
+        stacks,
         fetchProjectDetails,
+        allStacks,
+        fetchStacks,
     } = useEditProjectStore();
 
+    useEffect(() => {
+        fetchStacks();
+    }, [fetchStacks])
+
+    console.log("Allstacks", allStacks);
+    console.log("stakcs", stacks)
 
     useEffect(() => {
         if (id) {
-            fetchProjectDetails(Number(id)); 
+            fetchProjectDetails(Number(id));
         }
     }, [id, fetchProjectDetails]);
 
@@ -51,14 +60,19 @@ export default function EditProject() {
 
     const handleStackSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
-        if (Array.isArray(selectedStacks) && !selectedStacks.includes(selectedValue)) {
-            setSelectedStacks([...selectedStacks, selectedValue]);
+        const selectedStack = allStacks.find(stack => stack.name === selectedValue);
+    
+        if (selectedStack && !stacks.some(stack => stack.name === selectedStack.name)) {
+            setStacks([...stacks, selectedStack]);
         }
     };
+    
+
 
     const handleStackRemoval = (stack: string) => {
-        setSelectedStacks(selectedStacks.filter((s) => s !== stack));
+        setStacks(stacks.filter((s) => s !== stack));
     };
+
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -77,7 +91,7 @@ export default function EditProject() {
             <Header />
             <div className="max-w-3xl mx-auto p-12 text-[#FDFAD5]">
                 <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
-          
+
                     <div>
                         <label htmlFor="title" className="block text-sm font-medium">Titre du projet</label>
                         <input
@@ -91,7 +105,7 @@ export default function EditProject() {
                         />
                     </div>
 
-         
+
                     <div>
                         <label htmlFor="description" className="block text-sm font-medium text-[#FDFAD]">Description du projet</label>
                         <textarea
@@ -105,7 +119,7 @@ export default function EditProject() {
                         />
                     </div>
 
- 
+
                     <div>
                         <label htmlFor="enterprise" className="block text-sm font-medium text-[#FDFAD]">Entreprise affiliée</label>
                         <textarea
@@ -142,7 +156,7 @@ export default function EditProject() {
                             defaultValue=""
                         >
                             <option value="" disabled>-- Sélectionnez une stack --</option>
-                            {stacks.map((stack) => (
+                            {Array.isArray(allStacks) && allStacks.map((stack) => (
                                 <option key={stack.id} value={stack.name}>{stack.name}</option>
                             ))}
                         </select>
@@ -152,9 +166,9 @@ export default function EditProject() {
                         )}
 
                         <div className="mt-4 space-y-2">
-                            {selectedStacks.map((stack, index) => (
+                            {Array.isArray(stacks) && stacks.map((stack, index) => (
                                 <div key={index} className="flex items-center justify-between p-2 border border-gray-300 rounded-md">
-                                    <span>{stack}</span>
+                                    <span>{stack.name}</span>
                                     <button
                                         type="button"
                                         onClick={() => handleStackRemoval(stack)}
@@ -188,7 +202,7 @@ export default function EditProject() {
                         </div>
 
                         <div className="mt-4 flex flex-wrap gap-4">
-                            
+
                             {imageUrls.map((imageUrl, index) => (
                                 <div key={index} className="flex items-center space-x-2">
                                     <img
@@ -205,7 +219,7 @@ export default function EditProject() {
                                     </button>
                                 </div>
                             ))}
-                       
+
                             {images.map((file, index) => (
                                 <div key={index} className="flex items-center space-x-2">
                                     <img

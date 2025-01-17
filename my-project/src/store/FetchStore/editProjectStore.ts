@@ -1,5 +1,7 @@
 import { create } from "zustand";
 
+
+
 interface EditProjectStore {
     title: string;
     description: string;
@@ -8,6 +10,7 @@ interface EditProjectStore {
     selectedStacks: string[];
     stacks: string[];
     images: string[];
+    allStacks: string[]; 
 
     setTitle: (title: string) => void;
     setDescription: (description: string) => void;
@@ -16,7 +19,9 @@ interface EditProjectStore {
     setSelectedStacks: (stacks: string[]) => void;
     setStacks: (stacks: string[]) => void;
     setImages: (images: string[]) => void;
+    setAllStacks: (allStacks: string[]) => void;
     fetchProjectDetails: (projectId: number) => Promise<void>;
+    fetchStacks: () => Promise<void>;
 }
 
 export const useEditProjectStore = create<EditProjectStore>((set) => ({
@@ -27,6 +32,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     selectedStacks: [],
     stacks: [],
     images: [],
+    allStacks: [], 
 
     setTitle: (title: string) => set({ title }),
     setDescription: (description: string) => set({ description }),
@@ -35,6 +41,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     setSelectedStacks: (selectedStacks: string[]) => set({ selectedStacks }),
     setStacks: (stacks: string[]) => set({ stacks }),
     setImages: (images: string[]) => set({ images }),
+    setAllStacks: (allStacks: string[]) => set({ allStacks }), 
 
     fetchProjectDetails: async (projectId: number) => {
         try {
@@ -48,11 +55,22 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
                 enterprise: data.enterprise,
                 role_date: data.role_date,
                 stacks: data.stacks,
-                images: data.images
-
+                images: data.images,
             });
         } catch (error) {
             console.error(error);
         }
-    }
+    },
+
+    fetchStacks: async () => {
+        try {
+            const response = await fetch(`http://localhost:3000/api/stack`);
+            if (!response.ok) throw new Error("Erreur de récupération des stacks");
+
+            const data = await response.json();
+            set({ allStacks: data }); 
+        } catch (error) {
+            console.error(error);
+        }
+    },
 }));
