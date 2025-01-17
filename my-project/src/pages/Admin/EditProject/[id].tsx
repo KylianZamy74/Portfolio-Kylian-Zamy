@@ -5,9 +5,8 @@ import { useState, useEffect } from "react";
 import { useEditProjectStore } from "@/store/FetchStore/editProjectStore";
 import { useRouter } from "next/router";
 
-
 export default function EditProject() {
-    const [images, setImages] = useState<File[]>([]);
+    const [images, setImages] = useState<File[]>([]); 
     const [stackError, setStackError] = useState<string | null>(null);
     const router = useRouter();
     const { id } = router.query;
@@ -18,7 +17,7 @@ export default function EditProject() {
         enterprise,
         role_date,
         selectedStacks,
-        images: imageUrls,
+        images: imageUrls, 
         setTitle,
         setDescription,
         setEnterprise,
@@ -28,14 +27,12 @@ export default function EditProject() {
         fetchProjectDetails,
         allStacks,
         fetchStacks,
+        removeImage, 
     } = useEditProjectStore();
 
     useEffect(() => {
         fetchStacks();
-    }, [fetchStacks])
-
-    console.log("Allstacks", allStacks);
-    console.log("stakcs", stacks)
+    }, [fetchStacks]);
 
     useEffect(() => {
         if (id) {
@@ -52,27 +49,28 @@ export default function EditProject() {
         }
     };
 
-    const handleRemoveImage = (index: number) => {
-        const newImages = [...images];
-        newImages.splice(index, 1);
-        setImages(newImages);
+    const handleRemoveImage = (index: number, isLocal: boolean) => {
+        if (isLocal) {
+            const newImages = [...images];
+            newImages.splice(index, 1);
+            setImages(newImages);
+        } else {
+            removeImage(index); 
+        }
     };
 
     const handleStackSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
         const selectedStack = allStacks.find(stack => stack.name === selectedValue);
-    
+
         if (selectedStack && !stacks.some(stack => stack.name === selectedStack.name)) {
             setStacks([...stacks, selectedStack]);
         }
     };
-    
-
 
     const handleStackRemoval = (stack: string) => {
         setStacks(stacks.filter((s) => s !== stack));
     };
-
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -91,7 +89,6 @@ export default function EditProject() {
             <Header />
             <div className="max-w-3xl mx-auto p-12 text-[#FDFAD5]">
                 <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
-
                     <div>
                         <label htmlFor="title" className="block text-sm font-medium">Titre du projet</label>
                         <input
@@ -105,7 +102,6 @@ export default function EditProject() {
                         />
                     </div>
 
-
                     <div>
                         <label htmlFor="description" className="block text-sm font-medium text-[#FDFAD]">Description du projet</label>
                         <textarea
@@ -118,7 +114,6 @@ export default function EditProject() {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
-
 
                     <div>
                         <label htmlFor="enterprise" className="block text-sm font-medium text-[#FDFAD]">Entreprise affiliée</label>
@@ -201,8 +196,8 @@ export default function EditProject() {
                             </label>
                         </div>
 
-                        <div className="mt-4 flex flex-wrap gap-4">
 
+                        <div className="mt-4 flex flex-wrap gap-4">
                             {imageUrls.map((imageUrl, index) => (
                                 <div key={index} className="flex items-center space-x-2">
                                     <img
@@ -212,7 +207,7 @@ export default function EditProject() {
                                     />
                                     <button
                                         type="button"
-                                        onClick={() => handleRemoveImage(index)}
+                                        onClick={() => handleRemoveImage(index, false)} 
                                         className="ml-2 text-red-500 hover:text-red-700"
                                     >
                                         &times;
@@ -230,7 +225,7 @@ export default function EditProject() {
                                     <p className="text-sm">{file.name}</p>
                                     <button
                                         type="button"
-                                        onClick={() => handleRemoveImage(index)}
+                                        onClick={() => handleRemoveImage(index, true)} 
                                         className="ml-2 text-red-500 hover:text-red-700"
                                     >
                                         &times;

@@ -1,7 +1,5 @@
 import { create } from "zustand";
 
-
-
 interface EditProjectStore {
     title: string;
     description: string;
@@ -9,8 +7,8 @@ interface EditProjectStore {
     role_date: string;
     selectedStacks: string[];
     stacks: string[];
-    images: string[];
-    allStacks: string[]; 
+    images: string[];  
+    allStacks: string[];
 
     setTitle: (title: string) => void;
     setDescription: (description: string) => void;
@@ -22,6 +20,7 @@ interface EditProjectStore {
     setAllStacks: (allStacks: string[]) => void;
     fetchProjectDetails: (projectId: number) => Promise<void>;
     fetchStacks: () => Promise<void>;
+    removeImage: (index: number) => void;  
 }
 
 export const useEditProjectStore = create<EditProjectStore>((set) => ({
@@ -31,8 +30,8 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     role_date: "",
     selectedStacks: [],
     stacks: [],
-    images: [],
-    allStacks: [], 
+    images: [],  
+    allStacks: [],
 
     setTitle: (title: string) => set({ title }),
     setDescription: (description: string) => set({ description }),
@@ -41,7 +40,14 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     setSelectedStacks: (selectedStacks: string[]) => set({ selectedStacks }),
     setStacks: (stacks: string[]) => set({ stacks }),
     setImages: (images: string[]) => set({ images }),
-    setAllStacks: (allStacks: string[]) => set({ allStacks }), 
+    setAllStacks: (allStacks: string[]) => set({ allStacks }),
+
+    removeImage: (index: number) => set((state) => {
+        const newImages = [...state.images];
+        newImages.splice(index, 1);  
+        return { images: newImages };  
+    }),
+
 
     fetchProjectDetails: async (projectId: number) => {
         try {
@@ -55,20 +61,20 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
                 enterprise: data.enterprise,
                 role_date: data.role_date,
                 stacks: data.stacks,
-                images: data.images,
+                images: data.images,  
             });
         } catch (error) {
             console.error(error);
         }
     },
-
+    
     fetchStacks: async () => {
         try {
             const response = await fetch(`http://localhost:3000/api/stack`);
             if (!response.ok) throw new Error("Erreur de récupération des stacks");
 
             const data = await response.json();
-            set({ allStacks: data }); 
+            set({ allStacks: data });  
         } catch (error) {
             console.error(error);
         }
