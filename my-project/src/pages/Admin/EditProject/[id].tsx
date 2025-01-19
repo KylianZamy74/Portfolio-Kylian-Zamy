@@ -62,10 +62,11 @@ export default function EditProject() {
 
     const handleStackSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = event.target.value;
-        const selectedStack = allStacks.find(stack => stack.name === selectedValue);
-
-        if (selectedStack && !stacks.some(stack => stack.name === selectedStack.name)) {
-            setStacks([...stacks, selectedStack]);
+        const selectedStack = allStacks.find((stack) => stack.name === selectedValue);
+    
+        if (selectedStack && !stacks.some((stack) => stack.name === selectedStack.name)) {
+            setStacks([...stacks, selectedStack]); 
+            setStackError(null); 
         }
     };
 
@@ -76,12 +77,12 @@ export default function EditProject() {
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
-        if (selectedStacks.length === 0) {
+        if (stacks.length === 0) {
             setStackError("Veuillez sélectionner au moins une stack technique.");
             return;
         }
 
-        await submitEditProject(id);
+        await submitEditProject(Number(id));
 
         setStackError(null);
         router.push("/Admin/editProjectValidated");
@@ -239,7 +240,7 @@ export default function EditProject() {
                     </div>
 
                     <div className="pt-4">
-                        <button onClick={submitEditSubmit}
+                        <button 
                             type="submit"
                             className="w-full py-3 px-6 bg-[#F97316] text-white font-medium rounded-md shadow-sm hover:bg-orange-600 focus:ring-2 focus:ring-[#F97316] focus:ring-offset-2"
                         >
