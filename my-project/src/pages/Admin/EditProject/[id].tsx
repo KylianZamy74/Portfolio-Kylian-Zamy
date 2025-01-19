@@ -28,6 +28,7 @@ export default function EditProject() {
         allStacks,
         fetchStacks,
         removeImage, 
+        submitEditProject,
     } = useEditProjectStore();
 
     useEffect(() => {
@@ -79,6 +80,8 @@ export default function EditProject() {
             setStackError("Veuillez sélectionner au moins une stack technique.");
             return;
         }
+
+        await submitEditProject(id);
 
         setStackError(null);
         router.push("/Admin/editProjectValidated");
@@ -167,7 +170,7 @@ export default function EditProject() {
                                     <button
                                         type="button"
                                         onClick={() => handleStackRemoval(stack)}
-                                        className="px-2 py-1 text-sm bg-red-600 text-white rounded-md"
+                                        className="px-2 py-1 text-sm bg-red-500 hover:bg-red-600 text-white rounded-md duration-200"
                                     >
                                         Supprimer
                                     </button>
@@ -236,7 +239,7 @@ export default function EditProject() {
                     </div>
 
                     <div className="pt-4">
-                        <button
+                        <button onClick={submitEditSubmit}
                             type="submit"
                             className="w-full py-3 px-6 bg-[#F97316] text-white font-medium rounded-md shadow-sm hover:bg-orange-600 focus:ring-2 focus:ring-[#F97316] focus:ring-offset-2"
                         >

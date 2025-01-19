@@ -54,33 +54,39 @@ export default function About() {
                     </h2>
                     <div className="md:flex justify-between md:space-x-8 mt-8">
                         <article className="borderclass p-6 rounded-lg shadow-lg">
-                            <h3 className="text-3xl font-bold mb-4">
-                                Full stack <span className="text-[#D97706]">web development</span>
-                            </h3>
-                            <p className="text-lg">
-                                I build <span className="text-[#D97706]">complete websites</span> and web applications,
-                                handling both <span className="text-[#D97706]">frontend</span> and <span className="text-[#D97706]">backend</span> to create
+                            
+                                <h3 className="text-3xl font-bold mb-4 ">
+                                    Full stack <strong className="text-[#F97316]">web development</strong>
+                                </h3>
+                            
+                            <p className="text-lg mt-4">
+                                I build <strong className="text-[#F97316]">complete websites</strong> and web applications,
+                                handling both <strong className="text-[#F97316]">frontend</strong> and <strong className="text-[#F97316]">backend</strong> to create
                                 seamless, functional digital experiences.
                             </p>
                         </article>
 
                         <article className="borderclass p-6 rounded-lg shadow-lg">
-                            <h3 className="text-3xl font-bold mb-4">
-                                E-commerce <span className="text-[#D97706]">solutions</span>
-                            </h3>
-                            <p className="text-lg">
-                                I design and develop fully integrated <span className="text-[#D97706]">e-commerce websites</span>,
+                            
+                                <h3 className="text-3xl font-bold mb-4">
+                                    E-commerce websites <strong className="text-[#F97316]">solutions</strong>
+                                </h3>
+                            
+                            <p className="text-lg mt-4">
+                                I design and develop fully integrated <strong className="text-[#F97316]">e-commerce websites</strong>,
                                 providing a smooth shopping experience from product showcase to secure checkout.
                             </p>
                         </article>
 
                         <article className="borderclass p-6 rounded-lg shadow-lg">
-                            <h3 className="text-3xl font-bold mb-4">
-                                Interactive & Custom <span className="text-[#D97706]">Web Apps</span>
-                            </h3>
-                            <p className="text-lg pb-8">
-                                I create <span className="text-[#D97706]">dynamic</span>, user-centric web apps, including
-                                custom online portfolios and <span className="text-[#D97706]">interactive platforms</span>, tailored to your unique needs.
+                          
+                                <h3 className="text-3xl font-bold mb-4">
+                                    Interactive & Custom <strong className="text-[#F97316]">Web Apps</strong>
+                                </h3>
+                        
+                            <p className="text-lg pb-8 mt-4">
+                                I create <strong className="text-[#F97316]">dynamic</strong>, user-centric web apps, including
+                                custom online portfolios and <strong className="text-[#F97316]">interactive platforms</strong>, tailored to your unique needs.
                             </p>
                         </article>
                     </div>

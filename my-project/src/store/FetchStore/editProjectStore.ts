@@ -21,6 +21,7 @@ interface EditProjectStore {
     fetchProjectDetails: (projectId: number) => Promise<void>;
     fetchStacks: () => Promise<void>;
     removeImage: (index: number) => void;  
+    submitEditProject: (id: number) => void;
 }
 
 export const useEditProjectStore = create<EditProjectStore>((set) => ({
@@ -47,7 +48,6 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
         newImages.splice(index, 1);  
         return { images: newImages };  
     }),
-
 
     fetchProjectDetails: async (projectId: number) => {
         try {
@@ -79,4 +79,31 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
             console.error(error);
         }
     },
+
+    submitEditProject: async(id: number) => {
+
+        const updatedProject = {
+            id,
+            title: useEditProjectStore.getState().title,
+            description: useEditProjectStore.getState().description,
+            enterprise: useEditProjectStore.getState().enterprise,
+            role_date: useEditProjectStore.getState().role_date,
+            stacks: useEditProjectStore.getState().stacks,
+            images: useEditProjectStore.getState().images
+        }
+        console.log("objet a envoyer au server", updatedProject)
+        const response = await fetch("http://localhost:3000/api/manageProject/editProject", {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            credentials: "include",
+            body: JSON.stringify(updatedProject),
+        });
+        
+        if(!response) {
+            throw new Error("Erreur lors de la mise a jour")
+        }
+        
+        const result = await response.json();
+        console.log("data mis a jour", result)
+    }
 }));
