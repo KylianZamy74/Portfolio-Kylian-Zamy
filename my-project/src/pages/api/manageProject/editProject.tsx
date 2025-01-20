@@ -11,10 +11,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(405).json({message: "Méthode non autorisé, utiliser PUT"});
 
     }
-        const {id, title, description, enterprise, role_date, stacks, userId} = req.body
+        const {id, title, description, enterprise, role_date, stacks, userId, images} = req.body
         console.log("body", req.body);
 
-        if(!id || !title || !description || !enterprise || !role_date || !stacks) {
+        if(!id || !title || !description || !enterprise || !role_date || !stacks || !images) {
             return res.status(400).json({error: "Tous les champs doivent être remplis."});
         }
     
@@ -32,6 +32,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             stacks : {
                 set: [],
                 connect: stacks.map((stack: {id: number}) => ({id: stack.id}))
+            },
+            images: {
+                set: [],
+                connect: images.map((image: {id: number}) => ({id: image.id}))
             },
             userId
         },

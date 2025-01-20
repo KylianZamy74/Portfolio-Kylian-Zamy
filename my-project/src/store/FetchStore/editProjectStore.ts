@@ -7,7 +7,7 @@ interface EditProjectStore {
     role_date: string;
     selectedStacks: string[];
     stacks: string[];
-    images: string[];  
+    images: File[];  
     allStacks: string[];
 
     setTitle: (title: string) => void;
@@ -16,7 +16,7 @@ interface EditProjectStore {
     setRoleDate: (role_date: string) => void;
     setSelectedStacks: (stacks: string[]) => void;
     setStacks: (stacks: string[]) => void;
-    setImages: (images: string[]) => void;
+    setImages: (images: File[]) => void;
     setAllStacks: (allStacks: string[]) => void;
     fetchProjectDetails: (projectId: number) => Promise<void>;
     fetchStacks: () => Promise<void>;
@@ -40,7 +40,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     setRoleDate: (role_date: string) => set({ role_date }),
     setSelectedStacks: (selectedStacks: string[]) => set({ selectedStacks }),
     setStacks: (stacks: string[]) => set({ stacks }),
-    setImages: (images: string[]) => set({ images }),
+    setImages: (images: File[]) => set({images}),
     setAllStacks: (allStacks: string[]) => set({ allStacks }),
 
     removeImage: (index: number) => set((state) => {
@@ -92,6 +92,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
             enterprise: state.enterprise,
             role_date: state.role_date,
             stacks: state.stacks, 
+            images: state.images
         };
     
 
@@ -149,8 +150,5 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
             console.error("Erreur lors de la mise à jour du projet :", error);
         }
     }
-    
-    
-    
-    
+   
 }));

@@ -14,9 +14,9 @@ export const config = {
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== "PUT") {
-        console.log("Méthode non autorisée : ", req.method);  // Ajout d'un log pour vérifier la méthode
         return res.status(405).json({ error: `Méthode '${req.method}' non autorisée` });
     }
+
 
     const form = new IncomingForm({
         uploadDir,
@@ -30,52 +30,61 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             return res.status(500).json({ error: "Erreur lors du téléchargement des fichiers" });
         }
 
-        console.log("Fichiers reçus : ", files);  // Ajouter un log pour voir la structure des fichiers reçus
         const { projectId } = fields;
 
         if (!projectId) {
             return res.status(400).json({ error: "ID du projet manquant" });
         }
+        console.log("Fichiers reçus :", files);
 
         try {
-            // Vérifier et traiter les fichiers
-            const imageFiles = Array.isArray(files.images) ? files.images : [files.images]; 
-            if (!imageFiles || imageFiles.length === 0) {
-                throw new Error("Aucune image trouvée dans la requête.");
+      
+            let imageFiles = [];
+            if (files.images) {
+                imageFiles = Array.isArray(files.images) ? files.images : [files.images];
             }
-        
-            // Traiter les images reçues
+
+            if (imageFiles.length === 0) {
+                throw new Error("Aucune image reçue dans la requête.");
+            }
+
+            const existingImages = await prisma.image.findMany({
+                where: { projectId: Number(projectId) },
+            });
+
+            // Traiter les nouvelles images et les enregistrer
             const imagesData = imageFiles.map((file: any) => {
                 const ext = path.extname(file.newFilename).toLowerCase();
-        
-                // Vérification de l'extension du fichier
                 if (ext !== ".webp") {
                     throw new Error("Seuls les fichiers au format .webp sont autorisés");
                 }
-        
+
                 return {
                     url: `/uploads/${file.newFilename}`,
                     projectId: Number(projectId),
                 };
             });
-        
-            // Enregistrement des nouvelles images
-            console.log("Enregistrement des nouvelles images...");
+
+            // Si de nouvelles images sont envoyées, on les ajoute
+            console.log("Ajout des nouvelles images...");
             await prisma.image.createMany({
                 data: imagesData,
             });
-        
-            // Si les nouvelles images sont enregistrées avec succès, on peut supprimer les anciennes
-            console.log("Suppression des anciennes images du projet ID:", projectId);
-            await prisma.image.deleteMany({
-                where: { projectId: Number(projectId) },
-            });
-        
+
+            // Si de vieilles images doivent être remplacées (exemple : remplacement d'1 image existante)
+            // On supprime les anciennes images si elles sont remplacées
+            if (imageFiles.length > 0 && existingImages.length > 0) {
+                // Ici on suppose qu'on veut remplacer une image spécifique (par exemple la première)
+                console.log("Suppression des anciennes images du projet ID:", projectId);
+                await prisma.image.deleteMany({
+                    where: { projectId: Number(projectId) },
+                });
+            }
+
             return res.status(200).json({ message: "Images mises à jour avec succès" });
         } catch (error) {
             console.error("Erreur lors de l'enregistrement des images :", error);
             return res.status(500).json({ error: "Erreur lors de l'enregistrement des images" });
         }
-        
     });
 }
