@@ -80,30 +80,77 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
         }
     },
 
-    submitEditProject: async(id: number) => {
+    submitEditProject: async (id) => {
 
+        const state = useEditProjectStore.getState();
+        
+     
         const updatedProject = {
-            id,
-            title: useEditProjectStore.getState().title,
-            description: useEditProjectStore.getState().description,
-            enterprise: useEditProjectStore.getState().enterprise,
-            role_date: useEditProjectStore.getState().role_date,
-            stacks: useEditProjectStore.getState().stacks,
-            images: useEditProjectStore.getState().images
-        }
-        console.log("objet a envoyer au server", updatedProject)
-        const response = await fetch("http://localhost:3000/api/manageProject/editProject", {
-            method: "PUT",
-            headers: {"Content-Type": "application/json"},
-            credentials: "include",
-            body: JSON.stringify(updatedProject),
+            id,  
+            title: state.title,
+            description: state.description,
+            enterprise: state.enterprise,
+            role_date: state.role_date,
+            stacks: state.stacks, 
+        };
+    
+
+        const formData = new FormData();
+
+        state.images.forEach((image, index) => {
+            console.log(`Image ${index}:`, image);
+            formData.append("images", image);
         });
-        
-        if(!response) {
-            throw new Error("Erreur lors de la mise a jour")
+    
+        try {
+       
+            const projectResponse = await fetch(`http://localhost:3000/api/manageProject/editProject`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "credentials": "include",
+                },
+                body: JSON.stringify(updatedProject),
+            });
+    
+            if (!projectResponse.ok) {
+                throw new Error("Erreur lors de la mise à jour du projet");
+            }
+    
+            const { projectId } = await projectResponse.json();
+    
+         
+            if (state.images.length > 0) {
+                formData.append("projectId", projectId);  
+                console.log("FormData avant l'envoi : ", formData);
+                const imageResponse = await fetch(`http://localhost:3000/api/manageProject/editImages`, {
+                    method: "PUT",
+                    body: formData,
+                });
+    
+                if (!imageResponse.ok) {
+                    throw new Error("Erreur lors de l'envoi des images");
+                }
+            }
+    
+            console.log("Projet mis à jour avec succès !");
+            
+            set({
+                title: "",
+                description: "",
+                enterprise: "",
+                stacks: [],
+                selectedStacks: [],
+                role_date: "",
+                images: [],
+            });
+    
+        } catch (error) {
+            console.error("Erreur lors de la mise à jour du projet :", error);
         }
-        
-        const result = await response.json();
-        console.log("data mis a jour", result)
     }
+    
+    
+    
+    
 }));

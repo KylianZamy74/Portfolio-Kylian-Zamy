@@ -69,6 +69,7 @@ export const splitTextIntoChar = (text: string) => {
         </span>
     ));
 };
+
 // export const splitTextIntoChar = (text: string) => {
 //     const words = text.split(" "); // Divise le texte en mots
 

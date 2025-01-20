@@ -12,8 +12,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     }
         const {id, title, description, enterprise, role_date, stacks, userId} = req.body
+        console.log("body", req.body);
 
-        if(!id || !title || !description || !enterprise || !role_date || !stacks || !userId) {
+        if(!id || !title || !description || !enterprise || !role_date || !stacks) {
             return res.status(400).json({error: "Tous les champs doivent être remplis."});
         }
     
@@ -28,7 +29,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             description,
             enterprise,
             role_date,
-            stacks,
+            stacks : {
+                set: [],
+                connect: stacks.map((stack: {id: number}) => ({id: stack.id}))
+            },
             userId
         },
     });   

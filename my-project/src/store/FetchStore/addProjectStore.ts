@@ -131,6 +131,4 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
             console.error("Erreur lors de la création du projet :", error);
         }
     },
-    
-    
 }));

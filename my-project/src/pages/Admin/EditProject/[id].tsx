@@ -16,7 +16,6 @@ export default function EditProject() {
         description,
         enterprise,
         role_date,
-        selectedStacks,
         images: imageUrls, 
         setTitle,
         setDescription,
@@ -85,7 +84,7 @@ export default function EditProject() {
         await submitEditProject(Number(id));
 
         setStackError(null);
-        router.push("/Admin/editProjectValidated");
+        // router.push("/Admin/editProjectValidated");
     };
 
     return (
