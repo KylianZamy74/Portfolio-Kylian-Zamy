@@ -69,7 +69,6 @@ export default NextAuth({
           role: token.role as Role,
         };
       }
-      console.log("Session after JWT callback:", session);
       return session;
     },
     async jwt({ token, user }) {
@@ -78,7 +77,6 @@ export default NextAuth({
         token.name = user.name;
         token.role = user.role;
       }
-      console.log("JWT token:", token);
       return token;
     },
   },

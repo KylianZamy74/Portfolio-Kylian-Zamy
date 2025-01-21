@@ -37,7 +37,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         try {
             const imageFiles = Array.isArray(files.images) ? files.images : [files.images];
-            const imagesData = imageFiles.map((file: any) => {
+            const imagesData = imageFiles.map((file : any) => {
                 const ext = path.extname(file.newFilename).toLowerCase();
 
               

@@ -1,27 +1,34 @@
 import { create } from "zustand";
+import { Stack } from "@/types";
+
 
 interface EditProjectStore {
     title: string;
     description: string;
     enterprise: string;
     role_date: string;
-    selectedStacks: string[];
-    stacks: string[];
-    images: File[];  
-    allStacks: string[];
+    selectedStacks: Stack[];
+    stacks: Stack[];
+    images: string[];  
+    allStacks: Stack[];
+    newImages: File[];
+    userId: number;
+
 
     setTitle: (title: string) => void;
     setDescription: (description: string) => void;
     setEnterprise: (enterprise: string) => void;
     setRoleDate: (role_date: string) => void;
-    setSelectedStacks: (stacks: string[]) => void;
-    setStacks: (stacks: string[]) => void;
-    setImages: (images: File[]) => void;
-    setAllStacks: (allStacks: string[]) => void;
+    setSelectedStacks: (stacks: Stack[]) => void;
+    setStacks: (stacks: Stack[]) => void;
+    setImages: (images: string[]) => void;
+    setNewImages: (newImages: File[]) => void;
+    setAllStacks: (allStacks: Stack[]) => void;
     fetchProjectDetails: (projectId: number) => Promise<void>;
     fetchStacks: () => Promise<void>;
     removeImage: (index: number) => void;  
     submitEditProject: (id: number) => void;
+    setUserId: (userId: number) => void;
 }
 
 export const useEditProjectStore = create<EditProjectStore>((set) => ({
@@ -32,16 +39,20 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     selectedStacks: [],
     stacks: [],
     images: [],  
+    newImages: [],
     allStacks: [],
+    userId: 0,
 
     setTitle: (title: string) => set({ title }),
     setDescription: (description: string) => set({ description }),
     setEnterprise: (enterprise: string) => set({ enterprise }),
     setRoleDate: (role_date: string) => set({ role_date }),
-    setSelectedStacks: (selectedStacks: string[]) => set({ selectedStacks }),
-    setStacks: (stacks: string[]) => set({ stacks }),
-    setImages: (images: File[]) => set({images}),
-    setAllStacks: (allStacks: string[]) => set({ allStacks }),
+    setSelectedStacks: (selectedStacks: Stack[]) => set({ selectedStacks }),
+    setStacks: (stacks: Stack[]) => set({ stacks }),
+    setImages: (images: string[]) => set({images}),
+    setNewImages: (newImages: File[]) => set ({newImages}),
+    setUserId: (userId: number) => set({userId}),
+    setAllStacks: (allStacks: Stack[]) => set({ allStacks }),
 
     removeImage: (index: number) => set((state) => {
         const newImages = [...state.images];
@@ -62,6 +73,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
                 role_date: data.role_date,
                 stacks: data.stacks,
                 images: data.images,  
+                userId: data.userId
             });
         } catch (error) {
             console.error(error);
@@ -83,8 +95,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     submitEditProject: async (id) => {
 
         const state = useEditProjectStore.getState();
-        
-     
+    
         const updatedProject = {
             id,  
             title: state.title,
@@ -92,17 +103,18 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
             enterprise: state.enterprise,
             role_date: state.role_date,
             stacks: state.stacks, 
-            images: state.images
+            images: state.images,
+            userId: state.userId
         };
     
 
         const formData = new FormData();
 
-        state.images.forEach((image, index) => {
+        state.newImages.forEach((image, index) => {
             console.log(`Image ${index}:`, image);
             formData.append("images", image);
         });
-    
+        console.log("data envoyé au serveur", updatedProject);
         try {
        
             const projectResponse = await fetch(`http://localhost:3000/api/manageProject/editProject`, {
@@ -121,11 +133,11 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
             const { projectId } = await projectResponse.json();
     
          
-            if (state.images.length > 0) {
+            if (state.newImages.length > 0) {
                 formData.append("projectId", projectId);  
                 console.log("FormData avant l'envoi : ", formData);
-                const imageResponse = await fetch(`http://localhost:3000/api/manageProject/editImages`, {
-                    method: "PUT",
+                const imageResponse = await fetch(`http://localhost:3000/api/manageProject/uploadImages`, {
+                    method: "POST",
                     body: formData,
                 });
     
@@ -133,7 +145,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
                     throw new Error("Erreur lors de l'envoi des images");
                 }
             }
-    
+
             console.log("Projet mis à jour avec succès !");
             
             set({

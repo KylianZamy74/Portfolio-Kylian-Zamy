@@ -4,9 +4,11 @@ import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import { useEditProjectStore } from "@/store/FetchStore/editProjectStore";
 import { useRouter } from "next/router";
+import { Stack } from "@/types";
+
 
 export default function EditProject() {
-    const [images, setImages] = useState<File[]>([]); 
+    
     const [stackError, setStackError] = useState<string | null>(null);
     const router = useRouter();
     const { id } = router.query;
@@ -17,6 +19,8 @@ export default function EditProject() {
         enterprise,
         role_date,
         images: imageUrls, 
+        newImages,
+        setNewImages,
         setTitle,
         setDescription,
         setEnterprise,
@@ -43,17 +47,18 @@ export default function EditProject() {
     const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files) {
             const newFiles = Array.from(event.target.files)
-                .slice(0, 5 - images.length)
-                .filter((file) => file instanceof File);
-            setImages((prevImages) => [...prevImages, ...newFiles]);
+                .slice(0, 5 - newImages.length)
+                .filter((file): file is File => file instanceof File); 
+                const updatedImages = [...newImages, ...newFiles];
+            setNewImages(updatedImages); 
         }
     };
 
     const handleRemoveImage = (index: number, isLocal: boolean) => {
         if (isLocal) {
-            const newImages = [...images];
-            newImages.splice(index, 1);
-            setImages(newImages);
+            const newImage = [...newImages];
+            newImage.splice(index, 1);
+            setNewImages(newImage);
         } else {
             removeImage(index); 
         }
@@ -69,7 +74,7 @@ export default function EditProject() {
         }
     };
 
-    const handleStackRemoval = (stack: string) => {
+    const handleStackRemoval = (stack : Stack) => {
         setStacks(stacks.filter((s) => s !== stack));
     };
 
@@ -80,7 +85,7 @@ export default function EditProject() {
             setStackError("Veuillez sélectionner au moins une stack technique.");
             return;
         }
-        console.log("images lcoale", images)
+        console.log("images lcoale", newImages)
         await submitEditProject(Number(id));
 
         setStackError(null);
@@ -218,7 +223,7 @@ export default function EditProject() {
                                 </div>
                             ))}
 
-                            {images.map((file, index) => (
+                            {Array.isArray(newImages) && newImages.map((file, index) => (
                                 <div key={index} className="flex items-center space-x-2">
                                     <img
                                         src={URL.createObjectURL(file)}
