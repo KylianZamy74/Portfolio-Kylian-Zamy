@@ -1,4 +1,4 @@
-import { signOut } from "next-auth/react"; // Importer la fonction de déconnexion
+import { signOut } from "next-auth/react"; 
 import ProtectedRoutes from "../../components/ProtectedRoutes/ProtectedRoutes";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,22 +8,30 @@ import Link from "next/link";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { useSession } from "next-auth/react";
+import { useProjectDeleteStore } from "@/store/FetchStore/deleteProject";
+
 
 export default function Home() {
 
-    // Récupérer les projets
     const { projects, fetchProjects } = useGetProjectsStore();
-   
+    const {deleteProject} = useProjectDeleteStore();
+
     const { data: session } = useSession();
 
     useEffect(() => {
         fetchProjects();
     }, [fetchProjects]);
 
-    // Fonction pour déconnecter l'utilisateur
+   
     const handleLogout = async () => {
-        await signOut({ callbackUrl: "/auth/signin" });  // Redirection vers la page de connexion après la déconnexion
+        await signOut({ callbackUrl: "/auth/signin" });  
     };
+    const handleDeleteProject = async (projectId: number) => {
+        if (window.confirm("Êtes-vous sûr de vouloir supprimer ce projet ?")) {
+            deleteProject(projectId);
+        }
+    };
+
 
     return (
         <>
@@ -64,9 +72,9 @@ export default function Home() {
                                         <Link href={`/Admin/editProject/${project.id}`}>
                                             <CiEdit className="text-[#F97316] text-2xl" />
                                         </Link>
-                                        <Link href={`/Admin/editProject/${project.id}`}>
+                                        <button onClick={() => handleDeleteProject(project.id)}>
                                             <MdDelete className="text-[#F97316] text-2xl" />
-                                        </Link>
+                                        </button>
                                     </span>
                                 </li>
                             ))}

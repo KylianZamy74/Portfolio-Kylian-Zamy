@@ -1,4 +1,4 @@
-// pages/_app.js
+
 import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import "@/styles/global.css"; 
