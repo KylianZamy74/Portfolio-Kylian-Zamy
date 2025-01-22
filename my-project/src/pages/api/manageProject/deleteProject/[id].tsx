@@ -21,15 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    await prisma.stack.deleteMany({
-      where: {
-        projects: {
-          some: {
-            id: parseInt(id),  
-          },
-        },
-      },
-    });
+   
 
 
     const deletedProject = await prisma.project.delete({
