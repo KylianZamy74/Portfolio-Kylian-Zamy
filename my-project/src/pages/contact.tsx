@@ -8,13 +8,35 @@ import {motion} from "framer-motion";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import Inner from "@/components/Layout/Inner";
 import { useAnimationGsapService, splitTextIntoChar } from "@/services/animationServices/useGsapAnimationService";
+import { useContactStore } from "@/store/ContactStore/useContactService";
+
+
 export default function Contact() {
 
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
     useScrollService();
     useAnimationGsapService();
+    const {name,
+           email,
+           subject,
+           message,
+           setName,
+           setEmail,         
+           setPhone,
+           setSubject,
+           setMessage,
+           sendMail,
+        } = useContactStore();
+    
+   const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
+    if(!name || !email || !subject || !message ) {
+        throw new Error("Veuillez remplir les champs requis")
+    }
+    sendMail();
+   }
 
     return (
         <>
@@ -26,26 +48,26 @@ export default function Contact() {
                 
                 <div className="lg:flex md:flex w-full justify-between space-y-12 md:px-24 lg:px-24">
                     <section className="mt-32 px-4 w-2/3">
-                        <form className="text-[#FDFAD5] font-bold">
+                        <form onSubmit={handlesubmit} className="text-[#FDFAD5] font-bold">
                             <div>
                                 <label  className="text-2xl flex-col flex" htmlFor="name">Name</label>
-                                <input className="bg-transparent" type="text"name="name" placeholder="What's your name ?"/>
+                                <input className="bg-transparent" type="text"name="name" placeholder="What's your name ?" required onChange={(e) => setName(e.target.value)} />
                             </div>
                             <div className="mt-8">
                                 <label  className="text-2xl flex-col flex" htmlFor="email">Email adress</label>
-                                <input className="bg-transparent" type="text"name="email" placeholder="yourmail@example.com"/>
+                                <input className="bg-transparent" type="email"name="email" placeholder="yourmail@example.com" required onChange={(e) => setEmail(e.target.value)}/>
                             </div>
                             <div className="mt-8">
                                 <label  className="text-2xl flex-col flex" htmlFor="subject">Subject</label>
-                                <input className="bg-transparent" type="text"name="subject" placeholder="What's your project about ?"/>
+                                <input className="bg-transparent" type="text"name="subject" placeholder="What's your project about ?" required onChange={(e) => setSubject(e.target.value)}/>
                             </div>
                             <div className="mt-8">
                                 <label className="text-2xl flex-col flex" htmlFor="number">Phone number</label>
-                                <input  className="bg-transparent" type="text"name="number" placeholder="If you prefer a call."/>
+                                <input  className="bg-transparent" type="tel"name="number" placeholder="If you prefer a call." onChange={(e) => setPhone(e.target.value)}/>
                             </div>
                             <div className="mt-8">
                                 <label className="text-2xl flex-col flex" htmlFor="message">Message</label>
-                                <textarea className="bg-transparent w-full" name="message" placeholder="Hello Kylian, let's talk about how we can work together."/>
+                                <textarea className="bg-transparent w-full" name="message" placeholder="Hello Kylian, let's talk about how we can work together." required onChange={(e) => setMessage(e.target.value)}/>
                             </div>
                             <div className="mt-8 bg-[#FDFAD5] bg-fadedYellow text-center rounded p-2  w-1/3 mx-auto">
                                 <button type="submit">Let&apos;s connect !</button>

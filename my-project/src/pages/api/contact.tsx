@@ -4,8 +4,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if(req.method === 'POST') {
- 
+        console.log({Email_USER: process.env.EMAIL_USER})
+        console.log({EMAIL_PASS: process.env.EMAIL_PASS})
         const {name, email, subject, phone, message} = req.body;
+        console.log("corps de l'email recu depuis le navigateur", req.body);
 
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
@@ -13,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             secure:false,
             auth: {
                 user: process.env.EMAIL_USER,
-                password: process.env.EMAIL_PASS
+                pass: process.env.EMAIL_PASS
             },
         });
 
