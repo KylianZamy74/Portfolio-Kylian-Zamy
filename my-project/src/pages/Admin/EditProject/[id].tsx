@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { useEditProjectStore } from "@/store/FetchStore/editProjectStore";
 import { useRouter } from "next/router";
 import { Stack } from "@/types";
+import Image from "next/image";
+
 
 
 export default function EditProject() {
@@ -208,11 +210,15 @@ export default function EditProject() {
                         <div className="mt-4 flex flex-wrap gap-4">
                             {imageUrls.map((imageUrl, index) => (
                                 <div key={index} className="flex items-center space-x-2">
-                                    <img
+                                    <Image
                                         src={imageUrl.url}
                                         alt={`Image ${index + 1}`}
                                         className="w-16 h-16 object-cover rounded-md"
-                                    />
+                                        width={64}
+                                        height={64}
+                                        unoptimized={true}
+                                        >
+                                    </Image>
                                     <button
                                         type="button"
                                         onClick={() => handleRemoveImage(index, false)} 
@@ -225,11 +231,15 @@ export default function EditProject() {
 
                             {Array.isArray(newImages) && newImages.map((file, index) => (
                                 <div key={index} className="flex items-center space-x-2">
-                                    <img
+                                    <Image
                                         src={URL.createObjectURL(file)}
                                         alt={`Preview ${index + 1}`}
                                         className="w-16 h-16 object-cover rounded-md"
-                                    />
+                                        width={64}
+                                        height={64}
+                                        unoptimized={true} 
+                                        >
+                                    </Image>
                                     <p className="text-sm">{file.name}</p>
                                     <button
                                         type="button"

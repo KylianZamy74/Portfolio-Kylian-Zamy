@@ -8,13 +8,15 @@ import Link from "next/link";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { useSession } from "next-auth/react";
-import { useProjectDeleteStore } from "@/store/FetchStore/deleteProject";
+import { useState } from "react";
+import DeleteModal from "@/components/Modal/DeleteModal";
 
 
 export default function Home() {
 
     const { projects, fetchProjects } = useGetProjectsStore();
-    const {deleteProject} = useProjectDeleteStore();
+    const [openModal, setOpenModal] = useState<boolean>(false)
+    const [selectedproject, setSelectedProject] = useState<number | null >(null)
 
     const { data: session } = useSession();
 
@@ -26,11 +28,16 @@ export default function Home() {
     const handleLogout = async () => {
         await signOut({ callbackUrl: "/auth/signin" });  
     };
-    const handleDeleteProject = async (projectId: number) => {
-        if (window.confirm("Êtes-vous sûr de vouloir supprimer ce projet ?")) {
-            deleteProject(projectId);
-        }
-    };
+
+   
+
+    const handleOpenModal = (projectId: number) => {
+        setSelectedProject(projectId)
+        setOpenModal(true);
+    }
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    }
 
 
     return (
@@ -72,7 +79,7 @@ export default function Home() {
                                         <Link href={`/Admin/editProject/${project.id}`}>
                                             <CiEdit className="text-[#F97316] text-2xl" />
                                         </Link>
-                                        <button onClick={() => handleDeleteProject(project.id)}>
+                                        <button onClick={() => handleOpenModal(project.id)}>
                                             <MdDelete className="text-[#F97316] text-2xl" />
                                         </button>
                                     </span>
@@ -83,9 +90,10 @@ export default function Home() {
                 </div>
 
                 {/* Bouton de déconnexion */}
-               
-
                 <Footer />
+                {openModal && (
+                        <DeleteModal closeModal={handleCloseModal} projectId={selectedproject}/>
+                )}
             </ProtectedRoutes>
         </>
     );

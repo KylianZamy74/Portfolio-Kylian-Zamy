@@ -5,3 +5,7 @@ export interface Stack{
     name: string;
 }
 
+export interface Images {
+    id: number
+    url: string
+}

@@ -20,10 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         projectId: parseInt(id), 
       },
     });
-
-   
-
-
+    
     const deletedProject = await prisma.project.delete({
       where: {
         id: parseInt(id),
