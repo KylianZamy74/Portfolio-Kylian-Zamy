@@ -29,7 +29,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             Email : ${email}
             Phone : ${phone}
             Message : ${message}
-            `
+            `,
+            replyTo: email,
 
           })
           res.status(200).json({message: "Email bien envoyé au destinataire !"})

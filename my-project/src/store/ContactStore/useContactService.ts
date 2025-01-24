@@ -44,7 +44,7 @@ export const useContactStore = create<contactStore>((set) => ({
         }
 
         try {
-            const response = await fetch("http://localhost:3000/api/contact", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}contact`, {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json",

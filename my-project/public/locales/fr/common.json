@@ -1,0 +1,25 @@
+{
+    "title": {
+        "main": "Développeur freelance",
+        "second": "fullstack"
+    },
+    "slogan": {
+        "first": "Avec chaque ligne, je plante la ",
+        "seed": "graine",
+        "crafting": ", créant des ",
+        "solutions": "solutions ",
+        "to meet": "pour répondre à ",
+        "your needs": "vos besoins"
+    },
+    "presentation": {
+        "first": "Bonjour ! Je suis Kylian, un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
+        "second": "Développons ensemble vos idées et transformons-les en ",
+         "success": "succès"
+    },
+
+    "about": {
+        "about": "A propos de ",
+        "me": "moi"
+    }
+    
+}

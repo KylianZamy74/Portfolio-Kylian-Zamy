@@ -42,8 +42,8 @@ export default function Home() {
                         <span className="text-[#A3B46A]"> {splitTextIntoChar("seed")}</span>
                         <span>{splitTextIntoChar(", crafting")}</span>
                         <span className="text-[#668DCF]"> {splitTextIntoChar("solutions ")}</span>
-                        <span>{splitTextIntoChar("to match")}</span>
-                        <span className="text-[#F97316]"> {splitTextIntoChar("your need.")}</span>
+                        <span>{splitTextIntoChar("to meet")}</span>
+                        <span className="text-[#F97316]"> {splitTextIntoChar("your needs.")}</span>
                     </p>
                 </div>
                 {/* Section de présentation */}
@@ -53,13 +53,13 @@ export default function Home() {
                             <p>
                                 <em className="fromBotToTop">
                                     {splitTextIntoChar(
-                                        "I'm a passionate web developer eager to craft sleek, elegant, and functional solutions."
+                                        "Hi ! I'm Kylian, a passionate web developer dedicated to crafting sleek, elegant, and functional solutions."
                                     )}
                                 </em>
                             </p>
                             <p>
                                 <em className="fromBotToTop">
-                                    {splitTextIntoChar("Let's grow your ideas together and turn them into")}
+                                    {splitTextIntoChar("Let’s grow your ideas together and transform them into ")}
                                     <span className="text-[#F97316]"> {splitTextIntoChar("success.")}</span>
                                 </em>
                             </p>

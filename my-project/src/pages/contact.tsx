@@ -47,29 +47,29 @@ export default function Contact() {
                 </div>
                 
                 <div className="lg:flex md:flex w-full justify-between space-y-12 md:px-24 lg:px-24">
-                    <section className="mt-32 px-4 w-2/3">
+                    <section className="px-4 w-2/3">
                         <form onSubmit={handlesubmit} className="text-[#FDFAD5] font-bold">
                             <div>
                                 <label  className="text-2xl flex-col flex" htmlFor="name">Name</label>
-                                <input className="bg-transparent" type="text"name="name" placeholder="What's your name ?" required onChange={(e) => setName(e.target.value)} />
+                                <input className="bg-transparent mt-4 p-2 w-full" type="text"name="name" placeholder="What's your name ?" required onChange={(e) => setName(e.target.value)} />
                             </div>
                             <div className="mt-8">
                                 <label  className="text-2xl flex-col flex" htmlFor="email">Email adress</label>
-                                <input className="bg-transparent" type="email"name="email" placeholder="yourmail@example.com" required onChange={(e) => setEmail(e.target.value)}/>
+                                <input className="bg-transparent mt-4 p-2 w-full" type="email"name="email" placeholder="yourmail@example.com" required onChange={(e) => setEmail(e.target.value)}/>
                             </div>
                             <div className="mt-8">
                                 <label  className="text-2xl flex-col flex" htmlFor="subject">Subject</label>
-                                <input className="bg-transparent" type="text"name="subject" placeholder="What's your project about ?" required onChange={(e) => setSubject(e.target.value)}/>
+                                <input className="bg-transparent mt-4 p-2 w-full" type="text"name="subject" placeholder="What's your project about ?" required onChange={(e) => setSubject(e.target.value)}/>
                             </div>
                             <div className="mt-8">
                                 <label className="text-2xl flex-col flex" htmlFor="number">Phone number</label>
-                                <input  className="bg-transparent" type="tel"name="number" placeholder="If you prefer a call." onChange={(e) => setPhone(e.target.value)}/>
+                                <input  className="bg-transparent mt-4 p-2 w-full" type="tel"name="number" placeholder="If you prefer a call." onChange={(e) => setPhone(e.target.value)}/>
                             </div>
                             <div className="mt-8">
                                 <label className="text-2xl flex-col flex" htmlFor="message">Message</label>
-                                <textarea className="bg-transparent w-full" name="message" placeholder="Hello Kylian, let's talk about how we can work together." required onChange={(e) => setMessage(e.target.value)}/>
+                                <textarea className="bg-transparent w-full mt-4 p-2" name="message" placeholder="Hello Kylian, let's talk about how we can work together." required onChange={(e) => setMessage(e.target.value)}/>
                             </div>
-                            <div className="mt-8 bg-[#FDFAD5] bg-fadedYellow text-center rounded p-2  w-1/3 mx-auto">
+                            <div className="mt-8 bg-[#FDFAD5] bg-fadedYellow text-center rounded p-2  w-full md:w-1/3 mx-auto">
                                 <button type="submit">Let&apos;s connect !</button>
                             </div>
                         </form>

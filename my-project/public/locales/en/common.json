@@ -1,0 +1,25 @@
+{
+    "title": {
+        "main": "Freelance developper",
+        "second": "fullstack"
+    },
+    "slogan": {
+        "first": "With every line i plant the ",
+        "seed": "seed",
+        "crafting": ", crafting",
+        "solutions": "solutions ",
+        "to meet": "to meet ",
+        "your needs": "your need"
+    },
+    "presentation": {
+        "first": "Hi ! I'm Kylian, a passionate web developer dedicated to crafting sleek, elegant, and functional solutions.",
+        "second": "Let’s grow your ideas together and transform them into ",
+        "success": "success"
+    },
+
+    "about": {
+        "about": "A propos de ",
+        "me": "moi"
+    }
+    
+}
