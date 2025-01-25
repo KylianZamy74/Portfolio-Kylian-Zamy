@@ -3,10 +3,12 @@ import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { FaArrowRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
+import { useTranslation } from "react-i18next";
 
 export default function Menu() {
   const { closeModal, isOpen } = useModalStore();
   const { goToProjects } = useDirectToProjectService();
+  const {t} = useTranslation();
 
   // Variantes pour l'animation du menu
   const menuOpen = {
@@ -49,21 +51,21 @@ export default function Menu() {
             exit="exit" 
           >
             <li>
-              <button onClick={goToProjects}>Projects</button>
+              <button onClick={goToProjects}>{t("headers.projects")}</button>
             </li>
             <li>
               <Link href={"/"} onClick={closeModal}>
-                Home
+              {t("headers.home")}
               </Link>
             </li>
             <li className="flex">
               <Link href={"/contact"} onClick={closeModal}>
-                Contact
+              {t("headers.contact")}
               </Link>
             </li>
             <li>
               <Link href={"/about"} onClick={closeModal}>
-                About
+              {t("headers.about")}
               </Link>
             </li>
             <button onClick={closeModal} className="text-[#F97316]">

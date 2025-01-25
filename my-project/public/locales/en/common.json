@@ -1,4 +1,11 @@
 {
+    "headers": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "contact"
+    },
+
     "title": {
         "main": "Freelance developper",
         "second": "fullstack"
@@ -8,8 +15,8 @@
         "seed": "seed",
         "crafting": ", crafting",
         "solutions": "solutions ",
-        "to meet": "to meet ",
-        "your needs": "your need"
+        "meet": "to meet ",
+        "needs": "your need"
     },
     "presentation": {
         "first": "Hi ! I'm Kylian, a passionate web developer dedicated to crafting sleek, elegant, and functional solutions.",
@@ -18,8 +25,75 @@
     },
 
     "about": {
-        "about": "A propos de ",
-        "me": "moi"
+        "about": "about ",
+        "me": "me"
+    },
+
+    "about_section": {
+        "catchPhrase": {
+            "first": "I'm glad you're interested in learning more about me.",
+            "second": "Let's",
+            "third": "explore",
+            "fourth": "what we can ",
+            "fifth": "create",
+            "sixth": "in collaboration below."
+        },
+
+        "presentation": {
+            "first": "I'm a young web developer from Annecy in France eager to",
+            "second": " grow",
+            "third": "through stimulating and meaningful collaborations with my clients.",
+            "fourth": "Together",
+            "fifth": "we will bring your website",
+            "sixth": " vision",
+            "seven": "to life, focusing on both design and functionality to ensure a seamless and engaging user experience."
+        },
+
+        "services": {
+            "title": "Let's",
+            "title_1": "build",
+            "card_1": {
+                 "title": "Full stack",
+                 "strong_title": "web development",
+                 "first": "I build",
+                 "second": "complete websites",
+                 "third": "and web applications, handling both",
+                 "fourth": "frontend",
+                 "fifth": "and",
+                 "sixth": "backend",
+                 "seven": "to create seamless, functional digital experiences."               
+            },
+            "card_2": {
+                "title": "E-commerce websites ",
+                "strong_title": "solutions",
+                "first": "I design and develop fully integrated",
+                "second": "e-commerce websites",
+                "third": "providing a smooth shopping experience from product showcase to secure checkout."
+            },
+            "card_3": {
+                "title": "Interactive & Custom",
+                "title_1": "Web Apps",
+                "first": "I create",
+                "second": "dynamic",
+                "third": "user-centric web apps, including custom online portfolios and ",
+                "fourth": "interactive platforms",
+                "fifth": ", tailored to your unique needs."      
+        }
+      }
+    },
+    "projects": {
+        "project_1": {
+            "title": "Cinédelices",
+            "description": "This project is a responsive web application built with React, NodeJs, PostgreSQL, and Sequelize. Users can explore a catalog of movies and TV shows, discovering recipes inspired by dishes seen in the films. Visitors can also create and share their own recipes linked to their favorite movies. With a user-friendly interface, the app offers a seamless experience across all devices. The backend is powered by NodeJs, with efficient database management through Sequelize and PostgreSQL.",
+            "enterprise": "This collaborative project was undertaken as part of our training program to prepare for the final exam. Its primary goals were to evaluate our individual strengths and weaknesses, enhance our technical expertise, and foster strong teamwork and communication skills.It also served as an opportunity to strengthen our collaboration and problem-solving abilities under real-world conditions."
+        },
+        "project_2": {
+            "title": "Séquentiel",
+            "description": "This project is an interactive calendar designed for developers, allowing them to retrieve their GitLab issues and organize them visually through an intuitive interface. Users can drag and drop their tasks into the calendar, accurately track the time spent on each project or issue, and create custom time blocks that can be assigned to developers as well as specific issues. A daily summary tab provides an overview of completed tasks, with the option to validate workdays. A potential improvement could involve generating a detailed report showing the time spent on each project and task, further enhancing productivity tracking and management.",
+
+            "enterprise": "With over 30 years of experience, this company creates innovative and tailored solutions for SMEs, large enterprises, and associations. During my internship, I observed their focus on client needs, delivering effective tools while maintaining strong, professional relationships."
+        }
     }
-    
+
 }
+

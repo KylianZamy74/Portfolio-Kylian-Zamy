@@ -16,6 +16,7 @@ import { useAnimationGsapService } from "@/services/animationServices/useGsapAni
 import { useScrollService } from "@/services/animationServices/useScrollService";
 import { useGetProjectsStore } from "@/store/FetchStore/getProjectsStore";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 
 export default function Project() {
@@ -25,6 +26,7 @@ export default function Project() {
     useScrollService();
     const router = useRouter();
     const { id } = router.query;
+    const {t} = useTranslation();
 
     const { project, fetchProject } = useGetProjectsStore();
 
@@ -65,7 +67,7 @@ export default function Project() {
         <>
             <Inner>
                 <h1 className="text-[#FDFAD5] w-full text-6xl text-center p-8">
-                    {project?.title}
+                    {t(`projects.project_${id}.title`)}
                 </h1>
                 <div className="flex justify-center h-1/2 py-12 mb-24">
                     <Image
@@ -78,7 +80,7 @@ export default function Project() {
                 <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger">
                     <em>
                         {splitParagraph(
-                            project?.description || "No description"
+                            t(`projects.project_${id}.description`) || "No description"
                         ).map((paragraph, index) => (
                             <p
                                 key={index}
@@ -134,7 +136,7 @@ export default function Project() {
                         <h2 className="font-bold  text-left px-12 text-3xl py-4">Enterprise</h2>
                         <em>
                             {splitParagraph(
-                                project?.enterprise || "No enterprise"
+                                t(`projects.project_${id}.enterprise`) || "No enterprise"
                             ).map((paragraph, index) => (
                                 <p
                                     key={index}

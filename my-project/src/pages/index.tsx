@@ -13,24 +13,23 @@ import { useScrollService } from "@/services/animationServices/useScrollService"
 import Link from "next/link";
 import { useAnimationGsapService, splitTextIntoChar } from "@/services/animationServices/useGsapAnimationService";
 import Footer from "@/components/Footer";
+import { useTranslation } from "react-i18next";
 
 
 export default function Home() {
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
+    const {t} = useTranslation();
 
     useScrollService();
     useAnimationGsapService();
 
-    
-
     return (
         <>
-            {/* Section d'introduction */}
             <Inner>
                 <div className="intro flex-col flex justify-center h-screen p-4 lg:px-24">
                     <h1 className="text-[#FDFAD5] text-6xl">
-                        {splitTextIntoChar("Freelance Developer.")}
+                        {splitTextIntoChar(t("title.main"))}
                     </h1>
                     <em className="text-[#F97316] font-light">
                         {splitTextIntoChar("Fullstack.")}
@@ -38,12 +37,12 @@ export default function Home() {
                 </div>
                 <div className="text-right text-3xl p-4 pb-24 text-[#FDFAD5] lg:px-24 ">
                     <p className="trigger">
-                        <span>{splitTextIntoChar("With every line, I plant the")}</span>
-                        <span className="text-[#A3B46A]"> {splitTextIntoChar("seed")}</span>
-                        <span>{splitTextIntoChar(", crafting")}</span>
-                        <span className="text-[#668DCF]"> {splitTextIntoChar("solutions ")}</span>
-                        <span>{splitTextIntoChar("to meet")}</span>
-                        <span className="text-[#F97316]"> {splitTextIntoChar("your needs.")}</span>
+                        <span>{splitTextIntoChar(t("slogan.first"))}</span>
+                        <span className="text-[#A3B46A]"> {splitTextIntoChar(t("slogan.seed"))}</span>
+                        <span>{splitTextIntoChar(t("slogan.crafting"))}</span>
+                        <span className="text-[#668DCF]"> {splitTextIntoChar(t("slogan.solutions"))}</span>
+                        <span>{splitTextIntoChar(t("slogan.meet"))}</span>
+                        <span className="text-[#F97316]"> {splitTextIntoChar(t("slogan.needs"))}</span>
                     </p>
                 </div>
                 {/* Section de présentation */}
@@ -53,14 +52,14 @@ export default function Home() {
                             <p>
                                 <em className="fromBotToTop">
                                     {splitTextIntoChar(
-                                        "Hi ! I'm Kylian, a passionate web developer dedicated to crafting sleek, elegant, and functional solutions."
+                                        t("presentation.first")
                                     )}
                                 </em>
                             </p>
                             <p>
                                 <em className="fromBotToTop">
-                                    {splitTextIntoChar("Let’s grow your ideas together and transform them into ")}
-                                    <span className="text-[#F97316]"> {splitTextIntoChar("success.")}</span>
+                                    {splitTextIntoChar(t("presentation.second"))}
+                                    <span className="text-[#F97316]"> {splitTextIntoChar(t("presentation.success"))}</span>
                                 </em>
                             </p>
                         </div>
@@ -72,7 +71,7 @@ export default function Home() {
                             href="/about"
                         >
                             <em className="border border-[2px] border-[#000000] p-4 rounded hover:bg-[#51514F] cursor-pointer hover:text-[#FDFAD5] duration-200">
-                                About <span className="text-[#F97316]">me</span>
+                                {t("about.about")}<span className="text-[#F97316]">{t("about.me")}</span>
                             </em>
                         </Link>
                     </section>

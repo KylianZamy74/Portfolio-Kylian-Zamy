@@ -3,18 +3,24 @@
 import Link from "next/link";
 import { useRouter } from "next/router"; 
 import React from "react";
-import { useModalStore } from "@/store/ModalStore/useModalStore";
+import { useModalStore } from "@/store/ModalStore/useModalStore"; 
 import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
-  const { openModal } = useModalStore();
+  const { openModal } = useModalStore(); // Hook pour ouvrir la modale
   const { goToProjects } = useDirectToProjectService();
-  const { locale, locales, asPath, push } = useRouter(); 
+  const { locale, locales, asPath, push } = useRouter();
+  const {t} = useTranslation();
 
-  const handleLanguageChange = (e) => {
-    const newLocale = e.target.value; 
-    push(asPath, asPath, { locale: newLocale }); 
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value;
+    if (newLocale !== locale) {
+      i18next.changeLanguage(newLocale);
+      push(asPath, asPath, { locale: newLocale });
+    }
   };
 
   return (
@@ -28,28 +34,34 @@ export default function Header() {
           <strong className="text-[#F97316] text-2xl uppercase">zamy</strong>
         </Link>
       </div>
-      <nav className="text-[#FDFAD5] lg:hidden" onClick={openModal}>
-        <button className="cursor-pointer">Menu</button>
+
+      {/* Menu mobile - ouvre la modale */}
+      <nav className="text-[#FDFAD5] lg:hidden">
+        <button className="cursor-pointer" onClick={openModal}>
+          Menu
+        </button>
       </nav>
+
+      {/* Menu Desktop */}
       <nav className="hidden lg:flex gap-8 text-[#FDFAD5] list-none">
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/">{t("headers.home")}</Link>
         </li>
         <li>
-          <button onClick={goToProjects}>Projects</button>
+          <button onClick={goToProjects}>{t("headers.projects")}</button>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/about">{t("headers.about")}</Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">{t("headers.contact")}</Link>
         </li>
       </nav>
 
-   
+      {/* Sélecteur de langue */}
       <div className="ml-4">
         <select
-          value={locale} 
+          value={locale} // Assurez-vous que la langue sélectionnée est correcte au départ
           onChange={handleLanguageChange} 
           className="bg-transparent border border-[#FDFAD5] text-[#FDFAD5] p-2 rounded"
         >

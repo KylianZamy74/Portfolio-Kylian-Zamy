@@ -1,4 +1,12 @@
 {
+
+    "headers": {
+        "home": "Acueil",
+        "projects": "Projets",
+        "about": "A propos",
+        "contact": "contact"
+    },
+
     "title": {
         "main": "Développeur freelance",
         "second": "fullstack"
@@ -8,18 +16,83 @@
         "seed": "graine",
         "crafting": ", créant des ",
         "solutions": "solutions ",
-        "to meet": "pour répondre à ",
-        "your needs": "vos besoins"
+        "meet": "pour répondre à ",
+        "needs": "vos besoins"
     },
     "presentation": {
-        "first": "Bonjour ! Je suis Kylian, un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
+        "first": "Salut ! Je m'apelle Kylian, je suis un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
         "second": "Développons ensemble vos idées et transformons-les en ",
-         "success": "succès"
+        "success": "succès"
     },
 
     "about": {
         "about": "A propos de ",
         "me": "moi"
-    }
+    },
+    "about_section": {
+        "catchPhrase": {
+          "first": "Je suis ravi que vous soyez intéressé à en savoir plus sur moi.",
+          "second": "Explorons",
+          "third": "ce que nous pouvons",
+          "fourth": "créer",
+          "fifth": "ensemble ci-dessous.",
+          "sixth": ""
+        },
     
+        "presentation": {
+          "first": "Je suis un jeune développeur web d'Annecy en France, désireux de",
+          "second": "grandir",
+          "third": "grâce à des collaborations stimulantes et significatives avec mes clients.",
+          "fourth": "Ensemble",
+          "fifth": "nous donnerons vie à la ",
+          "sixth": "vision ",
+          "seven": "de votre site web en nous concentrant à la fois sur le design et la fonctionnalité pour garantir une expérience utilisateur fluide et engageante."
+        },
+    
+        "services": {
+          "title": "Construisons",
+          "title_1": "ensemble",
+          "card_1": {
+            "title": "Développement web",
+            "strong_title": "Full stack",
+            "first": "Je construis",
+            "second": "des sites web complets",
+            "third": "et des applications web, en gérant à la fois",
+            "fourth": "le frontend",
+            "fifth": "et",
+            "sixth": "le backend",
+            "seven": "pour créer des expériences numériques fonctionnelles et cohérentes."
+          },
+          "card_2": {
+            "title": "Solutions de sites e-commerce",
+            "strong_title": "intégrées",
+            "first": "Je conçois et développe des sites e-commerce entièrement intégrés",
+            "second": "offrant une expérience d'achat fluide, de la présentation des produits à la commande sécurisée.",
+            "third": ""
+          },
+          "card_3": {
+            "title": "Applications Web interactives & sur mesure",
+            "title_1": "",
+            "first": "Je crée",
+            "second": "des applications web dynamiques",
+            "third": "centrées sur l'utilisateur, y compris des portfolios en ligne personnalisés et",
+            "fourth": "des plateformes interactives",
+            "fifth": ", adaptées à vos besoins uniques."
+          }
+        }
+      },
+
+      "projects": {
+        "project_1": {
+            "title": "Cinédelices",
+            "description": "Ce projet est une application web responsive développée avec React, NodeJs, PostgreSQL et Sequelize. Les utilisateurs peuvent explorer un catalogue de films et d'émissions de télévision, en découvrant des recettes inspirées des plats vus dans les films. Les visiteurs peuvent également créer et partager leurs propres recettes liées à leurs films préférés. Avec une interface conviviale, l'application offre une expérience fluide sur tous les appareils. Le backend est alimenté par NodeJs, avec une gestion efficace de la base de données via Sequelize et PostgreSQL.",
+            "enterprise": "Ce projet collaboratif a été entrepris dans le cadre de notre programme de formation en vue de préparer l'examen final. Ses principaux objectifs étaient d'évaluer nos forces et nos faiblesses individuelles, d'améliorer notre expertise technique et de favoriser de solides compétences en travail d'équipe et en communication. Il a également été l'occasion de renforcer nos capacités de collaboration et de résolution de problèmes dans des conditions réelles."
+        },
+        "project_2": {
+            "title": "Séquentiel",
+            "description": "Ce projet est un calendrier interactif conçu pour les développeurs, leur permettant de récupérer leurs tickets GitLab et de les organiser visuellement via une interface intuitive. Les utilisateurs peuvent glisser-déposer leurs tâches dans le calendrier, suivre avec précision le temps passé sur chaque projet ou ticket et créer des blocs de temps personnalisés qui peuvent être attribués aux développeurs ainsi qu'à des tickets spécifiques. Un onglet récapitulatif quotidien fournit un aperçu des tâches terminées, génère un rapport détaillé indiquant le temps passé sur chaque projet et tâche. Une amélioration future pourrait consister à centraliser ces journées validées pour offrir une vision d'ensemble encore plus complète de la productivité.",
+
+            "enterprise": "Forte de plus de 30 ans d'expérience, cette entreprise crée des solutions innovantes et sur mesure pour les PME, les grandes entreprises et les associations. Lors de mon stage, j'ai pu constater qu'ils se concentrent sur les besoins des clients, leur fournissent des outils efficaces tout en entretenant des relations solides et professionnelles."
+        }
+    }
 }
