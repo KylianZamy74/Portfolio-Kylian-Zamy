@@ -8,6 +8,7 @@ import useDirectToProjectService from "@/services/animationServices/useDirectToP
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import { useEffect  } from "react";
 
 export default function Header() {
   const { openModal } = useModalStore(); // Hook pour ouvrir la modale
@@ -15,11 +16,14 @@ export default function Header() {
   const { locale, locales, asPath, push } = useRouter();
   const {t} = useTranslation();
 
+  
+  
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
     if (newLocale !== locale) {
       i18next.changeLanguage(newLocale);
       push(asPath, asPath, { locale: newLocale });
+      localStorage.setItem("language", newLocale)
     }
   };
 
@@ -61,7 +65,7 @@ export default function Header() {
       {/* Sélecteur de langue */}
       <div className="ml-4">
         <select
-          value={locale} // Assurez-vous que la langue sélectionnée est correcte au départ
+          value={locale || "en"} // Assurez-vous que la langue sélectionnée est correcte au départ
           onChange={handleLanguageChange} 
           className="bg-transparent border border-[#FDFAD5] text-[#FDFAD5] p-2 rounded"
         >

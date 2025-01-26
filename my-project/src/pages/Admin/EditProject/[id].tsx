@@ -91,7 +91,7 @@ export default function EditProject() {
         await submitEditProject(Number(id));
 
         setStackError(null);
-        // router.push("/Admin/editProjectValidated");
+        router.push("/Admin/editProjectValidated");
     };
 
     return (
