@@ -10,6 +10,7 @@ import Inner from "@/components/Layout/Inner";
 import { useAnimationGsapService, splitTextIntoChar } from "@/services/animationServices/useGsapAnimationService";
 import { useTranslation } from "react-i18next";
 import { useContactStore } from "@/store/ContactStore/useContactService";
+import { useRouter } from "next/router";
 
 
 export default function Contact() {
@@ -31,6 +32,7 @@ export default function Contact() {
         } = useContactStore();
 
     const {t} = useTranslation();
+    const router = useRouter();
     
    const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,6 +41,8 @@ export default function Contact() {
         throw new Error("Veuillez remplir les champs requis")
     }
     sendMail();
+
+    router.push("/mailSent");
    }
 
     return (
