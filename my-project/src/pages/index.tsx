@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import "@/styles/global.css";
 import { LuArrowDownRight } from "react-icons/lu";
 import Inner from "@/components/Layout/Inner";
@@ -11,7 +11,7 @@ import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import { useScrollService } from "@/services/animationServices/useScrollService";
 import Link from "next/link";
-import { useAnimationGsapService, splitTextIntoChar } from "@/services/animationServices/useGsapAnimationService";
+import { useAnimationGsapService, splitTextIntoChar, splitTextIntoWords } from "@/services/animationServices/useGsapAnimationService";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 
@@ -37,12 +37,12 @@ export default function Home() {
                 </div>
                 <div className="text-right text-3xl p-4 pb-24 text-[#FDFAD5] lg:px-24 ">
                     <p className="trigger">
-                        <span>{splitTextIntoChar(t("slogan.first"))}</span>
-                        <span className="text-[#A3B46A]"> {splitTextIntoChar(t("slogan.seed"))}</span>
-                        <span>{splitTextIntoChar(t("slogan.crafting"))}</span>
-                        <span className="text-[#668DCF]"> {splitTextIntoChar(t("slogan.solutions"))}</span>
-                        <span>{splitTextIntoChar(t("slogan.meet"))}</span>
-                        <span className="text-[#F97316]"> {splitTextIntoChar(t("slogan.needs"))}</span>
+                        <span>{splitTextIntoWords(t("slogan.first"))}</span>
+                        <span className="text-[#A3B46A]"> {splitTextIntoWords(t("slogan.seed"))}</span>
+                        <span>{splitTextIntoWords(t("slogan.crafting"))}</span>
+                        <span className="text-[#668DCF]"> {splitTextIntoWords(t("slogan.solutions"))}</span>
+                        <span>{splitTextIntoWords(t("slogan.meet"))}</span>
+                        <span className="text-[#F97316]"> {splitTextIntoWords(t("slogan.needs"))}</span>
                     </p>
                 </div>
                 {/* Section de présentation */}
@@ -51,15 +51,15 @@ export default function Home() {
                         <div className="mt-24 flex-col flex ">
                             <p>
                                 <em className="fromBotToTop">
-                                    {splitTextIntoChar(
+                                    {splitTextIntoWords(
                                         t("presentation.first")
                                     )}
                                 </em>
                             </p>
                             <p>
                                 <em className="fromBotToTop">
-                                    {splitTextIntoChar(t("presentation.second"))}
-                                    <span className="text-[#F97316]"> {splitTextIntoChar(t("presentation.success"))}</span>
+                                    {splitTextIntoWords(t("presentation.second"))}
+                                    <span className="text-[#F97316]"> {splitTextIntoWords(t("presentation.success"))}</span>
                                 </em>
                             </p>
                         </div>
@@ -84,13 +84,9 @@ export default function Home() {
             {isOpen && <Menu />}
 
             {showMenu && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                >
+                <div>
                     <MenuOpen />
-                </motion.div>
+                </div>
             )}
         </>
     );

@@ -12,11 +12,11 @@
         "second": "fullstack"
     },
     "slogan": {
-        "first": "Avec chaque ligne, je plante la ",
+        "first": "A chaque ligne, je plante la ",
         "seed": "graine",
-        "crafting": ", créant des ",
-        "solutions": "solutions ",
-        "meet": "pour répondre à ",
+        "crafting": ", créant",
+        "solutions": "des solutions",
+        "meet": "pour répondre à",
         "needs": "vos besoins"
     },
     "presentation": {

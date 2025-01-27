@@ -8,7 +8,7 @@ import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import { useScrollService } from "@/services/animationServices/useScrollService";
 import MenuOpen from '@/components/Modal/OpenMenuOnScroll';
 import { motion } from "framer-motion";
-import { useAnimationGsapService, splitTextIntoChar } from '@/services/animationServices/useGsapAnimationService';
+import { useAnimationGsapService, splitTextIntoWords } from '@/services/animationServices/useGsapAnimationService';
 import Footer from '@/components/Footer';
 
 // Import de la fonction useTranslation
@@ -26,31 +26,31 @@ export default function About() {
     return (
         <>
             <Inner>
-                <section className='intro'>
+                <section className='trigger'>
                     <h2 className="flex-col flex justify-center h-screen p-4 font-bold px-4">
-                        <p className="text-[#FDFAD5] text-3xl">{splitTextIntoChar(t('about_section.catchPhrase.first'))}</p>
+                        <p className="text-[#FDFAD5] text-3xl">{splitTextIntoWords(t('about_section.catchPhrase.first'))}</p>
                         <p className="text-[#FDFAD5] text-3xl">
-                            {splitTextIntoChar(t('about_section.catchPhrase.second'))}{' '}
-                            <span className="text-[#F97316]">{splitTextIntoChar(t('about_section.catchPhrase.third'))}</span>{' '}
-                            {splitTextIntoChar(t('about_section.catchPhrase.fourth'))}
-                            <span className="text-[#F97316]">{splitTextIntoChar(t('about_section.catchPhrase.fifth'))}</span>{' '}
-                            {splitTextIntoChar(t('about_section.catchPhrase.sixth'))}
+                            {splitTextIntoWords(t('about_section.catchPhrase.second'))}{' '}
+                            <span className="text-[#F97316]">{splitTextIntoWords(t('about_section.catchPhrase.third'))}</span>{' '}
+                            {splitTextIntoWords(t('about_section.catchPhrase.fourth'))}
+                            <span className="text-[#F97316]">{splitTextIntoWords(t('about_section.catchPhrase.fifth'))}</span>{' '}
+                            {splitTextIntoWords(t('about_section.catchPhrase.sixth'))}
                         </p>
                     </h2>
                 </section>
                 <section className="bg-[#FDFAD5] min-h-[60vh] flex justify-center space-x-4 md:pt-8 items-center flex-col md:flex-row lg:flex-row text-3xl px-12">
-                    <div className="mt-8 text-left md:w-1/2 lg:w-1/2">
+                    <div className="mt-8 text-left md:w-1/2 lg:w-1/2 ">
                         <p>
-                            <em className="text-lg lg:text-3xl">
-                                {t('about_section.presentation.first')}
-                                <strong className="text-[#A3B46A]"> {t('about_section.presentation.second')}</strong> {t('about_section.presentation.third')}
+                            <em className="text-lg lg:text-3xl fromTopToBot">
+                                {splitTextIntoWords(t('about_section.presentation.first'))}
+                                <strong className="text-[#A3B46A]"> {splitTextIntoWords(t('about_section.presentation.second'))}</strong> {splitTextIntoWords(t('about_section.presentation.third'))}
                             </em>
                         </p>
                         <p>
-                            <em className="text-lg lg:text-3xl">
-                                <strong className="text-[#F97316]">{t('about_section.presentation.fourth')}</strong>{' '}
-                                {t('about_section.presentation.fifth')}
-                                <strong className="text-[#668DCF]">{t('about_section.presentation.sixth')}</strong> {t('about_section.presentation.seven')}
+                            <em className="text-lg lg:text-3xl fromTopToBot">
+                                <strong className="text-[#F97316]">{splitTextIntoWords(t('about_section.presentation.fourth'))}</strong>{' '}
+                                {splitTextIntoWords(t('about_section.presentation.fifth'))}
+                                <strong className="text-[#668DCF]">{splitTextIntoWords(t('about_section.presentation.sixth'))}</strong> {splitTextIntoWords(t('about_section.presentation.seven'))}
                             </em>
                         </p>
                     </div>

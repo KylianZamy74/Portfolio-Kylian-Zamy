@@ -15,35 +15,35 @@ export const useAnimationGsapService = () => {
                 { opacity: 0 },
                 {
                     opacity: 1,
-                    duration: 0.3,
+                    duration: 0.5,
                     stagger: 0.03,
                     ease: "power2.out",
                 }
             );
     
             gsap.fromTo(
-                ".trigger .char",
+                ".trigger .word",
                 { opacity: 0 }, 
                 {
                   opacity: 1,
-                  stagger: 0.02,
+                  duration: 0.5,
+                  stagger: 0.05,
                   ease: "sine.out",
                   scrollTrigger: {
                     trigger: ".trigger",
                     start: "top 80%",
                     
                   },
-                 
                 }
               );
 
               gsap.fromTo(
-                ".fromBotToTop .char",
+                ".fromBotToTop .word",
                 { opacity: 0, y: 100 }, 
                 {
                   opacity: 1,
                   y: 0,
-                  duration:2,
+                  duration:1.5,
                   ease: "sine.out",
                   scrollTrigger: {
                     trigger: ".fromBotToTop",
@@ -52,9 +52,21 @@ export const useAnimationGsapService = () => {
                  
                 }
               );
-
-              
-              
+              gsap.fromTo(
+                ".fromTopToBot .word",
+                { opacity: 0, y: -70 }, 
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration:1,
+                  ease: "sine.out",
+                  scrollTrigger: {
+                    trigger: ".fromTopToBot",
+                    start: "top 80%",
+                  },
+                 
+                }
+              );
         };
     
         initGsap();
@@ -69,6 +81,18 @@ export const splitTextIntoChar = (text: string) => {
         </span>
     ));
 };
+
+export const splitTextIntoWords = (text: string) => {
+  return text.split(" ").map((word, index) => (
+    <span className="word" key={index} style={{ display: "inline-block" }}>
+      {word}
+      {/* Ajoute un espace entre les mots */}
+      {index < text.split(" ").length - 1 && "\u00A0"}
+    </span>
+  ));
+};
+
+
 
 // export const splitTextIntoChar = (text: string) => {
 //     const words = text.split(" "); // Divise le texte en mots

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
-import { FaArrowRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
 import { useTranslation } from "react-i18next";
@@ -8,33 +7,23 @@ import { useTranslation } from "react-i18next";
 export default function Menu() {
   const { closeModal, isOpen } = useModalStore();
   const { goToProjects } = useDirectToProjectService();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
-  // Variantes pour l'animation du menu
-  const menuOpen = {
+
+  const simpleAnimation = {
     open: {
-      width: "0%",
-      borderTopLeftRadius: "0",
-      borderBottomLeftRadius: "0",
-    },
-    closed: {
-      width: "33.33%",
-      borderTopLeftRadius: "1.5rem",
-      borderBottomLeftRadius: "1.5rem",
+      opacity: 1,
+      x: 0,
       transition: {
-        duration: 3,
+        duration: 1,
         ease: "easeOut",
-        type: "spring",
-        stiffness: 300,
-        damping: 15,
       },
     },
-    exit: {
-      width: "0%", 
-      borderTopLeftRadius: "0",
-      borderBottomLeftRadius: "0",
+    closed: {
+      opacity: 0,
+      x: "-100%", 
       transition: {
-        duration: 1.5, 
+        duration: 1,
         ease: "easeIn",
       },
     },
@@ -42,41 +31,42 @@ export default function Menu() {
 
   return (
     <nav>
-      <div className="fixed top-0 right-0 w-screen h-screen list-none text-[#FDFAD5] bg-modal flex flex-col justify-center items-end space-y-2">
-        <AnimatePresence>
+
+      <AnimatePresence>
+        {isOpen && (
           <motion.div
-            className="relative bg-[#828282] h-2/3 flex flex-col justify-center items-center space-y-2 text-xl"
-            variants={menuOpen}
-            animate={isOpen ? "closed" : "open"}
-            exit="exit" 
+            className="fixed top-0 right-0 w-full h-full list-none text-[#FDFAD5] bg-modal flex flex-col justify-center items-start space-y-6"
+            variants={simpleAnimation}
+            animate="open"
+            exit="closed"
           >
-            <li>
-              <button onClick={goToProjects}>{t("headers.projects")}</button>
-            </li>
-            <li>
-              <Link href={"/"} onClick={closeModal}>
-              {t("headers.home")}
-              </Link>
-            </li>
-            <li className="flex">
-              <Link href={"/contact"} onClick={closeModal}>
-              {t("headers.contact")}
-              </Link>
-            </li>
-            <li>
-              <Link href={"/about"} onClick={closeModal}>
-              {t("headers.about")}
-              </Link>
-            </li>
-            <button onClick={closeModal} className="text-[#F97316]">
-              Close
-            </button>
-            <button onClick={closeModal}>
-              <FaArrowRight className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-2 text-[#F97316]" />
-            </button>
+            <motion.div className="relative bg-[#828282] w-full h-full flex flex-col justify-center items-start space-y-6 text-3xl md:text-4xl lg:text-5xl font-bold px-6"
+            >
+              <motion.li variants={simpleAnimation}>
+                <button onClick={goToProjects}>{t("headers.projects")}</button>
+              </motion.li>
+              <motion.li variants={simpleAnimation}>
+                <Link href={"/"} onClick={closeModal}>
+                  {t("headers.home")}
+                </Link>
+              </motion.li>
+              <motion.li variants={simpleAnimation}>
+                <Link href={"/contact"} onClick={closeModal}>
+                  {t("headers.contact")}
+                </Link>
+              </motion.li>
+              <motion.li variants={simpleAnimation}>
+                <Link href={"/about"} onClick={closeModal}>
+                  {t("headers.about")}
+                </Link>
+              </motion.li>
+              <motion.button onClick={closeModal} className="text-[#F97316]" variants={simpleAnimation}>
+                Close
+              </motion.button>
+            </motion.div>
           </motion.div>
-        </AnimatePresence>
-      </div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
