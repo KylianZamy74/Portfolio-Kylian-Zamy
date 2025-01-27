@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextApiRequest, NextApiResponse } from "next";
+import validator from "validator";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
@@ -8,6 +9,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.log({EMAIL_PASS: process.env.EMAIL_PASS})
         const {name, email, subject, phone, message} = req.body;
         console.log("corps de l'email recu depuis le navigateur", req.body);
+
+        if(!validator.isEmail(email)) {
+            res.status(400).json({message: "Adresse email invalide."});
+        }       
 
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",

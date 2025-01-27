@@ -34,9 +34,9 @@
           "first": "Je suis ravi que vous soyez intéressé à en savoir plus sur moi.",
           "second": "Explorons",
           "third": "ce que nous pouvons",
-          "fourth": "créer",
-          "fifth": "ensemble ci-dessous.",
-          "sixth": ""
+          "fourth": "créer ",
+          "fifth": "ensemble",
+          "sixth": "ci-dessous."
         },
     
         "presentation": {
@@ -112,7 +112,7 @@
         "email": "Adresse mail",
         "email_placehold": "yourmail@example.com",
         "subject": "Objet",
-        "subject_placehold": "Quel est votre vision derriere le projet ?",
+        "subject_placehold": "Quel est votre vision du projet ?",
         "phone": "Numéro de téléphone",
         "phone_placehold": "Si vous préférez un appel",
         "message": "Message",

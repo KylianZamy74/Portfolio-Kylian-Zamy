@@ -78,7 +78,7 @@ export default function Project() {
                         height={600}
                     />
                 </div>
-                <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger">
+                <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger .fromLeftToRight">
                     <em>
                         {splitParagraph(
                             t(`projects.project_${id}.description`) || "No description"

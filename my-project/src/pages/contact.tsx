@@ -81,7 +81,7 @@ export default function Contact() {
                         <div className="flex-col flex text-lg">
                             <h3 className="text-labelYellow mb-2">Informations</h3>
                             <div className="w-full flex-col flex justify">
-                                <button className="text-left"><a href="mailto:Kylian.74940@gmail.com">Kylian.74940@gmail.com</a></button>
+                                <button className="text-left"><a href="mailto:Kylian.74940@gmail.com">Kzamy.74940@gmail.com</a></button>
                                 <button className="text-left"><a href="tel:+33684722698">+33684722698</a></button>
                             </div>
                         </div>

@@ -14,6 +14,7 @@ export default function MenuOpen() {
                 onClick={openModal}
                 initial={{ opacity: 0, scale: 1.5 }}
                 animate={{ opacity: 1, scale: 1 }}
+                whileTap={{scale:1.5}}
                 transition={{
                     type: "spring", 
                     stiffness: 400, 

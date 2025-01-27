@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="lg:mx-auto">
             {/* Informations de contact */}
             <div className="flex flex-col sm:flex-row sm:justify-start items-start mb-8">
-                <span className="text-lg mb-2 sm:mb-0 sm:mr-8">{t("footer.email")} : <a href="mailto:Kylian.74940@gmail.com" className="text-[#F97316] hover:text-[#FDFAD5]">Kylian.74940@gmail.com</a></span>
+                <span className="text-lg mb-2 sm:mb-0 sm:mr-8">{t("footer.email")} : <a href="mailto:Kzamy.74940@gmail.com" className="text-[#F97316] hover:text-[#FDFAD5]">Kzamy.74940@gmail.com</a></span>
                 <span className="text-lg">{t("footer.phone")} : <a href="tel:+33684722698" className="text-[#F97316] hover:text-[#FDFAD5]">+33 6 84 72 26 98</a></span>
             </div>
 
