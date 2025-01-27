@@ -51,7 +51,7 @@
 
         "services": {
             "title": "Let's",
-            "title_1": "build",
+            "title_1": "build..",
             "card_1": {
                  "title": "Full stack",
                  "strong_title": "web development",
@@ -77,7 +77,7 @@
                 "second": "dynamic",
                 "third": "user-centric web apps, including custom online portfolios and ",
                 "fourth": "interactive platforms",
-                "fifth": ", tailored to your unique needs."      
+                "fifth": "tailored to your unique needs"      
         }
       }
     },
@@ -93,7 +93,33 @@
 
             "enterprise": "With over 30 years of experience, this company creates innovative and tailored solutions for SMEs, large enterprises, and associations. During my internship, I observed their focus on client needs, delivering effective tools while maintaining strong, professional relationships."
         }
-    }
+    },
+    
+    "footer": {
+        "email": "Email",
+        "phone": "Phone",
+        "ready": "Ready to work together ?",
+        "contact": "Get in touch",
+        "legacy": "Legal Notice",
+        "policy": "Privacy policy"
+    },
+
+    "contact": {
+        "title": "Let's begin a",
+        "title_1": "project.",
+        "name": "Name",
+        "name_placehold": "What's your name ?",
+        "email": "Email adress",
+        "email_placehold": "yourmail@example.com",
+        "subject": "Subject",
+        "subject_placehold": "What's your project about ?",
+        "phone": "Phone number",
+        "phone_placehold": "If you prefer a call.",
+        "message": "Message",
+        "message_placehold": "Hello Kylian, let's talk about how we can work together.",
+        "connect": "Let's connect",
+        "links": "useful links"
+      }
 
 }
 

@@ -40,7 +40,7 @@
         },
     
         "presentation": {
-          "first": "Je suis un jeune développeur web d'Annecy en France, désireux de",
+          "first": "Je suis un jeune développeur web basé à Annecy en France, désireux de",
           "second": "grandir",
           "third": "grâce à des collaborations stimulantes et significatives avec mes clients.",
           "fourth": "Ensemble",
@@ -51,7 +51,7 @@
     
         "services": {
           "title": "Construisons",
-          "title_1": "ensemble",
+          "title_1": "ensemble..",
           "card_1": {
             "title": "Développement web",
             "strong_title": "Full stack",
@@ -66,18 +66,18 @@
           "card_2": {
             "title": "Solutions de sites e-commerce",
             "strong_title": "intégrées",
-            "first": "Je conçois et développe des sites e-commerce entièrement intégrés",
-            "second": "offrant une expérience d'achat fluide, de la présentation des produits à la commande sécurisée.",
-            "third": ""
+            "first": "Je conçois et développe des",
+            "second": "sites e-commerce",
+            "third": "entièrement intégrés offrant une expérience d'achat fluide, de la présentation des produits à la commande sécurisée"
           },
           "card_3": {
-            "title": "Applications Web interactives & sur mesure",
-            "title_1": "",
+            "title": "Applications Web interactives & ",
+            "title_1": "sur mesure",
             "first": "Je crée",
             "second": "des applications web dynamiques",
             "third": "centrées sur l'utilisateur, y compris des portfolios en ligne personnalisés et",
             "fourth": "des plateformes interactives",
-            "fifth": ", adaptées à vos besoins uniques."
+            "fifth": "adaptées à vos besoins uniques"
           }
         }
       },
@@ -94,5 +94,30 @@
 
             "enterprise": "Forte de plus de 30 ans d'expérience, cette entreprise crée des solutions innovantes et sur mesure pour les PME, les grandes entreprises et les associations. Lors de mon stage, j'ai pu constater qu'ils se concentrent sur les besoins des clients, leur fournissent des outils efficaces tout en entretenant des relations solides et professionnelles."
         }
-    }
+    },
+    "footer": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "ready": "Prêt à travailler ensemble ?",
+      "contact": "Prendre contact",
+      "legacy": "Mentions légales",
+      "policy": "Politique de confidentialité"
+  },
+
+  "contact": {
+        "title": "Créons un",
+        "title_1": "projet.",
+        "name": "Nom",
+        "name_placehold": "Quel est votre prénom ?",
+        "email": "Adresse mail",
+        "email_placehold": "yourmail@example.com",
+        "subject": "Objet",
+        "subject_placehold": "Quel est votre vision derriere le projet ?",
+        "phone": "Numéro de téléphone",
+        "phone_placehold": "Si vous préférez un appel",
+        "message": "Message",
+        "message_placehold": "Bonjour Kylian, parlons de comment nous pourrions travailler ensemble",
+        "connect": "Prenons contact !",
+        "links": "Liens utiles"
+      }
 }
