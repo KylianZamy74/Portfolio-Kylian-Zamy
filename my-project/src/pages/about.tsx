@@ -1,4 +1,4 @@
-import '@/styles/global.css';
+
 import Inner from '@/components/Layout/Inner';
 
 import { useModalStore } from "@/store/ModalStore/useModalStore";

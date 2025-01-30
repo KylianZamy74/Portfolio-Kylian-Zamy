@@ -14,6 +14,7 @@ interface getProjectsStore {
     project: ProjectWithRelations | null;
     setProject: (project: ProjectWithRelations) => void;
     fetchProjects: () => Promise<void>;
+    fetchProject: (id: number) => Promise<void>;
     deleteProject: (id: number) => Promise<void>;
 }
 

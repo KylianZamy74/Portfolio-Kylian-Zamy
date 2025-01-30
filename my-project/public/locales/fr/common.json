@@ -4,7 +4,7 @@
         "home": "Accueil",
         "projects": "Projets",
         "about": "A propos",
-        "contact": "contact"
+        "contact": "Contact"
     },
 
     "title": {
@@ -20,7 +20,7 @@
         "needs": "vos besoins."
     },
     "presentation": {
-        "first": "Salut ! Je m'apelle Kylian, je suis un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
+        "first": "Salut ! Je m'appelle Kylian, je suis un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
         "second": "Développons ensemble vos idées et transformons-les en ",
         "success": "succès."
     },
@@ -36,11 +36,11 @@
     },
     "about_section": {
         "catchPhrase": {
-          "first": "Je suis ravi que vous soyez intéressé à en savoir plus sur moi.",
-          "second": "Explorons",
-          "third": "ce que nous pouvons",
-          "fourth": "créer ",
-          "fifth": "ensemble",
+          "first": "Je suis ravi que vous souhaitiez en apprendre davantage sur moi.",
+          "second": "Découvrons",
+          "third": "ensemble",
+          "fourth": "ce que nous pouvons ",
+          "fifth": "créer",
           "sixth": "ci-dessous."
         },
     
@@ -90,7 +90,7 @@
       "projects": {
         "project_1": {
             "title": "Cinédelices",
-            "description": "Ce projet est une application web responsive développée avec React, NodeJs, PostgreSQL et Sequelize. Les utilisateurs peuvent explorer un catalogue de films et d'émissions de télévision, en découvrant des recettes inspirées des plats vus dans les films. Les visiteurs peuvent également créer et partager leurs propres recettes liées à leurs films préférés. Avec une interface conviviale, l'application offre une expérience fluide sur tous les appareils. Le backend est alimenté par NodeJs, avec une gestion efficace de la base de données via Sequelize et PostgreSQL.",
+            "description": "Ce projet est une application web responsive développée avec React, NodeJs, PostgreSQL et Sequelize. Les utilisateurs peuvent explorer un catalogue de films et d'émissions de télévision, en découvrant des recettes inspirées des plats vus dans les films. Les visiteurs peuvent également créer leurs propres recettes liées à leurs films préférés. Avec une interface conviviale, l'application offre une expérience fluide sur tous les appareils. Le backend est alimenté par NodeJs, avec une gestion efficace de la base de données via Sequelize et PostgreSQL.",
             "enterprise": "Ce projet collaboratif a été entrepris dans le cadre de notre programme de formation en vue de préparer l'examen final. Ses principaux objectifs étaient d'évaluer nos forces et nos faiblesses individuelles, d'améliorer notre expertise technique et de favoriser de solides compétences en travail d'équipe et en communication. Il a également été l'occasion de renforcer nos capacités de collaboration et de résolution de problèmes dans des conditions réelles.",
             "role_date": "Design, Développement, Projet Collaboratif - 2024"
         },

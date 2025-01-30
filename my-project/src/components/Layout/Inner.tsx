@@ -1,5 +1,4 @@
 import {motion, MotionProps, Variants} from "framer-motion";
-import "./inner.scss";
 import Header from "../Header";
 
 interface InnerProps {

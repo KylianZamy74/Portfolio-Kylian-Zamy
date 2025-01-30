@@ -9,7 +9,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const { id, title, description, enterprise, role_date, stacks, userId, images } = req.body;
-    console.log("Données reçues du navigateur :", req.body);
 
     // Validation des données reçues
     if (!id || !title || !description || !enterprise || !role_date || !stacks || !images) {
@@ -61,7 +60,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             })
         );
 
-        console.log("Projet mis à jour avec succès :", project);
 
         return res.status(200).json({
             message: "Projet mis à jour avec succès",

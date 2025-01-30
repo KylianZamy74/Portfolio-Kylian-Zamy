@@ -1,6 +1,4 @@
-@import './font.scss';
-@import './editBorder.scss';
-@import './editswiper.scss';
+
 
 @tailwind base;
 @tailwind components;

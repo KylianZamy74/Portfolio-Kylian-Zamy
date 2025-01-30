@@ -49,6 +49,8 @@ model Project {
     role_date String
     stacks  Stack[]  @relation("ProjectStacks")
     images  Image[] 
+    project_url  String?
+    isLinkExist  Boolean @default(false)
     userId  Int
     user  User  @relation(fields: [userId], references: [id])
 }

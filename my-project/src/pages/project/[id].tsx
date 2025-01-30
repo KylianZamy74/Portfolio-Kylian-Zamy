@@ -17,7 +17,7 @@ import { useScrollService } from "@/services/animationServices/useScrollService"
 import { useGetProjectsStore } from "@/store/FetchStore/getProjectsStore";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
-
+import Link from "next/link";
 
 
 export default function Project() {
@@ -30,7 +30,7 @@ export default function Project() {
     const {t} = useTranslation();
 
     const { project, fetchProject } = useGetProjectsStore();
-
+    
 
     useEffect(() => {
         if (id) {
@@ -72,7 +72,7 @@ export default function Project() {
                 </h1>
                 <div className="flex justify-center h-1/2 py-12 mb-24">
                     <Image
-                        src={project?.images[0].url}
+                        src={project?.images[0].url ||""}
                         alt="Project"
                         width={800}
                         height={600}
@@ -148,13 +148,20 @@ export default function Project() {
                             ))}
                         </em>
                     </div>
-                    <div className="flex-col flex my-14 text-left px-12 w-full">
-                        <h2 className="font-bold text-3xl py-4">Stack</h2>
-                        {project?.stacks?.map((stack, index) => (
-                            <em key={index}>
-                                <span className="text-lg lg:text-3xl md:text-2xl ">{stack.name}</span>
-                            </em>
-                        ))}
+                    <div className="flex justify-between items-center w-full px-12">
+                        <div className="flex-col flex my-14 text-left  w-full">
+                            <h2 className="font-bold text-3xl py-4">Stack</h2>
+                            {project?.stacks?.map((stack, index) => (
+                                <em key={index}>
+                                    <span className="text-lg lg:text-3xl md:text-2xl ">{stack.name}</span>
+                                </em>
+                            ))}
+                        </div>
+                        {project?.isLinkExist ? (
+                            <div className="text-lg lg:text-3xl md:text-2xl border border-black p-4 rounded cursor-pointer hover:bg-black duration-300">
+                                <Link href={project.project_url || ""}><strong className=" text-[#F97316]">Github</strong></Link>
+                            </div>
+                        ): (<span className="text-lg lg:text-3xl md:text-2xl">No Github :( </span>)} 
                     </div>
                 </section>
                 <Footer />

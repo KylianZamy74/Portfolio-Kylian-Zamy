@@ -86,30 +86,8 @@ export const splitTextIntoWords = (text: string) => {
   return text.split(" ").map((word, index) => (
     <span className="word" key={index} style={{ display: "inline-block" }}>
       {word}
-      {/* Ajoute un espace entre les mots */}
       {index < text.split(" ").length - 1 && "\u00A0"}
     </span>
   ));
 };
 
-
-
-// export const splitTextIntoChar = (text: string) => {
-//     const words = text.split(" "); // Divise le texte en mots
-
-//     return words.map((word, index) => (
-//         <span className="char inline-block" key={index}>
-//             {word} {/* Affiche chaque mot */}
-//             {/* Ajoute un espace non sécable après chaque mot sauf le dernier */}
-//             {index < words.length - 1 && "\u00A0"}
-//         </span>
-//     ));
-// };
-
-// export const splitTextIntoChar = (text: string) => {
-//     return text.split("").map((char, index) => (
-//         <span className="char inline-block" key={index}>
-//             {char === " " ? "\u00A0" : char}  
-//         </span>
-//     ));
-// };

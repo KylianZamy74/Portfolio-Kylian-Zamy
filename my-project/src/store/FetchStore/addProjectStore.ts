@@ -126,7 +126,6 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
                 images: [],
             });
     
-            console.log("Projet créé avec succès !");
         } catch (error) {
             console.error("Erreur lors de la création du projet :", error);
         }

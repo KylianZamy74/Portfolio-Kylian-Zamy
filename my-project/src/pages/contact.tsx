@@ -1,5 +1,4 @@
 import React from "react";
-import '@/styles/global.css';
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import Menu from "@/components/Modal/MenuModal";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
@@ -93,7 +92,7 @@ export default function Contact() {
                             <h3 className="text-labelYellow mb-2">{t("contact.links")}</h3>
                             <div className="flex-col flex">
                                 <button className="text-left"><a className="text-left" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
-                                <button className="text-left"><a  href="https://github.com/KylianZamy">Github</a></button>
+                                <button className="text-left"><a  href="https://github.com/KylianZamy74">Github</a></button>
                             </div>
                         </div>
                     </section>
@@ -104,7 +103,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-col flex">
                         <button><a href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
-                        <button><a href="https://github.com/KylianZamy">Github</a></button>
+                        <button><a href="https://github.com/KylianZamy74">Github</a></button>
                     </div>
                 </footer>
             </Inner>

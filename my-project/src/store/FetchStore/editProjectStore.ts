@@ -9,7 +9,7 @@ interface EditProjectStore {
     role_date: string;
     selectedStacks: Stack[];
     stacks: Stack[];
-    images: string[];  
+    images: {url: string}[];  
     allStacks: Stack[];
     newImages: File[];
     userId: number;
@@ -21,7 +21,7 @@ interface EditProjectStore {
     setRoleDate: (role_date: string) => void;
     setSelectedStacks: (stacks: Stack[]) => void;
     setStacks: (stacks: Stack[]) => void;
-    setImages: (images: string[]) => void;
+    setImages: (images: {url: string}[]) => void;
     setNewImages: (newImages: File[]) => void;
     setAllStacks: (allStacks: Stack[]) => void;
     fetchProjectDetails: (projectId: number) => Promise<void>;
@@ -49,7 +49,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     setRoleDate: (role_date: string) => set({ role_date }),
     setSelectedStacks: (selectedStacks: Stack[]) => set({ selectedStacks }),
     setStacks: (stacks: Stack[]) => set({ stacks }),
-    setImages: (images: string[]) => set({images}),
+    setImages: (images: {url: string}[]) => set({images}),
     setNewImages: (newImages: File[]) => set ({newImages}),
     setUserId: (userId: number) => set({userId}),
     setAllStacks: (allStacks: Stack[]) => set({ allStacks }),
@@ -110,11 +110,9 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
 
         const formData = new FormData();
 
-        state.newImages.forEach((image, index) => {
-            console.log(`Image ${index}:`, image);
+        state.newImages.forEach((image) => {
             formData.append("images", image);
         });
-        console.log("data envoyé au serveur", updatedProject);
         try {
        
             const projectResponse = await fetch(`http://localhost:3000/api/manageProject/editProject`, {
@@ -135,7 +133,6 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
          
             if (state.newImages.length > 0) {
                 formData.append("projectId", projectId);  
-                console.log("FormData avant l'envoi : ", formData);
                 const imageResponse = await fetch(`http://localhost:3000/api/manageProject/uploadImages`, {
                     method: "POST",
                     body: formData,
@@ -146,7 +143,6 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
                 }
             }
 
-            console.log("Projet mis à jour avec succès !");
             
             set({
                 title: "",

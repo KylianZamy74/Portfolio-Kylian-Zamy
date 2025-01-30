@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useAddProjectStore } from "@/store/FetchStore/addProjectStore";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function NewProject() {
     const [images, setImages] = useState<File[]>([]);
@@ -50,18 +51,21 @@ export default function NewProject() {
     const renderImagePreviews = () => {
         return images.map((file, index) => (
             <div key={index} className="flex items-center space-x-2">
-                <img
+                <Image
                     src={URL.createObjectURL(file)}
                     alt={`Preview ${index + 1}`}
                     className="w-16 h-16 object-cover rounded-md"
-                />
+                    width={64}
+                    height={64}
+                    unoptimized={true} 
+                ></Image>
                 <p className="text-sm">{file.name}</p>
                 <button
                     type="button"
                     onClick={() => handleRemoveImage(index)}
                     className="ml-2 text-red-500 hover:text-red-700"
                 >
-                    &times; {/* Icône pour supprimer */}
+                    &times; 
                 </button>
             </div>
         ));

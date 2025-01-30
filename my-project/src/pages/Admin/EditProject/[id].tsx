@@ -87,7 +87,6 @@ export default function EditProject() {
             setStackError("Veuillez sélectionner au moins une stack technique.");
             return;
         }
-        console.log("images lcoale", newImages)
         await submitEditProject(Number(id));
 
         setStackError(null);

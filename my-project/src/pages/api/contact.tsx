@@ -5,10 +5,7 @@ import validator from "validator";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if(req.method === 'POST') {
-        console.log({Email_USER: process.env.EMAIL_USER})
-        console.log({EMAIL_PASS: process.env.EMAIL_PASS})
         const {name, email, subject, phone, message} = req.body;
-        console.log("corps de l'email recu depuis le navigateur", req.body);
 
         if(!validator.isEmail(email)) {
             res.status(400).json({message: "Adresse email invalide."});

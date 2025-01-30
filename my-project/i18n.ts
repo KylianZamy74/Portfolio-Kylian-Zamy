@@ -15,7 +15,7 @@ i18next
         translation: translationFR, 
       },
     },
-    lng: 'en', 
+    lng: 'fr', 
     fallbackLng: 'en', 
     debug: true,
     interpolation: {

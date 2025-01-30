@@ -1,7 +1,5 @@
 "use client";
 
-
-import "@/styles/global.css";
 import { LuArrowDownRight } from "react-icons/lu";
 import Inner from "@/components/Layout/Inner";
 import Article from "@/components/Article";
@@ -45,7 +43,6 @@ export default function Home() {
                         <span className="text-[#F97316]"> {splitTextIntoWords(t("slogan.needs"))}</span>
                     </p>
                 </div>
-                {/* Section de présentation */}
                 <div className="w-full">
                     <section className="lg:flex-row bg-[#FDFAD5] h-screen lg:h-2/3 text-3xl flex justify-center items-center p-4 flex-col fromBotToTop lg:px-24">
                         <div className="mt-24 flex-col flex ">
@@ -75,7 +72,6 @@ export default function Home() {
                             </em>
                         </Link>
                     </section>
-                    {/* Section My work */}
                     <Article />
                 </div>
                 <Footer />

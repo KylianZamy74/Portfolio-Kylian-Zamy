@@ -47,7 +47,6 @@ export default function Home() {
                 <h1 className="text-3xl text-[#FDFAD5] p-16 w-full text-center">Yo mon {session?.user?.name}</h1>
 
                 <div className="flex w-full py-12 px-12 h-screen">
-                    {/* Section Ajouter un projet */}
                     <div className="w-1/3 border-r border-[#FDFAD5] px-8">
                         <Link href={"/Admin/addProject"} className="cursor-pointer">
                             <h2 className="text-lg text-[#FDFAD5] bg-[#1E1E1E] text-center rounded w-full py-2 text-sm hover:bg-[#F97316] duration-200">
@@ -64,7 +63,6 @@ export default function Home() {
                 </div>
                     </div>
                     
-                    {/* Section liste des projets */}
                     <div className="w-2/3 ml-12">
                         <h2 className="text-3xl text-[#F97316] pb-12 font-bold">Tous les projets</h2>
                         <ul className="space-y-8 w-full text-left">
@@ -89,7 +87,6 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Bouton de déconnexion */}
                 <Footer />
                 {openModal && (
                         <DeleteModal closeModal={handleCloseModal} projectId={selectedproject}/>
