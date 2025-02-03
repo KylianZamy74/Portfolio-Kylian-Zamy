@@ -10,13 +10,13 @@
         "main": "Freelance developper",
         "second": "fullstack"
     },
-    "slogan": {
-        "first": "With every line i plant the ",
-        "seed": "seed",
-        "crafting": ", crafting",
+    "slogan": { 
+        "first": "Line by line, I",
+        "seed": "craft ",
+        "crafting": "tailored",
         "solutions": "solutions ",
-        "meet": "to meet",
-        "needs": "your need."
+        "meet": "to drive your",
+        "needs": "digital project forward."
     },
     "presentation": {
         "first": "Hi ! I'm Kylian, a passionate web developer dedicated to crafting sleek, elegant, and functional solutions.",
@@ -90,7 +90,7 @@
     "projects": {
         "project_1": {
             "title": "Cinédelices",
-            "description": "This project is a responsive web application built with React, NodeJs, PostgreSQL, and Sequelize. Users can explore a catalog of movies and TV shows, discovering recipes inspired by dishes seen in the films. Visitors can also create and share their own recipes linked to their favorite movies. With a user-friendly interface, the app offers a seamless experience across all devices. The backend is powered by NodeJs, with efficient database management through Sequelize and PostgreSQL.",
+            "description": "This interactive web application allows users to explore a vast catalog of movies and TV shows while discovering recipes inspired by dishes seen on screen. Visitors can also add their own recipes linked to their favorite films, making the experience even more immersive and personalized. With an intuitive interface and responsive design, navigation is seamless across all devices, providing an enjoyable and engaging discovery experience.",
             "enterprise": "This collaborative project was undertaken as part of our training program to prepare for the final exam. Its primary goals were to evaluate our individual strengths and weaknesses, enhance our technical expertise, and foster strong teamwork and communication skills.It also served as an opportunity to strengthen our collaboration and problem-solving abilities under real-world conditions.",
             "role_date": "Design, Development & Collaboration Project - 2024"
         },

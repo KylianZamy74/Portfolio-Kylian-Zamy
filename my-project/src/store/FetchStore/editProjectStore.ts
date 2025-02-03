@@ -62,7 +62,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
 
     fetchProjectDetails: async (projectId: number) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/project/${projectId}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}project/${projectId}`);
             if (!response.ok) throw new Error("Erreur de récupération des détails du projet");
 
             const data = await response.json();
@@ -82,7 +82,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
     
     fetchStacks: async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/stack`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}stack`);
             if (!response.ok) throw new Error("Erreur de récupération des stacks");
 
             const data = await response.json();
@@ -115,7 +115,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
         });
         try {
        
-            const projectResponse = await fetch(`http://localhost:3000/api/manageProject/editProject`, {
+            const projectResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}manageProject/editProject`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -133,7 +133,7 @@ export const useEditProjectStore = create<EditProjectStore>((set) => ({
          
             if (state.newImages.length > 0) {
                 formData.append("projectId", projectId);  
-                const imageResponse = await fetch(`http://localhost:3000/api/manageProject/uploadImages`, {
+                const imageResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}manageProject/uploadImages`, {
                     method: "POST",
                     body: formData,
                 });

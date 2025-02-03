@@ -29,7 +29,7 @@ export const useGetProjectsStore = create<getProjectsStore>((set) => ({
 
     fetchProjects: async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/projects`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}projects`);
             const data = await response.json();
             set({ projects: data });
         } catch (error) {
@@ -39,7 +39,7 @@ export const useGetProjectsStore = create<getProjectsStore>((set) => ({
 
     fetchProject: async (id: number) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/project/${id}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}project/${id}`);
             const data = await response.json();
             set({ project: data });
         } catch (error) {

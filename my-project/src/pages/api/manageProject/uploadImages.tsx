@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
 
         try {
-            const imageFiles = files.images ? (Array.isArray(files.images) ? files.images : [files.images]) : [];
+            const imageFiles = Array.from(files.images || [])
 
             const validImageFiles = imageFiles.filter(Boolean) as File[];
             const imagesData = validImageFiles.map((file : File) => {

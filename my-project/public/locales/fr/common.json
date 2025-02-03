@@ -11,13 +11,13 @@
         "main": "Développeur freelance",
         "second": "fullstack"
     },
-    "slogan": {
-        "first": "A chaque ligne, je plante la ",
-        "seed": "graine",
-        "crafting": ", créant",
-        "solutions": "des solutions ",
-        "meet": "pour répondre à",
-        "needs": "vos besoins."
+    "slogan": {  
+        "first": "Code après code, je",
+        "seed": "façonne",
+        "crafting": " des",
+        "solutions": "solutions ",
+        "meet": "sur mesure pour propulser votre",
+        "needs": "projet digital."
     },
     "presentation": {
         "first": "Salut ! Je m'appelle Kylian, je suis un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
@@ -90,7 +90,7 @@
       "projects": {
         "project_1": {
             "title": "Cinédelices",
-            "description": "Ce projet est une application web responsive développée avec React, NodeJs, PostgreSQL et Sequelize. Les utilisateurs peuvent explorer un catalogue de films et d'émissions de télévision, en découvrant des recettes inspirées des plats vus dans les films. Les visiteurs peuvent également créer leurs propres recettes liées à leurs films préférés. Avec une interface conviviale, l'application offre une expérience fluide sur tous les appareils. Le backend est alimenté par NodeJs, avec une gestion efficace de la base de données via Sequelize et PostgreSQL.",
+            "description": "Cette application web interactive permet aux utilisateurs d’explorer un large catalogue de films et séries tout en découvrant des recettes inspirées des plats vus à l’écran. Les visiteurs peuvent également ajouter leurs propres recettes liées à leurs films préférés, rendant l'expérience encore plus immersive et personnalisée. Grâce à une interface intuitive et un design responsive, la navigation est fluide sur tous les appareils, offrant une découverte agréable et engageante.",
             "enterprise": "Ce projet collaboratif a été entrepris dans le cadre de notre programme de formation en vue de préparer l'examen final. Ses principaux objectifs étaient d'évaluer nos forces et nos faiblesses individuelles, d'améliorer notre expertise technique et de favoriser de solides compétences en travail d'équipe et en communication. Il a également été l'occasion de renforcer nos capacités de collaboration et de résolution de problèmes dans des conditions réelles.",
             "role_date": "Design, Développement, Projet Collaboratif - 2024"
         },

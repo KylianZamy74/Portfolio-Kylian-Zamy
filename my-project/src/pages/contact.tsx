@@ -75,7 +75,7 @@ export default function Contact() {
                                 <label className="text-2xl flex-col flex" htmlFor="message">{t("contact.message")}</label>
                                 <textarea className="bg-transparent w-full mt-4 p-2" name="message" placeholder={t("contact.message_placehold")} required onChange={(e) => setMessage(e.target.value)}/>
                             </div>
-                            <div className="mt-8 bg-[#FDFAD5] bg-fadedYellow text-center rounded p-2  w-full md:w-1/3 mx-auto">
+                            <div className="mt-8 bg-[#FDFAD5] bg-fadedYellow text-center rounded p-2  w-full md:w-full">
                                 <button type="submit">{t("contact.connect")}</button>
                             </div>
                         </form>

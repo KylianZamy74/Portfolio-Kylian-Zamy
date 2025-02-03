@@ -47,7 +47,7 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
   
     fetchStacks: async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/stack`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}stack`);
             if (!response.ok) {
                 throw new Error("Erreur survenue lors de la récupération des stacks");
             }
@@ -87,7 +87,7 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
     
         try {
          
-            const projectResponse = await fetch(`http://localhost:3000/api/manageProject/addProject`, {
+            const projectResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}manageProject/addProject`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export const useAddProjectStore = create<ProjectStore>((set) => ({
           
             if (state.images.length > 0) {
                 formData.append("projectId", projectId); 
-                const imageResponse = await fetch(`http://localhost:3000/api/manageProject/uploadImages`, {
+                const imageResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}manageProject/uploadImages`, {
                     method: "POST",
                     body: formData,
                 });
