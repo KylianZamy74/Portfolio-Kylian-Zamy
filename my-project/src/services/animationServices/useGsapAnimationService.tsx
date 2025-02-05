@@ -32,7 +32,7 @@ export const useAnimationGsapService = () => {
                   scrollTrigger: {
                     trigger: ".trigger",
                     start: "top 80%",
-                    
+   
                   },
                 }
               );

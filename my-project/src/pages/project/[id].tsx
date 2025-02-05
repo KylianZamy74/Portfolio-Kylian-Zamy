@@ -79,18 +79,19 @@ export default function Project() {
                     />
                 </div>
                 <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger .fromLeftToRight">
-                    <em>
-                        {splitParagraph(
-                            t(`projects.project_${id}.description`) || "No description"
-                        ).map((paragraph, index) => (
-                            <p
-                                key={index}
-                                className="text-lg px-12 lg:text-3xl md:text-2xl"
-                            >
-                                {paragraph}
-                            </p>
-                        ))}
-                    </em>
+                    
+                        <div>
+                            {splitParagraph(
+                                t(`projects.project_${id}.description`) || "No description"
+                            ).map((paragraph, index) => (
+                                <p
+                                    key={index}
+                                    className="text-lg px-12 lg:text-3xl md:text-2xl"
+                                >
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
                 </div>
                 <section className="bg-[#51514F] md:hidden min-h-screen flex justify-center items-center flex-col m-12">
                     <h2 className="text-3xl text-[#FDFAD5] pb-4">Pictures</h2>

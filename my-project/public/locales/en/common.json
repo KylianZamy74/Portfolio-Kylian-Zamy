@@ -7,21 +7,21 @@
     },
 
     "title": {
-        "main": "Freelance developper",
+        "main": "Freelance developper & Digital Craftman",
         "second": "fullstack"
     },
     "slogan": { 
-        "first": "Line by line, I",
-        "seed": "craft ",
-        "crafting": "tailored",
-        "solutions": "solutions ",
-        "meet": "to drive your",
-        "needs": "digital project forward."
+        "first": "Line by line, I craft tailored solutions to drive your digital project",
+        "forward": "forward.",
+        "discover": "Discover My Works",
+        "services": "Services"
     },
     "presentation": {
-        "first": "Hi ! I'm Kylian, a passionate web developer dedicated to crafting sleek, elegant, and functional solutions.",
-        "second": "Let’s grow your ideas together and transform them into ",
-        "success": "success."
+        "who": "Who",
+        "am": "Am",
+        "i": "I",
+        "first": "I'm a passionate web developer eager to craft sleek, elegant, and functional solutions. Let's grow your ideas together and turn them into",
+        "second": "success"
     },
 
     "travail":{

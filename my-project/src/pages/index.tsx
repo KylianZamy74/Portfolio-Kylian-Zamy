@@ -9,6 +9,7 @@ import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import { useScrollService } from "@/services/animationServices/useScrollService";
 import Link from "next/link";
+import Image from "next/image";
 import { useAnimationGsapService, splitTextIntoChar, splitTextIntoWords } from "@/services/animationServices/useGsapAnimationService";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
@@ -26,51 +27,33 @@ export default function Home() {
         <>
             <Inner>
                 <div className="intro flex-col flex justify-center h-screen p-4 lg:px-24">
-                    <h1 className="text-[#FDFAD5] text-6xl">
+                    <h1 className="text-anthra font-bold text-6xl">
                         {splitTextIntoChar(t("title.main"))}
                     </h1>
-                    <em className="text-[#F97316] font-light">
+                    <em className="text-beige text-3xl font-bold">
                         {splitTextIntoChar("Fullstack.")}
                     </em>
                 </div>
-                <div className="text-right text-3xl p-4 pb-24 text-[#FDFAD5] lg:px-24 ">
+                <div className="text-right font-semibold text-3xl p-4 pb-24 text-anthra lg:px-24 ">
                     <p className="trigger">
                         <span>{splitTextIntoWords(t("slogan.first"))}</span>
-                        <span className="text-[#A3B46A]"> {splitTextIntoWords(t("slogan.seed"))}</span>
-                        <span>{splitTextIntoWords(t("slogan.crafting"))}</span>
-                        <span className="text-[#668DCF]"> {splitTextIntoWords(t("slogan.solutions"))}</span>
-                        <span>{splitTextIntoWords(t("slogan.meet"))}</span>
-                        <span className="text-[#F97316]"> {splitTextIntoWords(t("slogan.needs"))}</span>
+                        <span className="text-beige"> {splitTextIntoWords(t("slogan.forward"))}</span>
                     </p>
+                    <div >
+                        <button className="text-anthra p-2 border-2 border-beige text-xl m-8">{splitTextIntoWords(t("slogan.discover"))}</button>
+                        <button className="text-anthra p-2 border-2 border-beige text-xl">{splitTextIntoWords(t("slogan.services"))}</button>
+                    </div>
                 </div>
                 <div className="w-full">
-                    <section className="lg:flex-row bg-[#FDFAD5] h-screen lg:h-2/3 text-3xl flex justify-center items-center p-4 flex-col fromBotToTop lg:px-24">
-                        <div className="mt-24 flex-col flex ">
-                            <p>
-                                <em className="fromBotToTop">
-                                    {splitTextIntoWords(
-                                        t("presentation.first")
-                                    )}
-                                </em>
-                            </p>
-                            <p>
-                                <em className="fromBotToTop">
-                                    {splitTextIntoWords(t("presentation.second"))}
-                                    <span className="text-[#F97316]"> {splitTextIntoWords(t("presentation.success"))}</span>
-                                </em>
-                            </p>
+                    <section className="lg:flex-row bg-whiteBroke min-h-1/3 lg:h-2/3 text-3xl flex justify-center items-center p-4 flex-col fromBotToTop lg:px-24">
+                        
+                        <div>
+                            <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian"/>
                         </div>
-                        <div className="lg:hidden">
-                            <LuArrowDownRight className="h-12 w-12 mt-4" />
-                        </div>
-                        <Link
-                            className="w-full text-right mt-8"
-                            href="/about"
-                        >
-                            <em className="border border-[2px] border-[#000000] p-4 rounded hover:bg-[#51514F] cursor-pointer hover:text-[#FDFAD5] duration-200">
-                                {t("about.about")}<span className="text-[#F97316]">{t("about.me")}</span>
-                            </em>
-                        </Link>
+                        <h2 className="text-5xl font-semibold py-24">Who <strong className="text-beige">Am</strong> <strong className="text-beige">I</strong> ? </h2>
+                       
+                        
+                           
                     </section>
                     <Article />
                 </div>

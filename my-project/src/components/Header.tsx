@@ -31,22 +31,20 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center p-4">
       <div className="flex items-center gap-4">
-        <Link href={"/auth/signin"} className="text-[#FDFAD5]">
-          <MdOutlineAdminPanelSettings />
-        </Link>
+      
         <Link href="/" >
-          <span className="text-[#FDFAD5] text-2xl">Kylian </span>
-          <strong className="text-[#F97316] text-2xl uppercase">zamy</strong>
+          <span className="text-anthra font-bold text-4xl">Kylian </span>
+          <strong className="text-beige text-4xl uppercase">zamy</strong>
         </Link>
       </div>
 
-      <nav className="text-[#FDFAD5] lg:hidden">
+      <nav className="text-anthra gap-auto lg:hidden">
         <button className="cursor-pointer" onClick={openModal}>
           Menu
         </button>
       </nav>
 
-      <nav className="hidden lg:flex gap-8 text-[#FDFAD5] list-none">
+      <nav className="hidden lg:flex gap-8 text-anthra font-bold list-none">
         <li>
           <Link href="/" >{t("headers.home")}</Link>
         </li>
@@ -65,7 +63,7 @@ export default function Header() {
         <select
           value={locale || "en"} // Assurez-vous que la langue sélectionnée est correcte au départ
           onChange={handleLanguageChange} 
-          className="bg-transparent border border-[#FDFAD5] text-[#FDFAD5] p-2 rounded"
+          className="bg-transparent border border-anthra text-anthra p-2 rounded"
         >
           {locales?.map((lng) => (
             <option key={lng} value={lng}>

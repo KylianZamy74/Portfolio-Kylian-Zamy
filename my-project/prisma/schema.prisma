@@ -45,7 +45,9 @@ model Project {
     id  Int  @id @default(autoincrement())
     title  String 
     description String
+    short_description String?
     enterprise String
+    conclusion String?
     role_date String
     stacks  Stack[]  @relation("ProjectStacks")
     images  Image[] 
