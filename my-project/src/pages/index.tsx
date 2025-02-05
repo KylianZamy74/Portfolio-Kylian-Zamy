@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     useScrollService();
     useAnimationGsapService();
@@ -45,15 +45,80 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <section className="lg:flex-row bg-whiteBroke min-h-1/3 lg:h-2/3 text-3xl flex justify-center items-center p-4 flex-col fromBotToTop lg:px-24">
-                        
+                    <section className="lg:flex-row bg-whiteBroke min-h-1/3 lg:h-2/3 text-3xl flex justify-center items-center  flex-col fromBotToTop lg:px-24">
+
                         <div>
-                            <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian"/>
+                            <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" />
                         </div>
-                        <h2 className="text-5xl font-semibold py-24">Who <strong className="text-beige">Am</strong> <strong className="text-beige">I</strong> ? </h2>
-                       
-                        
-                           
+
+                        <h2 className="text-5xl font-semibold py-24 trigger m-auto">{splitTextIntoWords(t("presentation.who"))} <strong className="text-beige">{splitTextIntoWords(t("presentation.am"))}</strong> <strong className="text-beige">{splitTextIntoWords(t("presentation.i"))}</strong></h2>
+                        <div className="trigger mx-8">
+                            <p>{splitTextIntoWords(t("presentation.first"))}<strong className="text-beige">{splitTextIntoWords(t("presentation.second"))}.</strong></p>
+                        </div>
+                        <div className="flex m-8 gap-x-2 border-t-2 border-b-2 py-4">
+                            <div className="relative group">
+                                <Image src="/Images/react.png" width={33} height={33} alt="React" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    React
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/next.png" width={33} height={33} alt="Next.js" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Next.js
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/tailwind.png" width={33} height={33} alt="Tailwind CSS" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Tailwind CSS
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/sass.png" width={33} height={33} alt="Sass" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Sass
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/prisma.png" width={33} height={33} alt="Prisma" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Prisma
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/sequelize.png" width={33} height={33} alt="Sequelize" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Sequelize
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/postgres.png" width={33} height={33} alt="Postgres" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Postgres
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/node.png" width={33} height={33} alt="Node.js" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Node.js
+                                </div>
+                            </div>
+
+                            <div className="relative group">
+                                <Image src="/Images/express.png" width={33} height={33} alt="Express" />
+                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
+                                    Express
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <Article />
                 </div>

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useGetProjectsStore } from "@/store/FetchStore/getProjectsStore";
 import { useTranslation } from "react-i18next";
+import { splitTextIntoWords } from "@/services/animationServices/useGsapAnimationService";
 
 export default function Article() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -48,11 +49,15 @@ export default function Article() {
     return (
         <section
             id="my-work"
-            className="text-left text-5xl pt-4 bg-[#FDFAD5] p-4 pt-8 lg:py-24 lg:px-24 w-full"
+            className="text-left text-5xl pt-4 bg-whiteBroke p-4 pt-8 lg:py-24 lg:px-24 m-auto"
         >
-            <span className="font-semibold">
-                {t("travail.my")}<span className="text-[#F97316]"> {t("travail.work")}</span>
-            </span>
+            <div className="text-5xl font-semibold trigger text-center w-full">
+            {splitTextIntoWords(t("travail.my-recent"))} <strong className="text-beige">{splitTextIntoWords(t("travail.work"))}</strong>
+            </div>
+
+            <div>
+                <Image src="/Images/Programming.png" width={384} height={384}/>
+            </div>
 
             {projects.map((project) => (
                 <Link href={`/project/${project.id}`} key={project.id}>
@@ -98,16 +103,11 @@ export default function Article() {
                                 </motion.div>
                             )}
                         </AnimatePresence>
-
                         <span className="text-left w-full mt-4 borderclass">{project.title}</span>
                         <span className="text-sm text-left w-full mt-4">{t(`projects.project_${project.id}.role_date`)}</span>
                     </motion.article>
                 </Link>
-            ))}
-
-            <div className="w-full">
-                <IoArrowDown className="h-12 w-12 mt-8" />
-            </div>
+            ))}   
         </section>
     );
 }

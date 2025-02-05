@@ -19,14 +19,14 @@
     "presentation": {
         "who": "Who",
         "am": "Am",
-        "i": "I",
+        "i": "I ?",
         "first": "I'm a passionate web developer eager to craft sleek, elegant, and functional solutions. Let's grow your ideas together and turn them into",
-        "second": "success"
+        "second": " success"
     },
 
     "travail":{
-        "my": "My ",
-        "work": "work"
+        "my-recent": "My Recent ",
+        "work": "Work"
       },
   
 
