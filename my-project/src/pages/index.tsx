@@ -1,6 +1,5 @@
 "use client";
 
-import { LuArrowDownRight } from "react-icons/lu";
 import Inner from "@/components/Layout/Inner";
 import Article from "@/components/Article";
 import Menu from "@/components/Modal/MenuModal";
@@ -45,7 +44,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <section className="lg:flex-row bg-whiteBroke min-h-1/3 lg:h-2/3 text-3xl flex justify-center items-center  flex-col fromBotToTop lg:px-24">
+                    <section className="lg:flex-row  min-h-1/3 lg:h-2/3 text-3xl flex justify-center items-center  flex-col fromBotToTop lg:px-24">
 
                         <div>
                             <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" />
@@ -121,6 +120,14 @@ export default function Home() {
                         </div>
                     </section>
                     <Article />
+                    <section>
+                        <div className="trigger">
+                            <h2 className="text-5xl w-full text-center py-24 ">{splitTextIntoWords(t("tailored.tailored"))}{splitTextIntoWords(t("tailored.web"))}<strong className="text-beige">{splitTextIntoWords(t("tailored.solutions"))}</strong></h2>
+                        </div>
+                        <div >
+                            <Image src="/Images/collab-2.svg" width={354} height={354} className="w-full m-auto" alt="Image tailored solutions"/>
+                        </div>
+                    </section>
                 </div>
                 <Footer />
             </Inner>

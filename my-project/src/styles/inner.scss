@@ -1,7 +1,10 @@
 .inner {
     background-color: black;
     .page{
-        background-color: #f8f9fa;    
+        background-color: #f8f9fa;
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+ 
 
     }
     .slide {
@@ -10,6 +13,7 @@
         top:0;
         left:0;
         background-color: #f8f9fa;
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
         width: 100vw;
         height: 100vh;
         }

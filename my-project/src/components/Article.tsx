@@ -49,14 +49,14 @@ export default function Article() {
     return (
         <section
             id="my-work"
-            className="text-left text-5xl pt-4 bg-whiteBroke p-4 pt-8 lg:py-24 lg:px-24 m-auto"
+            className="text-left text-5xl pt-4  p-4 pt-8 lg:py-24 lg:px-24 m-auto"
         >
             <div className="text-5xl font-semibold trigger text-center w-full">
             {splitTextIntoWords(t("travail.my-recent"))} <strong className="text-beige">{splitTextIntoWords(t("travail.work"))}</strong>
             </div>
 
             <div>
-                <Image src="/Images/Programming.png" width={384} height={384}/>
+                <Image src="/Images/Programming-2.svg" width={384} height={384}/>
             </div>
 
             {projects.map((project) => (
