@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { IoArrowDown } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -56,7 +55,7 @@ export default function Article() {
             </div>
 
             <div>
-                <Image src="/Images/Programming-2.svg" width={384} height={384}/>
+                <Image src="/Images/Programming-2.svg" width={384} height={384} alt= "Image d'un programmeur"/>
             </div>
 
             {projects.map((project) => (
@@ -103,8 +102,8 @@ export default function Article() {
                                 </motion.div>
                             )}
                         </AnimatePresence>
-                        <span className="text-left w-full mt-4 borderclass">{project.title}</span>
-                        <span className="text-sm text-left w-full mt-4">{t(`projects.project_${project.id}.role_date`)}</span>
+                        <span className="text-center w-full mt-4 borderclass">{project.title}</span>
+                        <span className="text-sm text-center w-full mt-4">{t(`projects.project_${project.id}.role_date`)}</span>
                     </motion.article>
                 </Link>
             ))}   

@@ -4,35 +4,41 @@ import { useTranslation } from "react-i18next";
 
 export default function Footer() {
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
-        <footer className="bg-[#1E1E1E] text-[#FDFAD5] py-12 px-4">
-        <div className="lg:mx-auto">
-            <div className="flex flex-col sm:flex-row sm:justify-start items-start mb-8">
-                <span className="text-lg mb-2 sm:mb-0 sm:mr-8">{t("footer.email")} : <a href="mailto:Kzamy.74940@gmail.com" className="text-[#F97316] hover:text-[#FDFAD5]">Kzamy.74940@gmail.com</a></span>
-                <span className="text-lg">{t("footer.phone")} : <a href="tel:+33684722698" className="text-[#F97316] hover:text-[#FDFAD5]">+33 6 84 72 26 98</a></span>
-            </div>
-
-            <div className="text-center mb-12">
-                <p className="text-3xl font-bold mb-8">{t("footer.ready")}</p>
-                <div className="border-2 border-[#FDFAD5] py-2 px-4 rounded text-3xl hover:bg-[#FDFAD5] hover:text-[#1E1E1E] duration-200 inline-block">
-                    <Link href="/contact">{t("footer.contact")}</Link>
+        <footer className="bg-[#1E1E1E] text-white py-12 px-4">
+            <div className="flex flex-wrap gap-4 justify-between">
+                <div>
+                    <h2><strong>{t("footer.social.social")}</strong></h2>
+                    <ul>
+                        <li>{t("footer.social.mail")}</li>
+                        <li>{t("footer.social.tel")}</li>
+                        <li><Link href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">{t("footer.social.linkedIn")}</Link></li>
+                        <li><Link href="https://github.com/KylianZamy74">{t("footer.social.github")}</Link></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2><strong>{t("footer.links.links")}</strong></h2>
+                    <ul>
+                        <li>{t("footer.links.home")}</li>
+                        <li>{t("footer.links.services")}</li>
+                        <li>{t("footer.links.contact")}</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2><strong>{t("footer.services.services")}</strong></h2>
+                    <ul>
+                        <li>{t("footer.services.first")}</li>
+                        <li>{t("footer.services.second")}</li>
+                        <li>{t("footer.services.third")}</li>
+                        <li>{t("footer.services.fourth")}</li>
+                    </ul>
+                </div>
+                <div className="justify-center items-center flex">
+                    <h2>Annecy, France</h2>
                 </div>
             </div>
-
-            <div className="flex flex-col sm:flex-row sm:justify-between items-center mt-16">
-                <span className="text-lg">Annecy, France</span>
-                <div className="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303" className="text-lg hover:text-[#F97316]" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/KylianZamy74" className="text-lg hover:text-[#F97316]" target="_blank" rel="noopener noreferrer" title="GitHub">
-                        GitHub
-                    </a>
-                </div>
-            </div>
-
             <div className="text-center mt-16 text-sm text-gray-400">
                 <p>&copy; 2025 Kylian Zamy. All rights reserved.</p>
                 <div className="flex justify-center mt-4 space-x-8">
@@ -41,8 +47,7 @@ export default function Footer() {
                     <Link href="/cookies" className="hover:text-[#F97316]">Cookies</Link>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 
     )

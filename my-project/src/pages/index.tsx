@@ -44,7 +44,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <section className="lg:flex-row  min-h-1/3 lg:h-2/3 text-3xl flex justify-center items-center  flex-col fromBotToTop lg:px-24">
+                    <section className="lg:flex-row  lg:h-2/3 text-3xl flex justify-center items-center  flex-col fromBotToTop lg:px-24">
 
                         <div>
                             <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" />
@@ -120,13 +120,25 @@ export default function Home() {
                         </div>
                     </section>
                     <Article />
-                    <section>
+                    <section className="flex justify-center items-center flex-col">
                         <div className="trigger">
                             <h2 className="text-5xl w-full text-center py-24 ">{splitTextIntoWords(t("tailored.tailored"))}{splitTextIntoWords(t("tailored.web"))}<strong className="text-beige">{splitTextIntoWords(t("tailored.solutions"))}</strong></h2>
                         </div>
                         <div >
-                            <Image src="/Images/collab-2.svg" width={354} height={354} className="w-full m-auto" alt="Image tailored solutions"/>
+                            <Image src="/Images/collab-2.svg" width={354} height={354} className="w-full " alt="Image tailored solutions"/>
                         </div>
+                        <div className=" flex flex-col gap-y-4 mx-4 my-12">
+                            <p>{splitTextIntoWords(t("tailored.description"))}</p>
+                            <p><strong className="text-beige">{splitTextIntoWords(t("tailored.first-strong"))}</strong> - {splitTextIntoWords(t("tailored.first"))}</p>
+                            <p><strong className="text-beige">{splitTextIntoWords(t("tailored.second-strong"))}</strong> - {splitTextIntoWords(t("tailored.second"))}</p>
+                            <p><strong className="text-beige">{splitTextIntoWords(t("tailored.third-strong"))}</strong> - {splitTextIntoWords(t("tailored.third"))}</p>
+                            <p><strong className="text-beige">{splitTextIntoWords(t("tailored.fourth-strong"))}</strong> - {splitTextIntoWords(t("tailored.fourth"))}</p>
+                        </div>
+                        <button className="text-anthra p-2 border-2 border-beige text-xl">{splitTextIntoWords(t("tailored.learn"))}</button>
+                    </section>
+                    <section className="flex flex-col items-center mx-4 my-24">           
+                            <h2 className="text-6xl text-center pb-12">{splitTextIntoWords(t("build-section.build"))}<strong className="text-beige">{splitTextIntoWords(t("build-section.together"))}</strong></h2>
+                            <button className="text-anthra p-2 border-2 border-beige text-xl">{splitTextIntoWords(t("build-section.cta"))}</button>
                     </section>
                 </div>
                 <Footer />

@@ -32,8 +32,27 @@
       "tailored": {
         "tailored": "Tailored",
         "web": " web",
-        "solutions": "solutions"
+        "solutions": "solutions",
+        "description": "Every project is unique, and I strive to deliver web solutions that are both efficient and tailored to your goals. Whether it’s building a website, optimizing an existing platform, or providing technical guidance, I bring my expertise to help you succeed.",
+        "first-strong": "Website Development",
+        "first": "Development of modern, high-performance websites and web applications.",
+        "second-strong": "Custom Web Solutions ",
+        "second": "Tailor-made features designed to fit your specific requirements.",
+        "third-strong": "Performance & Optimization",
+        "third": "Enhancing speed, SEO, and user experience for a more effective website.",
+        "fourth-strong": "Consulting & Mentoring",
+        "fourth": "Strategic guidance to help you structure and grow your digital projects.",
+        "learn": "Learn More"
       },
+
+      "build-section": {
+        "build": "Let’s build something ",
+        "together": "Together",
+        "cta": "Get in touch"
+      },
+
+
+    
   
 
     "about": {
@@ -111,6 +130,26 @@
     },
     
     "footer": {
+        "social": {
+            "social": "Social",
+            "mail": "kzamy.74940@gmail.com",
+            "tel": "+33684722698",
+            "linkedIn": "LinkedIn",
+            "github": "Github"
+        },
+        "links": {
+            "links": "Links",
+            "home": "Home",
+            "services": "Services",
+            "contact": "Contact"
+        },
+        "services": {
+            "services": "Services",
+            "first": "Website Development",
+            "second": "Custom Web Solutions",
+            "third": "Performance & Optimization",
+            "fourth": "Consulting & Mentoring"
+        },
         "email": "Email",
         "phone": "Phone",
         "ready": "Ready to work together ?",
