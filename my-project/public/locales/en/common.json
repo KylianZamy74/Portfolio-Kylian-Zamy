@@ -132,9 +132,51 @@
                     "paragraph-4-strong-2": " scalability",
                     "paragraph-4-third": " issues."
                  }
-            }
-            
+            }    
+      },
+      "faq": {
+        "faq-1": {
+            "title": "What technologies do you use for web development?",
+            "paragraph": "I work with the latest web technologies such as React, Next.js, Node.js, Tailwind CSS, and many others to ensure modern, fast, and high-performance websites. I always choose the best tools for each specific project."
+        },
+        "faq-2": {
+            "title": "What types of projects do you accept?",
+            "paragraph": "I accept a wide range of projects, from simple showcase websites to e-commerce platforms, complex web applications, and custom solutions. Each project is unique, and I adapt to your specific needs."
+        },
+        "faq-3": {
+            "title": "How long does it take to develop a website?",
+            "paragraph": "The timeline depends on the complexity of the project. A simple showcase site can take a few weeks, while a more complex web application may take several months. I will provide you with a detailed schedule during the quote phase."
+        },
+        "faq-4": {
+            "title": "What is the cost of a project?",
+            "paragraph": "The cost varies depending on the project type and the features requested. I provide custom quotes based on your specific needs. Feel free to contact me to discuss your project and get an accurate estimate."
+        },
+        "faq-5": {
+            "title": "Do you provide support after the project is delivered?",
+            "paragraph": "Yes, I offer post-delivery support to ensure everything is working as expected. This includes fixing minor bugs and providing technical support. Ongoing maintenance services are also available."
+        },
+        "faq-6": {
+            "title": "Will my site be mobile-friendly?",
+            "paragraph": "Absolutely! All the websites and applications I develop are responsive, meaning they automatically adjust to all screen sizes, whether it’s on a smartphone, tablet, or desktop."
+        },
+        "faq-7": {
+            "title": "What is the process for working with you?",
+            "paragraph": "The process begins with a discussion to understand your needs and objectives. Afterward, we’ll define the project requirements, and I’ll start development. You’ll receive regular updates and can provide feedback at every stage."
+        },
+        "faq-8": {
+            "title": "Do I need to provide the design, or do you handle that as well?",
+            "paragraph": "I can work with designs you provide, or I can create a custom design for your site based on your preferences and best UX/UI practices. We’ll work together to define the visual approach that fits you."
+        },
+        "faq-9": {
+            "title": "When is the best time to start a project?",
+            "paragraph": "The best time to start is as soon as you have a clear vision of your project. Don’t wait too long, as digitizing a project takes time and may require adjustments along the way."
+        },
+        "faq-10": {
+            "title": "Do you offer SEO services?",
+            "paragraph": "Yes, SEO is an integral part of my services. I ensure that your website is optimized for search engines, so it’s visible on search results and drives qualified traffic."
+        }
       }
+
     },
     "projects": {
         "project_1": {
