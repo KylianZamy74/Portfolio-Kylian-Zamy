@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { AnimatePresence, motion } from "framer-motion";
-import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
 import { useTranslation } from "react-i18next";
 
 export default function Menu() {
-  const { closeModal, isOpen } = useModalStore();
-  const { goToProjects } = useDirectToProjectService();
+  const { closeModal, isOpen } = useModalStore();;
   const { t } = useTranslation();
 
  
@@ -27,9 +25,6 @@ export default function Menu() {
           >
             <div className="relative bg-[#828282] w-full h-full flex flex-col justify-center items-start space-y-6 text-3xl md:text-4xl lg:text-5xl font-bold px-6">
               <motion.li>
-                <button onClick={goToProjects}>{t("headers.projects")}</button>
-              </motion.li>
-              <motion.li>
                 <Link href={"/"} onClick={closeModal}>
                   {t("headers.home")}
                 </Link>
@@ -40,8 +35,8 @@ export default function Menu() {
                 </Link>
               </motion.li>
               <motion.li>
-                <Link href={"/about"} onClick={closeModal}>
-                  {t("headers.about")}
+                <Link href={"/services"} onClick={closeModal}>
+                  {t("headers.services")}
                 </Link>
               </motion.li>
               <motion.button onClick={closeModal} className="text-[#F97316]">

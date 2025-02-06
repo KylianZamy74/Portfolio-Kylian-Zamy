@@ -50,7 +50,7 @@ export default function Home() {
                             <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" />
                         </div>
 
-                        <h2 className="text-5xl font-semibold py-24 trigger m-auto">{splitTextIntoWords(t("presentation.who"))} <strong className="text-beige">{splitTextIntoWords(t("presentation.am"))}</strong> <strong className="text-beige">{splitTextIntoWords(t("presentation.i"))}</strong></h2>
+                        <h2 className="text-5xl font-semibold py-12 trigger m-auto">{splitTextIntoWords(t("presentation.who"))} <strong className="text-beige">{splitTextIntoWords(t("presentation.am"))}</strong> <strong className="text-beige">{splitTextIntoWords(t("presentation.i"))}</strong></h2>
                         <div className="trigger mx-8">
                             <p>{splitTextIntoWords(t("presentation.first"))}<strong className="text-beige">{splitTextIntoWords(t("presentation.second"))}.</strong></p>
                         </div>
@@ -122,7 +122,7 @@ export default function Home() {
                     <Article />
                     <section className="flex justify-center items-center flex-col">
                         <div className="trigger">
-                            <h2 className="text-5xl w-full text-center py-24 ">{splitTextIntoWords(t("tailored.tailored"))}{splitTextIntoWords(t("tailored.web"))}<strong className="text-beige">{splitTextIntoWords(t("tailored.solutions"))}</strong></h2>
+                            <h2 className="text-5xl w-full text-center py-12 ">{splitTextIntoWords(t("tailored.tailored"))}{splitTextIntoWords(t("tailored.web"))}<strong className="text-beige">{splitTextIntoWords(t("tailored.solutions"))}</strong></h2>
                         </div>
                         <div >
                             <Image src="/Images/collab-2.svg" width={354} height={354} className="w-full " alt="Image tailored solutions"/>

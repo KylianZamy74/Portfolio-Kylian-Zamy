@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useModalStore } from "@/store/ModalStore/useModalStore"; 
 import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
-import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -49,10 +48,7 @@ export default function Header() {
           <Link href="/" >{t("headers.home")}</Link>
         </li>
         <li>
-          <button onClick={goToProjects}>{t("headers.projects")}</button>
-        </li>
-        <li>
-          <Link href="/about" >{t("headers.about")}</Link>
+          <Link href="/services" >{t("headers.services")}</Link>
         </li>
         <li>
           <Link href="/contact" >{t("headers.contact")}</Link>

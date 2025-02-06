@@ -1,8 +1,7 @@
 {
     "headers": {
         "home": "Home",
-        "projects": "Projects",
-        "about": "About",
+        "services": "Services",
         "contact": "Contact"
     },
 
@@ -52,64 +51,86 @@
       },
 
 
-    
-  
-
-    "about": {
-        "about": "about ",
-        "me": "me"
-    },
-
-    "about_section": {
-        "catchPhrase": {
-            "first": "I'm glad you're interested in learning more about me.",
-            "second": "Let's",
-            "third": "explore",
-            "fourth": "what we can ",
-            "fifth": "create",
-            "sixth": "in collaboration below."
-        },
-
+    "services-section": {
+        "catch-phrase": "Tailor-made solutions adapted to your needs.",
+        "second-catch-phrase-title": "Every project is unique.",
+        "second-catch-phrase-subtitle": "Together, let's design efficient, elegant solutions tailored to your",
+        "second-catch-phrase-strong": " goals.",
         "presentation": {
-            "first": "I'm a young web developer from Annecy in France eager to",
-            "second": " grow",
-            "third": "through stimulating and meaningful collaborations with my clients.",
-            "fourth": "Together",
-            "fifth": "we will bring your website",
-            "sixth": " vision",
-            "seven": "to life, focusing on both design and functionality to ensure a seamless and engaging user experience."
+            
         },
 
         "services": {
             "title": "Let's",
             "title_1": "build..",
             "card_1": {
-                 "title": "Full stack",
-                 "strong_title": "web development",
-                 "first": "I build",
-                 "second": "complete websites",
-                 "third": "and web applications, handling both",
-                 "fourth": "frontend",
-                 "fifth": "and",
-                 "sixth": "backend",
-                 "seven": "to create seamless, functional digital experiences."               
+                 "title": "Website Development",
+                 "subtitle": "Creating Modern and High-Performance Websites",
+                 "first-paragraph": "Your website is the digital face of your business. I design custom websites that are fast, aesthetically pleasing, and intuitive whether it’s a simple showcase site or a more complex web application.",
+                 "second-subtitle": "Key features ",
+                 "second-paragraph": {
+                    "paragraph-1-strong": "Custom-built",
+                    "paragraph-1": "showcase websites and web applications.",
+                    "paragraph-2": "Modern design with",
+                    "paragraph-2-strong": "optimized UX.",
+                    "paragraph-3": "Development using",
+                    "paragraph-3-strong": "high-performance.",
+                    "paragraph-4": "technologies (React, Next.js, Node.js, etc.).",
+                    "paragraph-5": "Fully",
+                    "paragraph-5-strong": "responsive",
+                    "paragraph-5-second": "and",
+                    "paragraph-5-strong-2": "accessible",
+                    "paragraph-5-third": "on all devices."
+                 }
             },
             "card_2": {
-                "title": "E-commerce websites ",
-                "strong_title": "solutions",
-                "first": "I design and develop fully integrated",
-                "second": "e-commerce websites",
-                "third": "providing a smooth shopping experience from product showcase to secure checkout."
+                 "title": "Custom Web Solutions",
+                 "subtitle": "Features Adapted to Your Business",
+                 "first-paragraph": "Do you need a specific feature? Automation, API integration, or custom functionalities? I develop solutions tailored to your business, ensuring seamless integration into your ecosystem.",
+                 "second-subtitle": "Examples of Integrations",
+                 "second-paragraph" :{
+                    "paragraph-1": "Database and",
+                    "paragraph-1-strong": "API integration.",
+                    "paragraph-2": "Custom Tool.",
+                    "paragraph-3": "Development of specific applications."
+                 }
             },
             "card_3": {
-                "title": "Interactive & Custom",
-                "title_1": "Web Apps",
-                "first": "I create",
-                "second": "dynamic",
-                "third": "user-centric web apps, including custom online portfolios and ",
-                "fourth": "interactive platforms",
-                "fifth": "tailored to your unique needs"      
-        }
+                 "title": "Performance & Optimization (SEO & Speed Optimization)",
+                 "subtitle": "A Fast, Well-Ranked, and Optimized Website",
+                 "first-paragraph": "A slow or poorly optimized website can drive visitors away. I optimize your site to load quickly, rank well on Google, and provide the best possible user experience.",
+                 "second-subtitle": "Key features",
+                 "second-paragraph": {
+                    "paragraph-1-strong": "Performance",
+                    "paragraph-1": "improvements (speed, load time, optimized code).",
+                    "paragraph-2-strong": "SEO optimization",
+                    "paragraph-2": "for better search engine rankings.",
+                    "paragraph-3": "Seamless and smooth",
+                    "paragraph-3-strong": "user experience Mobile-friendly",
+                    "paragraph-3-second": "and",
+                    "paragraph-3-strong-2": "fully accessible"
+                 }
+            },
+            "card_4": {
+                 "title": "Consulting & Project Support (Technical Guidance & Assistance)",
+                 "subtitle": "Personalized Support for Your Digital Projects",
+                 "first-paragraph": "Navigating the web development world can be complex. I help you make the right technical choices, improve your project’s structure, and ensure your website or application is efficient, scalable, and well-designed.",
+                 "second-subtitle": "Offered Services",
+                 "second-paragraph": {
+                    "paragraph-1": "Technical audits and recommendations.",
+                    "paragraph-2":"Assistance in structuring and",
+                    "paragraph-2-strong": "improving web projects.",
+                    "paragraph-3": "Guidance on",
+                    "paragraph-3-strong": "best practices",
+                    "paragraph-3-second": "and technology choices.",
+                    "paragraph-4": "Support for",
+                    "paragraph-4-strong": "debugging, performance",
+                    "paragraph-4-second": "and",
+                    "paragraph-4-strong-2": "scalability",
+                    "paragraph-4-third": "issues."
+                 }
+            }
+            
       }
     },
     "projects": {
