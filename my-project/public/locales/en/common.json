@@ -31,7 +31,7 @@
       "tailored": {
         "tailored": "Tailored",
         "web": " web",
-        "solutions": "solutions",
+        "solutions": " solutions",
         "description": "Every project is unique, and I strive to deliver web solutions that are both efficient and tailored to your goals. Whether it’s building a website, optimizing an existing platform, or providing technical guidance, I bring my expertise to help you succeed.",
         "first-strong": "Website Development",
         "first": "Development of modern, high-performance websites and web applications.",
@@ -56,11 +56,14 @@
         "second-catch-phrase-title": "Every project is unique.",
         "second-catch-phrase-subtitle": "Together, let's design efficient, elegant solutions tailored to your",
         "second-catch-phrase-strong": " goals.",
+        "contact-button": "Contact me !",
         "presentation": {
             
         },
 
         "services": {
+            "main-title": "My",
+            "main-title-strong": " Services",
             "title": "Let's",
             "title_1": "build..",
             "card_1": {
@@ -69,18 +72,18 @@
                  "first-paragraph": "Your website is the digital face of your business. I design custom websites that are fast, aesthetically pleasing, and intuitive whether it’s a simple showcase site or a more complex web application.",
                  "second-subtitle": "Key features ",
                  "second-paragraph": {
-                    "paragraph-1-strong": "Custom-built",
+                    "paragraph-1-strong": "Custom-built ",
                     "paragraph-1": "showcase websites and web applications.",
                     "paragraph-2": "Modern design with",
-                    "paragraph-2-strong": "optimized UX.",
+                    "paragraph-2-strong": " optimized UX.",
                     "paragraph-3": "Development using",
-                    "paragraph-3-strong": "high-performance.",
+                    "paragraph-3-strong": " high-performance.",
                     "paragraph-4": "technologies (React, Next.js, Node.js, etc.).",
                     "paragraph-5": "Fully",
-                    "paragraph-5-strong": "responsive",
-                    "paragraph-5-second": "and",
-                    "paragraph-5-strong-2": "accessible",
-                    "paragraph-5-third": "on all devices."
+                    "paragraph-5-strong": " responsive",
+                    "paragraph-5-second": " and",
+                    "paragraph-5-strong-2": " accessible",
+                    "paragraph-5-third": " on all devices."
                  }
             },
             "card_2": {
@@ -90,7 +93,7 @@
                  "second-subtitle": "Examples of Integrations",
                  "second-paragraph" :{
                     "paragraph-1": "Database and",
-                    "paragraph-1-strong": "API integration.",
+                    "paragraph-1-strong": " API integration.",
                     "paragraph-2": "Custom Tool.",
                     "paragraph-3": "Development of specific applications."
                  }
@@ -102,13 +105,13 @@
                  "second-subtitle": "Key features",
                  "second-paragraph": {
                     "paragraph-1-strong": "Performance",
-                    "paragraph-1": "improvements (speed, load time, optimized code).",
-                    "paragraph-2-strong": "SEO optimization",
+                    "paragraph-1": " improvements (speed, load time, optimized code).",
+                    "paragraph-2-strong": "SEO optimization ",
                     "paragraph-2": "for better search engine rankings.",
                     "paragraph-3": "Seamless and smooth",
-                    "paragraph-3-strong": "user experience Mobile-friendly",
+                    "paragraph-3-strong": " user experience Mobile-friendly",
                     "paragraph-3-second": "and",
-                    "paragraph-3-strong-2": "fully accessible"
+                    "paragraph-3-strong-2": " fully accessible."
                  }
             },
             "card_4": {
@@ -119,15 +122,15 @@
                  "second-paragraph": {
                     "paragraph-1": "Technical audits and recommendations.",
                     "paragraph-2":"Assistance in structuring and",
-                    "paragraph-2-strong": "improving web projects.",
+                    "paragraph-2-strong": " improving web projects.",
                     "paragraph-3": "Guidance on",
-                    "paragraph-3-strong": "best practices",
-                    "paragraph-3-second": "and technology choices.",
+                    "paragraph-3-strong": " best practices",
+                    "paragraph-3-second": " and technology choices.",
                     "paragraph-4": "Support for",
-                    "paragraph-4-strong": "debugging, performance",
-                    "paragraph-4-second": "and",
-                    "paragraph-4-strong-2": "scalability",
-                    "paragraph-4-third": "issues."
+                    "paragraph-4-strong": " debugging, performance",
+                    "paragraph-4-second": " and",
+                    "paragraph-4-strong-2": " scalability",
+                    "paragraph-4-third": " issues."
                  }
             }
             

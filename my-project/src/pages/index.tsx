@@ -7,7 +7,6 @@ import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
 import MenuOpen from "@/components/Modal/OpenMenuOnScroll";
 import { useScrollService } from "@/services/animationServices/useScrollService";
-import Link from "next/link";
 import Image from "next/image";
 import { useAnimationGsapService, splitTextIntoChar, splitTextIntoWords } from "@/services/animationServices/useGsapAnimationService";
 import Footer from "@/components/Footer";
@@ -51,7 +50,7 @@ export default function Home() {
                         </div>
 
                         <h2 className="text-5xl font-semibold py-12 trigger m-auto">{splitTextIntoWords(t("presentation.who"))} <strong className="text-beige">{splitTextIntoWords(t("presentation.am"))}</strong> <strong className="text-beige">{splitTextIntoWords(t("presentation.i"))}</strong></h2>
-                        <div className="trigger mx-8">
+                        <div className="trigger mx-4">
                             <p>{splitTextIntoWords(t("presentation.first"))}<strong className="text-beige">{splitTextIntoWords(t("presentation.second"))}.</strong></p>
                         </div>
                         <div className="flex m-8 gap-x-2 border-t-2 border-b-2 py-4">
