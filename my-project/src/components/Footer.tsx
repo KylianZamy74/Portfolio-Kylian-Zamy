@@ -7,7 +7,7 @@ export default function Footer() {
     const { t } = useTranslation();
 
     return (
-        <footer className="bg-[#1E1E1E] text-white py-12 px-4">
+        <footer className="bg-sand text-white py-12 px-4">
             <div className="flex flex-wrap gap-4 justify-between">
                 <div>
                     <h2><strong>{t("footer.social.social")}</strong></h2>
@@ -39,7 +39,7 @@ export default function Footer() {
                     <h2>Annecy, France</h2>
                 </div>
             </div>
-            <div className="text-center mt-16 text-sm text-gray-400">
+            <div className="text-center mt-16 text-sm text-white">
                 <p>&copy; 2025 Kylian Zamy. All rights reserved.</p>
                 <div className="flex justify-center mt-4 space-x-8">
                     <Link href="/mentions-legales" className="hover:text-[#F97316]">{t("footer.legacy")}</Link>

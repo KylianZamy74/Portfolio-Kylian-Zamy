@@ -152,9 +152,15 @@ export default function Services() {
                     {t("services-section.faq.faq-10.paragraph")}
                     </AccordionContent>
                 </AccordionItem>
-                
                 </Accordion>
-
+                </section>
+                <section>
+                    <div>
+                        <Image src="/Images/talking.svg" width={402} height={402} alt='image of peoples talkings together'/>
+                    </div>
+                    <h2 className='text-5xl text-center my-12'>{t("services-section.talks.title")}<strong className='text-beige'>{t("services-section.talks.title-strong")}</strong></h2>
+                    <p className='mx-4 my-8'>{t("services-section.talks.description")}</p>
+                    <div className='w-full text-center'><button className="text-anthra p-2 border-2 border-beige text-xl mb-24">{splitTextIntoWords(t("services-section.contact-button"))}</button> </div>            
                 </section>
 
                 <Footer />

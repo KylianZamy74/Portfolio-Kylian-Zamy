@@ -27,10 +27,10 @@ export default function Project() {
     useScrollService();
     const router = useRouter();
     const { id } = router.query;
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const { project, fetchProject } = useGetProjectsStore();
-    
+
 
     useEffect(() => {
         if (id) {
@@ -67,40 +67,50 @@ export default function Project() {
     return (
         <>
             <Inner>
-                <h1 className="text-[#FDFAD5] w-full text-6xl text-center p-8">
-                    {t(`projects.project_${id}.title`)}
-                </h1>
-                <div className="flex justify-center h-1/2 py-12 mb-24">
-                    <Image
-                        src={project?.images[0].url ||""}
-                        alt="Project"
-                        width={800}
-                        height={600}
-                    />
-                </div>
-                <div className="bg-[#FDFAD5] min-h-screen pt-12 flex justify-center items-center md:px-12 lg:px-24 trigger .fromLeftToRight">
-                    
+                <div className="mt-24">
+                    <h1 className="text-anthra w-full text-6xl text-center p-8 text-anthra font-bold">
+                        {t(`projects.project_${id}.title`)}
+                    </h1>
+                    <p className="mx-4 text-xl text-anthra">{project?.short_description}</p>
+                    <div className="flex justify-center h-1/2 py-12">
+                        <Image
+                            src={project?.images[0].url || ""}
+                            alt="Project"
+                            width={345}
+                            height={150}
+                        />
+                    </div>
+                    <div className="pt-12 flex flex-col justify-center items-center md:px-12 lg:px-24 trigger fromLeftToRight mx-4">
+                        <h2 className="text-beige text-anthra text-3xl text-left w-full text-semibold">Description</h2>
+                        <div>
+                            <Image src="/Images/creative.svg" width={295} height={295} alt="creative peoples"></Image>
+                        </div>
                         <div>
                             {splitParagraph(
                                 t(`projects.project_${id}.description`) || "No description"
                             ).map((paragraph, index) => (
                                 <p
                                     key={index}
-                                    className="text-lg px-12 lg:text-3xl md:text-2xl"
+                                    className="text-lg lg:text-3xl md:text-2xl"
                                 >
                                     {paragraph}
                                 </p>
                             ))}
                         </div>
-                </div>
-                <section className="bg-[#51514F] md:hidden min-h-screen flex justify-center items-center flex-col m-12">
-                    <h2 className="text-3xl text-[#FDFAD5] pb-4">Pictures</h2>
-                    {project?.images.map((image, index) => (
-                    <div className="py-4" key={index}>
-                        <Image src={image.url} alt="Project" width={1200} height={800} />
                     </div>
-                    ))}
+                </div>
+                <section className="bg-[#fffff] md:hidden min-h-screen flex justify-center items-center flex-col mx-4 ">
+                <h2 className="text-3xl text-beige font-semibold pb-4 text-left w-full my-4 pt-4">Pictures</h2>
+                    <div className="bg-white p-8 rounded drop-shadow-600">
+                        
+                        {project?.images.map((image, index) => (
+                            <div className="py-4" key={index}>
+                                <Image src={image.url} alt="Project" width={1200} height={800} />
+                            </div>
+                        ))}
+                    </div>
                 </section>
+                
                 <section className="bg-[#51514F] hidden md:block h-[80vh]">
                     <div className="px-24 w-full text-left mt-32 text-3xl text-[#FDFAD5] ">
                         <h2>
@@ -133,36 +143,47 @@ export default function Project() {
                         </Swiper>
                     </motion.div>
                 </section>
-                <section className="min-h-[80vh] bg-[#FDFAD5] flex justify-between items-center flex-col text-center py-12 md:px-12 lg:px-24">
+                <section className="flex justify-between items-center flex-col text-center pt-12 md:px-12 lg:px-24">
                     <div className="w-full">
-                        <h2 className="font-bold  text-left px-12 text-3xl py-4">Enterprise</h2>
-                        <em>
+                        <h2 className="font-semibold text-left text-3xl py-4 text-beige mx-4">Enterprise</h2>
+                        
                             {splitParagraph(
                                 t(`projects.project_${id}.enterprise`) || "No enterprise"
                             ).map((paragraph, index) => (
                                 <p
                                     key={index}
-                                    className="text-lg px-12 lg:text-3xl md:text-2xl text-left"
+                                    className="text-lg mx-4 lg:text-3xl md:text-2xl text-left"
                                 >
                                     {paragraph}
                                 </p>
                             ))}
-                        </em>
+                        
                     </div>
-                    <div className="flex justify-between items-center w-full px-12">
-                        <div className="flex-col flex my-14 text-left  w-full">
-                            <h2 className="font-bold text-3xl py-4">Stack</h2>
+                    <div className="flex justify-between items-center w-full px-4">
+                        <div className="flex-col flex my-8 text-left w-full ">
+                            <h2 className="font-semibold text-3xl py-4 text-beige">Stack</h2>
                             {project?.stacks?.map((stack, index) => (
-                                <em key={index}>
-                                    <span className="text-lg lg:text-3xl md:text-2xl ">{stack.name}</span>
-                                </em>
+                                <ul key={index}>
+                                    <li className="text-lg lg:text-3xl md:text-2xl ">{stack.name}</li>
+                                </ul>
                             ))}
                         </div>
                         {project?.isLinkExist ? (
                             <div className="text-lg lg:text-3xl md:text-2xl border border-black p-4 rounded cursor-pointer hover:bg-black duration-300">
                                 <Link href={project.project_url || ""}><strong className=" text-[#F97316]">Github</strong></Link>
                             </div>
-                        ): (<span className="text-lg lg:text-3xl md:text-2xl">No Github :( </span>)} 
+                        ) : (<span className="text-lg lg:text-3xl md:text-2xl">No Github :( </span>)}
+                    </div>
+                </section>
+                <section>
+                    <div className="flex justify-center items-center mb-12">
+                        <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284}/>
+                    </div>
+                    <h2 className="text-beige text-3xl font-semibold mx-4 my-4">Conclusion</h2>
+                    <p className="mx-4">This project allowed me to explore powerful tools like Full Calendar and gain valuable experience in the web industry, working with a client-oriented approach. The technical challenges, such as finding solutions through documentation and forums, were a great opportunity to learn and develop new skills. Exploring new features constantly pushed me to improve, and while the bugs were frustrating, they helped me grow and refine my development abilities.</p>
+                    <div className="space-x-4 my-8 mx-4">
+                        <button className="text-anthra p-2 border-2 border-beige text-xl ">See another project</button>
+                        <button className="text-anthra p-2 border-2 border-beige text-xl ">Contact</button>
                     </div>
                 </section>
                 <Footer />

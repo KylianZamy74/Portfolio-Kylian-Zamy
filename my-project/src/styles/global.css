@@ -20,7 +20,7 @@ body, html {
     width: 100%; 
     font-family: 'Aileron', sans-serif;
     background-color: #f8f9fa;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png"); */
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     
 }
@@ -89,4 +89,6 @@ body, html {
     @apply bg-background text-foreground;
     }
 }
-
+.drop-shadow-600 {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+}

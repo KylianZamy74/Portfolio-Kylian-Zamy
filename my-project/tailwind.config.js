@@ -65,7 +65,8 @@ module.exports = {
   		},
   		backgroundColor: {
   			modal: 'rgba(0, 0, 0, 0.80)',
-  			whiteBroke: '#F8F9FA'
+  			whiteBroke: '#F8F9FA',
+			sand: "#B3947A"
   		},
   		border: {
   			beige: '#D9B08C'

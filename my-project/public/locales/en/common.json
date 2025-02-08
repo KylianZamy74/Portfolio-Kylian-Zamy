@@ -175,6 +175,11 @@
             "title": "Do you offer SEO services?",
             "paragraph": "Yes, SEO is an integral part of my services. I ensure that your website is optimized for search engines, so it’s visible on search results and drives qualified traffic."
         }
+      },
+      "talks": {
+        "title": "Let's",
+        "title-strong": "Talk !",
+        "description": "Whether you have a clear idea or just a desire to digitize your business, I am here to listen. Contact me and let's see together how we can bring your project to life!"
       }
 
     },
