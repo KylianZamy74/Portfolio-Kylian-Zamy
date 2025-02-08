@@ -128,7 +128,7 @@ export default function Home() {
                             <p><strong className="text-beige">{splitTextIntoWords(t("tailored.second-strong"))}</strong> - {splitTextIntoWords(t("tailored.second"))}</p>
                             <p><strong className="text-beige">{splitTextIntoWords(t("tailored.third-strong"))}</strong> - {splitTextIntoWords(t("tailored.third"))}</p>
                             <p><strong className="text-beige">{splitTextIntoWords(t("tailored.fourth-strong"))}</strong> - {splitTextIntoWords(t("tailored.fourth"))}</p>
-                            <button className="text-anthra p-2 lg:p-4 font-semibold border-2 border-beige text-xl lg:text-3xl w-1/3 ">{splitTextIntoWords(t("tailored.learn"))}</button>
+                            <button className="text-anthra p-2 lg:p-4 font-semibold border-2 border-beige text-xl lg:text-3xl my-4 w-full ">{splitTextIntoWords(t("tailored.learn"))}</button>
                         </div>
                         <div className=" hidden lg:block lg:space-y-12 lg:w-1/3">
                             <div className="trigger">

@@ -179,7 +179,8 @@
       "talks": {
         "title": "Let's",
         "title-strong": "Talk !",
-        "description": "Whether you have a clear idea or just a desire to digitize your business, I am here to listen. Contact me and let's see together how we can bring your project to life!"
+        "description-1": "Whether you have a clear idea or just a desire to digitize your business, I am here to listen. ",
+        "description-2": "Contact me and let's see together how we can bring your project to life !"
       }
 
     },
