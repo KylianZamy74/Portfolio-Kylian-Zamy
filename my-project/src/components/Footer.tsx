@@ -7,7 +7,7 @@ export default function Footer() {
     const { t } = useTranslation();
 
     return (
-        <footer className="bg-sand text-white py-12 px-4">
+        <footer className="bg-sand text-white py-12 px-4 md:px-32">
             <div className="flex flex-wrap gap-4 justify-between">
                 <div>
                     <h2><strong>{t("footer.social.social")}</strong></h2>

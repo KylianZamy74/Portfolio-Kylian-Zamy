@@ -24,8 +24,8 @@
     },
 
     "travail":{
-        "my-recent": "My Recent ",
-        "work": "Work"
+        "my-recent": "My Recent",
+        "work": "Projects"
       },
 
       "tailored": {
@@ -47,7 +47,7 @@
       "build-section": {
         "build": "Let’s build something ",
         "together": "Together",
-        "cta": "Get in touch"
+        "cta": "Get in touch !"
       },
 
 
