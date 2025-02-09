@@ -15,6 +15,8 @@ import MenuOpen from '@/components/Modal/OpenMenuOnScroll';
 import { motion } from "framer-motion";
 import { useAnimationGsapService, splitTextIntoWords } from '@/services/animationServices/useGsapAnimationService';
 import Footer from '@/components/Footer';
+import Button from '@/components/ui/button';
+import Magnet from '@/components/ui/magnetic';
 
 // Import de la fonction useTranslation
 import { useTranslation } from 'react-i18next';
@@ -279,7 +281,7 @@ export default function Services() {
                             <p className='lg:text-2xl'>{t("services-section.talks.description-1")}</p>
                             <p className='lg:text-2xl'>{t("services-section.talks.description-2")}</p>
                         </div>
-                        <div className='w-full text-center lg:text-2xl'><button className="text-anthra p-2 border-2 border-beige text-xl lg:p-4 mb-24 lg:text-3xl font-semibold">{splitTextIntoWords(t("services-section.contact-button"))}</button> </div>
+                        <div className='my-8'><Magnet><Button>{splitTextIntoWords(t("services-section.contact-button"))}</Button></Magnet> </div>
                     </section>
                 </div>
 

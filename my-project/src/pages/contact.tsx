@@ -10,6 +10,8 @@ import { useAnimationGsapService, splitTextIntoChar } from "@/services/animation
 import { useTranslation } from "react-i18next";
 import { useContactStore } from "@/store/ContactStore/useContactService";
 import { useRouter } from "next/router";
+import Button from "@/components/ui/button";
+import Magnet from "@/components/ui/magnetic";
 
 
 export default function Contact() {
@@ -75,9 +77,11 @@ export default function Contact() {
                                 <label className="text-2xl flex-col flex" htmlFor="message">{t("contact.message")}</label>
                                 <textarea className="bg-transparent w-full mt-4 p-2" name="message" placeholder={t("contact.message_placehold")} required onChange={(e) => setMessage(e.target.value)}/>
                             </div>
-                            <div className="mt-8  border-2 border-beige text-center rounded p-2  w-full md:w-full">
-                                <button type="submit">{t("contact.connect")}</button>
-                            </div>
+                            
+                                <div className="my-4">
+                                    <Magnet><Button type="submit">{t("contact.connect")}</Button></Magnet>
+                                </div>
+                           
                         </form>
                     </section>
                     <section className="text-anthra font-bold px-4">
@@ -102,8 +106,8 @@ export default function Contact() {
                         <span>Annecy, France</span>
                     </div>
                     <div className="flex-col flex">
-                        <button><a href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
-                        <button><a href="https://github.com/KylianZamy74">Github</a></button>
+                        <button><a className="font-semibold" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
+                        <button><a className="font-semibold" href="https://github.com/KylianZamy74">Github</a></button>
                     </div>
                 </footer>
             </Inner>

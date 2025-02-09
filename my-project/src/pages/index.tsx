@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/ui/button";
 import Link from "next/link";
+import Magnet from "@/components/ui/magnetic";
 
 
 
@@ -145,7 +146,9 @@ export default function Home() {
                     </section>
                     <section className="flex flex-col items-center mx-4 mb-24 ">           
                             <h2 className="text-6xl text-center my-12 lg:w-1/2">{splitTextIntoWords(t("build-section.build"))}<strong className="text-beige">{splitTextIntoWords(t("build-section.together"))}</strong></h2>
-                            <Link href="/contact"><Button>{splitTextIntoWords(t("build-section.cta"))}</Button></Link>
+                            <Magnet>
+                                <Link href="/contact"><Button>{splitTextIntoWords(t("build-section.cta"))}</Button></Link>
+                            </Magnet>
                     </section>
                 </div>
                 <Footer />
