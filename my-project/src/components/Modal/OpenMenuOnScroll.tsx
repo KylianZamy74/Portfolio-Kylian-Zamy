@@ -10,7 +10,7 @@ export default function MenuOpen() {
         
         <>
             <motion.button
-                className="fixed top-20 right-0 bg-[#51514F] p-4 rounded-full border border-[#FDFAD5] lg:hidden"
+                className="fixed top-20 right-0 bg-[#333333] p-4 rounded-full border border-[#D9B08C] lg:p-8 "
                 onClick={openModal}
                 initial={{ opacity: 0, scale: 1.5 }}
                 animate={{ opacity: 1, scale: 1 }}

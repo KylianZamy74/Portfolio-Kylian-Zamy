@@ -42,14 +42,12 @@ export default function Services() {
                             </div>
                             <div className='lg:flex flex items-center justify-center flex-col lg:w-2/3'>
                                 <h2 className='text-3xl  lg:text-5xl font-semibold text-anthra trigger'>{splitTextIntoWords(t("services-section.second-catch-phrase-title"))}<p>{splitTextIntoWords(t("services-section.second-catch-phrase-subtitle"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.second-catch-phrase-strong"))}</strong></p></h2>
-                                <div className='w-full text-left mt-2 lg:my-8 '>
-                                    <button className="text-anthra p-2 border-2 border-beige text-xl lg:text-3xl lg:p-4 font-semibold ">{splitTextIntoWords(t("services-section.contact-button"))}</button>
-                                </div>
+
                             </div>
                         </div>
                     </section>
                     <section className="mt-12 space-y-12 mx-4">
-                        <h2 className='text-5xl lg:text-left mt-8 mb-12 font-semibold text-center'>{splitTextIntoWords(t("services-section.services.main-title"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.services.main-title-strong"))}</strong>  </h2>
+                        <h2 className='text-5xl lg:text-left mb-12 font-semibold text-center'>{splitTextIntoWords(t("services-section.services.main-title"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.services.main-title-strong"))}</strong>  </h2>
                         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-8">
                             <article className="border-b-2 lg:border-b-0 lg:border-r-2 pr-8 pb-12 pt-8 mt-8">
                                 <h3 className="text-beige text-anthra text-3xl font-bold">

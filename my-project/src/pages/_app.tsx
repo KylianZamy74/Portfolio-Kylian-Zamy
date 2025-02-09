@@ -12,6 +12,7 @@ import '../styles/editswiper.scss';
 import '../styles/inner.scss'
 
 
+
 function MyApp({ Component, pageProps, router }: AppProps) {
 
   useEffect(() => {

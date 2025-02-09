@@ -14,7 +14,7 @@ export default function Menu() {
         {isOpen && (
           <motion.div
             key="menu-modal"
-            className="fixed top-0 right-0 w-full h-full list-none text-[#FDFAD5] bg-modal flex flex-col justify-center items-start space-y-6"
+            className="fixed top-0 right-0 w-full h-full list-none text-white bg-modal flex flex-col justify-center items-start space-y-6"
             initial={{ opacity: 0, width: "0%" }}
             animate={{ opacity: 1, width: "100%" }}
             exit={{ opacity: 0, width: "0%"}}
@@ -23,7 +23,7 @@ export default function Menu() {
               ease: [0.48,-0.3,.23,1.06]
             }}
           >
-            <div className="relative bg-[#828282] w-full h-full flex flex-col justify-center items-start space-y-6 text-3xl md:text-4xl lg:text-5xl font-bold px-6">
+            <div className="relative bg-sand w-full h-full flex flex-col justify-center items-start lg:items-center  space-y-6 text-3xl md:text-4xl lg:text-5xl font-bold px-6">
               <motion.li>
                 <Link href={"/"} onClick={closeModal}>
                   {t("headers.home")}
@@ -39,7 +39,7 @@ export default function Menu() {
                   {t("headers.services")}
                 </Link>
               </motion.li>
-              <motion.button onClick={closeModal} className="text-[#F97316]">
+              <motion.button onClick={closeModal} className="text-anthra">
                 Close
               </motion.button>
             </div>

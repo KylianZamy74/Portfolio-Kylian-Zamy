@@ -11,6 +11,10 @@ import Image from "next/image";
 import { useAnimationGsapService, splitTextIntoChar, splitTextIntoWords } from "@/services/animationServices/useGsapAnimationService";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
+import Button from "@/components/ui/button";
+import Link from "next/link";
+
+
 
 
 export default function Home() {
@@ -38,9 +42,9 @@ export default function Home() {
                             <span>{splitTextIntoWords(t("slogan.first"))}</span>
                             <span className="text-beige"> {splitTextIntoWords(t("slogan.forward"))}</span>
                         </p>
-                        <div className="space-x-4 space-y-8">
-                            <button className="text-anthra p-2 lg:p-4 border-2 border-beige text-xl font-semibold lg:text-3xl">{splitTextIntoWords(t("slogan.discover"))}</button>
-                            <button className="text-anthra p-2 lg:p-4 font-semibold  border-2 border-beige text-xl lg:text-3xl">{splitTextIntoWords(t("slogan.services"))}</button>
+                        <div className=" flex justify-end space-x-4 my-8">
+                            <Button>{splitTextIntoWords(t("slogan.discover"))}</Button>
+                            <Link href="/services"><Button>{splitTextIntoWords(t("slogan.services"))}</Button></Link>
                         </div>
                     </div>
                 </section>
@@ -128,7 +132,7 @@ export default function Home() {
                             <p><strong className="text-beige">{splitTextIntoWords(t("tailored.second-strong"))}</strong> - {splitTextIntoWords(t("tailored.second"))}</p>
                             <p><strong className="text-beige">{splitTextIntoWords(t("tailored.third-strong"))}</strong> - {splitTextIntoWords(t("tailored.third"))}</p>
                             <p><strong className="text-beige">{splitTextIntoWords(t("tailored.fourth-strong"))}</strong> - {splitTextIntoWords(t("tailored.fourth"))}</p>
-                            <button className="text-anthra p-2 lg:p-4 font-semibold border-2 border-beige text-xl lg:text-3xl my-4 w-full ">{splitTextIntoWords(t("tailored.learn"))}</button>
+                            <Link href="/services"><Button>{splitTextIntoWords(t("tailored.learn"))}</Button></Link>
                         </div>
                         <div className=" hidden lg:block lg:space-y-12 lg:w-1/3">
                             <div className="trigger">
@@ -141,7 +145,7 @@ export default function Home() {
                     </section>
                     <section className="flex flex-col items-center mx-4 mb-24 ">           
                             <h2 className="text-6xl text-center my-12 lg:w-1/2">{splitTextIntoWords(t("build-section.build"))}<strong className="text-beige">{splitTextIntoWords(t("build-section.together"))}</strong></h2>
-                            <button className="text-anthra p-4 border-2 lg:text-3xl border-beige text-xl font-semibold">{splitTextIntoWords(t("build-section.cta"))}</button>
+                            <Link href="/contact"><Button>{splitTextIntoWords(t("build-section.cta"))}</Button></Link>
                     </section>
                 </div>
                 <Footer />
