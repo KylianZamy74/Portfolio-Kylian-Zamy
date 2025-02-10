@@ -11,7 +11,6 @@ import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const { openModal } = useModalStore(); // Hook pour ouvrir la modale
-  const { goToProjects } = useDirectToProjectService();
   const { locale, locales, asPath, push } = useRouter();
   const {t} = useTranslation();
 
@@ -32,8 +31,8 @@ export default function Header() {
       <div className="flex items-center gap-4">
       
         <Link href="/" >
-          <span className="text-anthra font-bold text-4xl">Kylian </span>
-          <strong className="text-beige text-4xl uppercase">zamy</strong>
+          <span className="text-anthra font-bold text-4xl">Kik<span className="text-beige">ode</span></span>
+          
         </Link>
       </div>
 

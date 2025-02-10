@@ -50,65 +50,67 @@ export default function Contact() {
         <>
            
             <Inner>
-                <div className="flex-col flex justify-center h-screen p-4 intro">
-                    <h1 className="text-anthra text-6xl font-semibold">{splitTextIntoChar(t("contact.title"))} <strong className="text-beige">{splitTextIntoChar(t("contact.title_1"))}</strong></h1>
-                </div>
-                
-                <div className="lg:flex md:flex w-full justify-between space-y-12 md:px-24 lg:px-24">
-                    <section className="px-4 w-2/3">
-                        <form onSubmit={handlesubmit} className="text-anthra font-bold">
-                            <div>
-                                <label  className="text-2xl flex-col flex" htmlFor="name">{t("contact.name")}</label>
-                                <input className="bg-transparent mt-4 p-2 w-full" type="text"name="name" placeholder={t("contact.name_placehold")} required onChange={(e) => setName(e.target.value)} />
-                            </div>
-                            <div className="mt-8">
-                                <label  className="text-2xl flex-col flex" htmlFor="email">{t("contact.email")}</label>
-                                <input className="bg-transparent mt-4 p-2 w-full" type="email"name="email" placeholder={t("contact.email_placehold")} required onChange={(e) => setEmail(e.target.value)}/>
-                            </div>
-                            <div className="mt-8">
-                                <label  className="text-2xl flex-col flex" htmlFor="subject">{t("contact.subject")}</label>
-                                <input className="bg-transparent mt-4 p-2 w-full" type="text"name="subject" placeholder={t("contact.subject_placehold")} required onChange={(e) => setSubject(e.target.value)}/>
-                            </div>
-                            <div className="mt-8">
-                                <label className="text-2xl flex-col flex" htmlFor="number">{t("contact.phone")}</label>
-                                <input  className="bg-transparent mt-4 p-2 w-full" type="tel"name="number" placeholder={t("contact.phone_placehold")} onChange={(e) => setPhone(e.target.value)}/>
-                            </div>
-                            <div className="mt-8">
-                                <label className="text-2xl flex-col flex" htmlFor="message">{t("contact.message")}</label>
-                                <textarea className="bg-transparent w-full mt-4 p-2" name="message" placeholder={t("contact.message_placehold")} required onChange={(e) => setMessage(e.target.value)}/>
-                            </div>
-                            
-                                <div className="my-4">
-                                    <Magnet><Button type="submit">{t("contact.connect")}</Button></Magnet>
+                <div className="lg:px-24 px-12">
+                    <div className="flex-col flex justify-center h-screen p-4 intro">
+                        <h1 className="text-anthra text-6xl font-semibold">{splitTextIntoChar(t("contact.title"))} <strong className="text-beige">{splitTextIntoChar(t("contact.title_1"))}</strong></h1>
+                    </div>
+                    
+                    <div className="lg:flex md:flex w-full justify-between space-y-12 md:px-24 lg:px-24">
+                        <section className="px-4 w-2/3">
+                            <form onSubmit={handlesubmit} className="text-anthra font-bold">
+                                <div>
+                                    <label  className="text-2xl flex-col flex" htmlFor="name">{t("contact.name")}</label>
+                                    <input className="bg-transparent mt-4 p-2 w-full" type="text"name="name" placeholder={t("contact.name_placehold")} required onChange={(e) => setName(e.target.value)} />
                                 </div>
-                           
-                        </form>
-                    </section>
-                    <section className="text-anthra font-bold px-4">
-                        <div className="flex-col flex text-lg">
-                            <h3 className="text-anthra mb-2 font-bold">Informations</h3>
-                            <div className="w-full flex-col flex justify">
-                                <button className="text-left"><a href="mailto:Kylian.74940@gmail.com">Kzamy.74940@gmail.com</a></button>
-                                <button className="text-left"><a href="tel:+33684722698">+33684722698</a></button>
+                                <div className="mt-8">
+                                    <label  className="text-2xl flex-col flex" htmlFor="email">{t("contact.email")}</label>
+                                    <input className="bg-transparent mt-4 p-2 w-full" type="email"name="email" placeholder={t("contact.email_placehold")} required onChange={(e) => setEmail(e.target.value)}/>
+                                </div>
+                                <div className="mt-8">
+                                    <label  className="text-2xl flex-col flex" htmlFor="subject">{t("contact.subject")}</label>
+                                    <input className="bg-transparent mt-4 p-2 w-full" type="text"name="subject" placeholder={t("contact.subject_placehold")} required onChange={(e) => setSubject(e.target.value)}/>
+                                </div>
+                                <div className="mt-8">
+                                    <label className="text-2xl flex-col flex" htmlFor="number">{t("contact.phone")}</label>
+                                    <input  className="bg-transparent mt-4 p-2 w-full" type="tel"name="number" placeholder={t("contact.phone_placehold")} onChange={(e) => setPhone(e.target.value)}/>
+                                </div>
+                                <div className="mt-8">
+                                    <label className="text-2xl flex-col flex" htmlFor="message">{t("contact.message")}</label>
+                                    <textarea className="bg-transparent w-full mt-4 p-2" name="message" placeholder={t("contact.message_placehold")} required onChange={(e) => setMessage(e.target.value)}/>
+                                </div>
+                    
+                                    <div className="my-4">
+                                        <Magnet><Button type="submit">{t("contact.connect")}</Button></Magnet>
+                                    </div>
+                    
+                            </form>
+                        </section>
+                        <section className="text-anthra font-bold px-4">
+                            <div className="flex-col flex text-lg">
+                                <h3 className="text-anthra mb-2 font-bold">Informations</h3>
+                                <div className="w-full flex-col flex justify">
+                                    <button className="text-left"><a href="mailto:Kylian.74940@gmail.com">Kzamy.74940@gmail.com</a></button>
+                                    <button className="text-left"><a href="tel:+33684722698">+33684722698</a></button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="mt-8 text-lg">
-                            <h3 className="text-anthra mb-2 font-bold">{t("contact.links")}</h3>
-                            <div className="flex-col flex">
-                                <button className="text-left"><a className="text-left" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
-                                <button className="text-left"><a  href="https://github.com/KylianZamy74">Github</a></button>
+                            <div className="mt-8 text-lg">
+                                <h3 className="text-anthra mb-2 font-bold">{t("contact.links")}</h3>
+                                <div className="flex-col flex">
+                                    <button className="text-left"><a className="text-left" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
+                                    <button className="text-left"><a  href="https://github.com/KylianZamy74">Github</a></button>
+                                </div>
                             </div>
+                        </section>
+                    </div>
+                    </div>
+                    <footer className="flex justify-between text-anthra p-4 pt-8 ">
+                        <div className="mt-6">
+                            <span>Annecy, France</span>
                         </div>
-                    </section>
-                </div>
-                <footer className="flex justify-between text-anthra p-4 pt-8 ">
-                    <div className="mt-6">
-                        <span>Annecy, France</span>
-                    </div>
-                    <div className="flex-col flex">
-                        <button><a className="font-semibold" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
-                        <button><a className="font-semibold" href="https://github.com/KylianZamy74">Github</a></button>
-                    </div>
+                        <div className="flex-col flex">
+                            <button><a className="font-semibold" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
+                            <button><a className="font-semibold" href="https://github.com/KylianZamy74">Github</a></button>
+                        </div>
                 </footer>
             </Inner>
             {isOpen && <Menu />}

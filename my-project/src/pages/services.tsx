@@ -33,7 +33,7 @@ export default function Services() {
     return (
         <>
             <Inner>
-                <div className='lg:mx-12'>
+                <div className='lg:px-24 px-12'>
                     <section className='flex flex-col justify-center gap-y-4 p-4 my-12 '>
                         <div className='lg:w-3/5 trigger lg:my-32'>
                             <h1 className='text-6xl font-bold text-anthra'>{splitTextIntoWords(t("services-section.catch-phrase"))}</h1>

@@ -41,10 +41,9 @@ export default function Footer() {
             </div>
             <div className="text-center mt-16 text-sm text-white">
                 <p>&copy; 2025 Kylian Zamy. All rights reserved.</p>
+                <p>Siret : 94069262700018</p>
                 <div className="flex justify-center mt-4 space-x-8">
-                    <Link href="/mentions-legales" className="hover:text-[#F97316]">{t("footer.legacy")}</Link>
-                    <Link href="/politique-confidentialite" className="hover:text-[#F97316]">{t("footer.policy")}</Link>
-                    <Link href="/cookies" className="hover:text-[#F97316]">Cookies</Link>
+                    <Link href="/politique-confidentialite">{t("footer.policy")}</Link>             
                 </div>
             </div>
         </footer>

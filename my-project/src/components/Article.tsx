@@ -44,6 +44,7 @@ export default function Article() {
             transition: { duration: 0.2 },
         },
     };
+   
 
     return (
         <section
