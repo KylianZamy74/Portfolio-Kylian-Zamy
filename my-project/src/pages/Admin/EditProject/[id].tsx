@@ -96,7 +96,7 @@ export default function EditProject() {
     return (
         <ProtectedRoutes requiredRole="admin">
             <Header />
-            <div className="max-w-3xl mx-auto p-12 text-[#FDFAD5]">
+            <div className="max-w-3xl mx-auto p-12 text-anthra">
                 <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
                     <div>
                         <label htmlFor="title" className="block text-sm font-medium">Titre du projet</label>
@@ -112,7 +112,7 @@ export default function EditProject() {
                     </div>
 
                     <div>
-                        <label htmlFor="description" className="block text-sm font-medium text-[#FDFAD]">Description du projet</label>
+                        <label htmlFor="description" className="block text-sm font-medium text-anthra">Description du projet</label>
                         <textarea
                             name="description"
                             id="description"
@@ -125,7 +125,7 @@ export default function EditProject() {
                     </div>
 
                     <div>
-                        <label htmlFor="enterprise" className="block text-sm font-medium text-[#FDFAD]">Entreprise affiliée</label>
+                        <label htmlFor="enterprise" className="block text-sm font-medium text-anthra">Entreprise affiliée</label>
                         <textarea
                             name="enterprise"
                             id="enterprise"
@@ -138,7 +138,7 @@ export default function EditProject() {
                     </div>
 
                     <div>
-                        <label htmlFor="role_date" className="block text-sm font-medium text-[#FDFAD]">Rôle et date du projet</label>
+                        <label htmlFor="role_date" className="block text-sm font-medium text-anthra">Rôle et date du projet</label>
                         <input
                             type="text"
                             id="role_date"
@@ -151,7 +151,7 @@ export default function EditProject() {
                     </div>
 
                     <div>
-                        <label htmlFor="stack" className="block text-sm font-medium text-[#FDFAD]">Stack technique utilisé</label>
+                        <label htmlFor="stack" className="block text-sm font-medium text-anthra">Stack technique utilisé</label>
                         <select
                             id="stack"
                             name="stack"
@@ -186,7 +186,7 @@ export default function EditProject() {
                     </div>
 
                     <div>
-                        <label htmlFor="images" className="block text-sm font-medium text-[#FDFAD]">Images du projet (5 max)</label>
+                        <label htmlFor="images" className="block text-sm font-medium text-anthra">Images du projet (5 max)</label>
                         <div className="mt-2 flex items-center space-x-4">
                             <input
                                 type="file"
@@ -199,7 +199,7 @@ export default function EditProject() {
                             />
                             <label
                                 htmlFor="images"
-                                className="cursor-pointer px-4 py-2 bg-[#F97316] text-white font-medium rounded-md shadow-sm hover:bg-orange-600"
+                                className="cursor-pointer px-4 py-2 bg-sand text-white font-medium rounded-md shadow-sm hover:bg-orange-600"
                             >
                                 Charger des images
                             </label>
@@ -255,7 +255,7 @@ export default function EditProject() {
                     <div className="pt-4">
                         <button 
                             type="submit"
-                            className="w-full py-3 px-6 bg-[#F97316] text-white font-medium rounded-md shadow-sm hover:bg-orange-600 focus:ring-2 focus:ring-[#F97316] focus:ring-offset-2"
+                            className="w-full py-3 px-6 bg-sand text-white font-medium rounded-md shadow-sm hover:bg-orange-600 focus:ring-2 focus:ring-[#F97316] focus:ring-offset-2"
                         >
                             Mettre à jour le projet
                         </button>
