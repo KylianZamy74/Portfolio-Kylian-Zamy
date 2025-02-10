@@ -74,7 +74,7 @@ export default function Project() {
                         <div className="lg:flex lg:w-full space-x-12">
                             <div className="lg:w-1/3">
                                 <h1 className="text-anthra w-full text-6xl text-center p-8 text-anthra font-bold">
-                                    {t(`projects.project_${id}.title`)}
+                                    {t(`projects.project_${id}.title`) || `${project?.title}`} 
                                 </h1>
                                 <div className="flex justify-center pt-12">
                                     <Image
@@ -91,16 +91,16 @@ export default function Project() {
                         <div className="pt-12 flex flex-col justify-center items-center trigger fromLeftToRight mx-4">
                             <h2 className="text-5xl lg:my-8 lg:text-left text-beige text-anthra text-3xl text-left w-full text-semibold text-center">Description</h2>
                             <div className="lg:flex lg:w-full">
-                                <div className="lg:hidden block flex items-center justify-center">
+                                <div className="lg:hidden block flex items-center justify-center ">
                                     <Image src="/Images/creative.svg" width={295} height={295} alt="creative people"></Image>
                                 </div>
                                 <div className="lg:w-1/2">
                                     {splitParagraph(
-                                        t(`projects.project_${id}.description`) || "No description"
+                                        t(`projects.project_${id}.description`) || `${project?.short_description}`
                                     ).map((paragraph, index) => (
                                         <p
                                             key={index}
-                                            className="text-lg lg:text-2xl md:text-2xl"
+                                            className="text-lg text-anthra lg:text-2xl md:text-2xl"
                                         >
                                             {paragraph}
                                         </p>
@@ -165,7 +165,7 @@ export default function Project() {
                                 ).map((paragraph, index) => (
                                     <p
                                         key={index}
-                                        className="text-xl md:text-2xl lg:text-2xl text-left"
+                                        className="text-xl md:text-2xl lg:text-2xl text-left text-anthra"
                                     >
                                         {paragraph}
                                     </p>
@@ -174,10 +174,10 @@ export default function Project() {
 
                             <div className="flex justify-between items-center w-full">
                                 <div className="flex-col flex my-8 text-left w-full ">
-                                    <h2 className="font-semibold text-3xl lg:text-5xl py-4 text-beige">Stack</h2>
+                                    <h2 className="font-semibold text-anthra text-3xl lg:text-5xl py-4 text-beige">Stack</h2>
                                     {project?.stacks?.map((stack, index) => (
                                         <ul key={index}>
-                                            <li className="text-lg lg:text-2xl md:text-2xl ">{stack.name}</li>
+                                            <li className="text-lg lg:text-2xl md:text-2xl text-anthra ">{stack.name}</li>
                                         </ul>
                                     ))}
                                 </div>
@@ -185,25 +185,26 @@ export default function Project() {
                                     <div>
                                         <Link href={project.project_url || ""}><Magnet><Button>Github</Button></Magnet></Link>
                                     </div>
-                                ) : (<span className="text-lg lg:text-3xl md:text-2xl">No Github :( </span>)}
+                                ) : (<span className="text-lg lg:text-3xl md:text-2xl text-anthra">No Github :( </span>)}
                             </div>
                         </div>
                     </section>
-                    <section>
-                        <div className="lg:hidden block flex justify-center items-center mb-12">
-                            <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} />
-                        </div>
-                        <div>
-                        <h2 className="text-beige text-3xl font-semibold mx-4 my-4">Conclusion</h2>
-                            <p className="mx-4">This project allowed me to explore powerful tools like Full Calendar and gain valuable experience in the web industry, working with a client-oriented approach. The technical challenges, such as finding solutions through documentation and forums, were a great opportunity to learn and develop new skills. Exploring new features constantly pushed me to improve, and while the bugs were frustrating, they helped me grow and refine my development abilities.</p>
-                            <div className="space-x-4 my-8 mx-4">
-                                <button className="text-anthra p-2 border-2 border-beige text-xl ">See another project</button>
-                                <button className="text-anthra p-2 border-2 border-beige text-xl ">Contact</button>
+                    <section className="my-8">
+                        <div className="lg:flex">
+                            <div className=" flex justify-center items-center mb-12 lg:w-1/2">
+                                <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} />
                             </div>
+                                <div className="lg:w-1/2">
+                                    <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 text-right">Conclusion</h2>
+                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-right">{project?.conclusion}</p>
+                                    <div className="space-x-4 my-8 flex">
+                                        <Button>See another project</Button>
+                                        <Magnet><Button>Contact</Button></Magnet>
+                                    </div>
+                                </div>
+                            
                         </div>
-                        <div className="hidden lg:block flex justify-center items-center mb-12">
-                            <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} />
-                        </div>
+                        
                     </section>
                 </div>
                 <Footer />

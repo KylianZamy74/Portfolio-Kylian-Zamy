@@ -20,8 +20,7 @@ body, html {
     width: 100%; 
     font-family: 'Aileron', sans-serif;
     background-color: #f8f9fa;
-    
-    
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
 @layer base {
