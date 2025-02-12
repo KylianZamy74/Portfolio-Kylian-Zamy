@@ -20,6 +20,7 @@ export default function Menu() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
+          onClick={closeModal}
         >
           
             <motion.div
@@ -32,6 +33,7 @@ export default function Menu() {
                 duration: 1.5,
                 ease: [0.48, -0.3, 0.23, 1.06]
               }}
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="relative w-full h-full flex flex-col justify-center items-start lg:items-center space-y-6 text-3xl md:text-4xl lg:text-5xl font-bold px-6">
                 <motion.li>
