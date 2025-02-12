@@ -54,7 +54,7 @@
       "catch-phrase": "Solutions sur mesure adaptées à vos besoins.",
       "second-catch-phrase-title": "Chaque projet est unique.",
       "second-catch-phrase-subtitle": "Ensemble, concevons des solutions efficaces et élégantes, adaptées à vos",
-      "second-catch-phrase-strong": "objectifs.",
+      "second-catch-phrase-strong": " objectifs.",
       "contact-button": "Contactez-moi !",
       "presentation": {},
 
@@ -181,13 +181,18 @@
     }
 },
 "projects": {
+    
+    "company-title" : "Entreprise / Organisme",
+    "pictures": "Images",
     "project_1": {
         "title": "Cinédelices",
         "description": "Cette application web interactive permet aux utilisateurs d'explorer un vaste catalogue de films et séries tout en découvrant des recettes inspirées des plats vus à l'écran. Les visiteurs peuvent également ajouter leurs propres recettes liées à leurs films favoris, rendant l'expérience encore plus immersive et personnalisée. Avec une interface intuitive et un design responsive, la navigation est fluide sur tous les appareils, offrant ainsi une expérience agréable et engageante.",
+        
         "enterprise": "Ce projet collaboratif a été réalisé dans le cadre de notre programme de formation en préparation de l'examen final. Ses objectifs principaux étaient d'évaluer nos forces et faiblesses individuelles, d'améliorer nos compétences techniques et de renforcer notre esprit d'équipe et de communication. Il a aussi servi d'opportunité pour consolider notre collaboration et nos capacités de résolution de problèmes dans des conditions réelles.",
+       
         "role_date": "Design, Développement & Projet Collaboratif - 2024",
         "short-description": "Une application web interactive permettant aux utilisateurs d'explorer des films et des séries tout en découvrant et en partageant des recettes inspirées des plats à l'écran.",
-      "conclusion": "Ce projet a été une expérience d'apprentissage précieuse, nous permettant d'appliquer nos compétences techniques tout en renforçant notre esprit d'équipe et nos capacités de résolution de problèmes dans un contexte réel. Tout au long du processus de développement, nous avons rencontré plusieurs défis, mais notre capacité à nous adapter et à trouver des solutions nous a permis de les surmonter. En créant une plateforme interactive qui mêle cinéma et cuisine, nous avons non seulement affiné notre expertise, mais aussi favorisé la créativité et la collaboration. Cette initiative a été déterminante dans notre préparation pour l'examen final et pour relever les défis professionnels futurs."
+        "conclusion": "Ce projet a été une expérience d'apprentissage précieuse, nous permettant d'appliquer nos compétences techniques tout en renforçant notre esprit d'équipe et nos capacités de résolution de problèmes dans un contexte réel. Tout au long du processus de développement, nous avons rencontré plusieurs défis, mais notre capacité à nous adapter et à trouver des solutions nous a permis de les surmonter. En créant une plateforme interactive qui mêle cinéma et cuisine, nous avons non seulement affiné notre expertise, mais aussi favorisé la créativité et la collaboration. Cette initiative a été déterminante dans notre préparation pour l'examen final et pour relever les défis professionnels futurs."
 
     },
     "project_2": {

@@ -185,6 +185,9 @@
 
     },
     "projects": {
+
+        "company-title" : "Company / Organization",
+        "pictures": "Pictures",
         "project_1": {
             "title": "Cinédelices",
             "description": "This interactive web application allows users to explore a vast catalog of movies and TV shows while discovering recipes inspired by dishes seen on screen. Visitors can also add their own recipes linked to their favorite films, making the experience even more immersive and personalized. With an intuitive interface and responsive design, navigation is seamless across all devices, providing an enjoyable and engaging discovery experience.",
@@ -197,14 +200,11 @@
         "project_2": {
             "title": "Séquentiel",
             "description": "This project is an interactive calendar designed for developers, allowing them to retrieve their GitLab issues and organize them visually through an intuitive interface. Users can drag and drop their tasks into the calendar, accurately track the time spent on each project or issue, and create custom time blocks that can be assigned to developers as well as specific issues. A daily summary tab provides an overview of completed tasks, with the option to validate workdays. A potential improvement could involve generating a detailed report showing the time spent on each project and task, further enhancing productivity tracking and management.",
-
+            
             "enterprise": "With over 30 years of experience, this company creates innovative and tailored solutions for SMEs, large enterprises, and associations. During my internship, I observed their focus on client needs, delivering effective tools while maintaining strong, professional relationships.",
-
             "role_date": "Implementation & Full Development - 2024",
-
             "short-description": "This project is an interactive calendar for developers, helping them organize their GitLab tickets and track the time spent on each task. It provides an intuitive interface to manage tasks and generate detailed productivity reports.",
             "conclusion": "This project allowed me to explore powerful tools like Full Calendar and gain valuable experience in the web industry, working with a client-oriented approach. The technical challenges, such as finding solutions through documentation and forums, were a great opportunity to learn and develop new skills. Exploring new features constantly pushed me to improve, and while the bugs were frustrating, they helped me grow and refine my development abilities."
-           
     },
     
     "footer": {

@@ -86,7 +86,7 @@ export default function Project() {
                                     />
                                 </div>
                             </div>
-                            <p className="mx-4 my-8 text-xl text-anthra lg:w-2/3 lg:mt-44 font-semibold lg:text-3xl">{t(`projetcs.project_${id}.short-description`) ||project?.short_description}</p>
+                            <p className="mx-4 my-8 text-xl text-anthra lg:w-2/3 lg:mt-44 font-semibold lg:text-3xl">{t(`projects.project_${id}.short-description`) ||project?.short_description}</p>
                         </div>
                         <div className="pt-12 flex flex-col justify-center items-center trigger fromLeftToRight mx-4">
                             <h2 className="text-5xl lg:my-8 lg:text-left text-beige text-anthra text-3xl text-left w-full text-semibold text-center">Description</h2>
@@ -113,7 +113,7 @@ export default function Project() {
                         </div>
                     </div>
                     <section className="md:hidden min-h-screen flex justify-center items-center flex-col">
-                        <h2 className="text-3xl text-beige font-semibold pb-4 text-left w-full my-4 pt-4 ">Pictures</h2>
+                        <h2 className="text-3xl text-beige font-semibold pb-4 text-left w-full my-4 pt-4 ">{t("projects.pictures")}</h2>
                         <div className="bg-sand p-8 rounded drop-shadow-600">
                             {project?.images.map((image, index) => (
                                 <div className="py-4" key={index}>
@@ -126,7 +126,7 @@ export default function Project() {
                     <section className="hidden md:block h-[80vh]">
                         <div className="w-full text-left mt-32 text-3xl text-[#FDFAD5]">
                             <h2 className="text-beige my-8 lg:text-5xl font-semibold">
-                                Pictures
+                               {t('projects.pictures')}
                             </h2>
                         </div>
                         <motion.div
@@ -157,7 +157,7 @@ export default function Project() {
                     </section>
                     <section className="flex justify-between items-center flex-col text-center pt-12">
                         <div className="w-full">
-                            <h2 className="font-semibold text-left text-3xl pt-20 text-beige lg:text-5xl font-semibold">Enterprise</h2>
+                            <h2 className="font-semibold text-left text-3xl pt-20 text-beige lg:text-5xl font-semibold">{t('projects.company-title')}</h2>
 
                             <div className="my-8">
                                 {splitParagraph(
@@ -195,11 +195,13 @@ export default function Project() {
                                 <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} />
                             </div>
                                 <div className="lg:w-1/2">
-                                    <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 text-right">Conclusion</h2>
-                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-right">{`projects.project_${id}.conclusion` || project?.conclusion}</p>
+                                    <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 text-right"></h2>
+                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-right">{t(`projects.project_${id}.conclusion`) || project?.conclusion}</p>
                                     <div className="space-x-4 my-8 flex">
-                                        <Button>See another project</Button>
-                                        <Magnet><Button>Contact</Button></Magnet>
+                                        <Link href="/"><Button>See another project</Button></Link>
+                                        <Link href="/contact">
+                                            <Magnet><Button>Contact</Button></Magnet>
+                                        </Link>
                                     </div>
                                 </div>
                             

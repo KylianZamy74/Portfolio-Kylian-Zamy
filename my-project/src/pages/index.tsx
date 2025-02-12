@@ -115,7 +115,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <div>
-                                <Image src="/Images/linkedimage.webp" width={282} height={205} className="rounded shadow-lg " alt="Image Kylian" layout="responsive" />
+                                <Image src="/Images/linkedinImage.webp" width={282} height={205} className="rounded shadow-lg " alt="Image Kylian" layout="responsive" />
                             </div>
                         </section>
                         <Article />
