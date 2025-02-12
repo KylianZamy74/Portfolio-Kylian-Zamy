@@ -86,7 +86,7 @@ export default function Project() {
                                     />
                                 </div>
                             </div>
-                            <p className="mx-4 my-8 text-xl text-anthra lg:w-2/3 lg:mt-44 font-semibold lg:text-3xl">{project?.short_description}</p>
+                            <p className="mx-4 my-8 text-xl text-anthra lg:w-2/3 lg:mt-44 font-semibold lg:text-3xl">{t(`projetcs.project_${id}.short-description`) ||project?.short_description}</p>
                         </div>
                         <div className="pt-12 flex flex-col justify-center items-center trigger fromLeftToRight mx-4">
                             <h2 className="text-5xl lg:my-8 lg:text-left text-beige text-anthra text-3xl text-left w-full text-semibold text-center">Description</h2>
@@ -196,7 +196,7 @@ export default function Project() {
                             </div>
                                 <div className="lg:w-1/2">
                                     <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 text-right">Conclusion</h2>
-                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-right">{project?.conclusion}</p>
+                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-right">{`projects.project_${id}.conclusion` || project?.conclusion}</p>
                                     <div className="space-x-4 my-8 flex">
                                         <Button>See another project</Button>
                                         <Magnet><Button>Contact</Button></Magnet>

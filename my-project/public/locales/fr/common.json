@@ -1,131 +1,250 @@
 {
-
-    "headers": {
-        "home": "Accueil",
-        "projects": "Projets",
-        "about": "A propos",
-        "contact": "Contact"
-    },
-
-    "title": {
-        "main": "Développeur freelance",
-        "second": "fullstack"
-    },
-    "slogan": {  
-        "first": "Code après code, je",
-        "seed": "façonne",
-        "crafting": " des",
-        "solutions": "solutions ",
-        "meet": "sur mesure pour propulser votre",
-        "needs": "projet digital."
-    },
-    "presentation": {
-        "first": "Salut ! Je m'appelle Kylian, je suis un développeur web passionné, dédié à la création de solutions épurées, élégantes et fonctionnelles.",
-        "second": "Développons ensemble vos idées et transformons-les en ",
-        "success": "succès."
-    },
-
-    "travail":{
-      "my": "Mes ",
-      "work": "travaux"
-    },
-
-    "about": {
-        "about": "A propos de ",
-        "me": "moi"
-    },
-    "about_section": {
-        "catchPhrase": {
-          "first": "Je suis ravi que vous souhaitiez en apprendre davantage sur moi.",
-          "second": "Découvrons",
-          "third": "ensemble",
-          "fourth": "ce que nous pouvons ",
-          "fifth": "créer",
-          "sixth": "ci-dessous."
-        },
-    
-        "presentation": {
-          "first": "Je suis un jeune développeur web basé à Annecy en France, désireux de",
-          "second": "grandir",
-          "third": "grâce à des collaborations stimulantes et significatives avec mes clients.",
-          "fourth": "Ensemble",
-          "fifth": "nous donnerons vie à la ",
-          "sixth": "vision ",
-          "seven": "de votre site web en nous concentrant à la fois sur le design et la fonctionnalité pour garantir une expérience utilisateur fluide et engageante."
-        },
-    
-        "services": {
-          "title": "Construisons",
-          "title_1": "ensemble..",
-          "card_1": {
-            "title": "Développement web",
-            "strong_title": "Full stack",
-            "first": "Je construis",
-            "second": "des sites web complets",
-            "third": "et des applications web, en gérant à la fois",
-            "fourth": "le frontend",
-            "fifth": "et",
-            "sixth": "le backend",
-            "seven": "pour créer des expériences numériques fonctionnelles et cohérentes."
-          },
-          "card_2": {
-            "title": "Solutions de sites e-commerce ",
-            "strong_title": "intégrées",
-            "first": "Je conçois et développe des",
-            "second": "sites e-commerce",
-            "third": "entièrement intégrés offrant une expérience d'achat fluide, de la présentation des produits à la commande sécurisée"
-          },
-          "card_3": {
-            "title": "Applications Web interactives & ",
-            "title_1": "sur mesure",
-            "first": "Je crée",
-            "second": "des applications web dynamiques",
-            "third": "centrées sur l'utilisateur, y compris des portfolios en ligne personnalisés et",
-            "fourth": "des plateformes interactives",
-            "fifth": "adaptées à vos besoins uniques"
-          }
-        }
-      },
-
-      "projects": {
-        "project_1": {
-            "title": "Cinédelices",
-            "description": "Cette application web interactive permet aux utilisateurs d’explorer un large catalogue de films et séries tout en découvrant des recettes inspirées des plats vus à l’écran. Les visiteurs peuvent également ajouter leurs propres recettes liées à leurs films préférés, rendant l'expérience encore plus immersive et personnalisée. Grâce à une interface intuitive et un design responsive, la navigation est fluide sur tous les appareils, offrant une découverte agréable et engageante.",
-            "enterprise": "Ce projet collaboratif a été entrepris dans le cadre de notre programme de formation en vue de préparer l'examen final. Ses principaux objectifs étaient d'évaluer nos forces et nos faiblesses individuelles, d'améliorer notre expertise technique et de favoriser de solides compétences en travail d'équipe et en communication. Il a également été l'occasion de renforcer nos capacités de collaboration et de résolution de problèmes dans des conditions réelles.",
-            "role_date": "Design, Développement, Projet Collaboratif - 2024"
-        },
-        "project_2": {
-            "title": "Séquentiel",
-            "description": "Ce projet est un calendrier interactif conçu pour les développeurs, leur permettant de récupérer leurs tickets GitLab et de les organiser visuellement via une interface intuitive. Les utilisateurs peuvent glisser-déposer leurs tâches dans le calendrier, suivre avec précision le temps passé sur chaque projet ou ticket et créer des blocs de temps personnalisés qui peuvent être attribués aux développeurs ainsi qu'à des tickets spécifiques. Un onglet récapitulatif quotidien fournit un aperçu des tâches terminées, génère un rapport détaillé indiquant le temps passé sur chaque projet et tâche. Une amélioration future pourrait consister à centraliser ces journées validées pour offrir une vision d'ensemble encore plus complète de la productivité.",
-
-            "enterprise": "Forte de plus de 30 ans d'expérience, cette entreprise crée des solutions innovantes et sur mesure pour les PME, les grandes entreprises et les associations. Lors de mon stage, j'ai pu constater qu'ils se concentrent sur les besoins des clients, leur fournissent des outils efficaces tout en entretenant des relations solides et professionnelles.",
-
-            "role_date": "Intégration et Développement Complet - 2024 "
-        }
-    },
-    "footer": {
-      "email": "Email",
-      "phone": "Téléphone",
-      "ready": "Prêt à travailler ensemble ?",
-      "contact": "Prendre contact",
-      "legacy": "Mentions légales",
-      "policy": "Politique de confidentialité"
+  "headers": {
+      "home": "Accueil",
+      "services": "Services",
+      "contact": "Contact"
   },
 
-  "contact": {
-        "title": "Créons un",
-        "title_1": "projet.",
-        "name": "Nom",
-        "name_placehold": "Quel est votre prénom ?",
-        "email": "Adresse mail",
-        "email_placehold": "yourmail@example.com",
-        "subject": "Objet",
-        "subject_placehold": "Quel est votre vision du projet ?",
-        "phone": "Numéro de téléphone",
-        "phone_placehold": "Si vous préférez un appel",
-        "message": "Message",
-        "message_placehold": "Bonjour Kylian, parlons de comment nous pourrions travailler ensemble",
-        "connect": "Prenons contact !",
-        "links": "Liens utiles"
-      }
+  "title": {
+      "main": "Développeur Freelance & Artisan Numérique",
+      "second": "fullstack"
+  },
+  "slogan": {
+      "first": "Ligne par ligne, je façonne des solutions sur mesure pour propulser votre projet numérique",
+      "forward": "vers l'avenir.",
+      "discover": "Découvrez mes réalisations",
+      "services": "Services"
+  },
+  "presentation": {
+      "who": "Qui",
+      "am": "suis-je ?",
+      "i": "",
+      "first": "Je suis un développeur web passionné, désireux de créer des solutions élégantes, performantes et fonctionnelles. Faisons grandir vos idées ensemble et transformons-les en",
+      "second": "succès"
+  },
+
+  "travail": {
+      "my-recent": "Mes récents",
+      "work": "Projets"
+  },
+
+  "tailored": {
+      "tailored": "Solutions",
+      "web": " web",
+      "solutions": " sur mesure",
+      "description": "Chaque projet est unique, et je m'efforce de livrer des solutions web à la fois efficaces et adaptées à vos objectifs. Que ce soit pour la création d'un site internet, l'optimisation d'une plateforme existante ou la fourniture de conseils techniques, je mets mon expertise au service de votre réussite.",
+      "first-strong": "Développement de Sites Web",
+      "first": "Création de sites web modernes et performants ainsi que d'applications web.",
+      "second-strong": "Solutions Web Sur Mesure",
+      "second": "Fonctionnalités conçues spécifiquement pour répondre à vos besoins.",
+      "third-strong": "Performance & Optimisation",
+      "third": "Amélioration de la vitesse, du SEO et de l'expérience utilisateur pour un site web plus efficace.",
+      "fourth-strong": "Consulting & Mentorat",
+      "fourth": "Accompagnement stratégique pour structurer et développer vos projets numériques.",
+      "learn": "En savoir plus"
+  },
+
+  "build-section": {
+      "build": "Construisons quelque chose",
+      "together": " ensemble",
+      "cta": "Contactez-moi !"
+  },
+
+  "services-section": {
+      "catch-phrase": "Solutions sur mesure adaptées à vos besoins.",
+      "second-catch-phrase-title": "Chaque projet est unique.",
+      "second-catch-phrase-subtitle": "Ensemble, concevons des solutions efficaces et élégantes, adaptées à vos",
+      "second-catch-phrase-strong": "objectifs.",
+      "contact-button": "Contactez-moi !",
+      "presentation": {},
+
+      "services": {
+          "main-title": "Mes",
+          "main-title-strong": " Services",
+          "title": "Créons",
+          "title_1": "ensemble..",
+          "card_1": {
+              "title": "Développement de Sites Web",
+              "subtitle": "Création de sites web modernes et performants",
+              "first-paragraph": "Votre site internet est la vitrine numérique de votre entreprise. Je conçois des sites web personnalisés, rapides, esthétiques et intuitifs, qu'il s'agisse d'un simple site vitrine ou d'une application web plus complexe.",
+              "second-subtitle": "Caractéristiques clés",
+              "second-paragraph": {
+                  "paragraph-1-strong": "Création sur mesure",
+                  "paragraph-1": " de sites vitrines et d'applications web.",
+                  "paragraph-2": "Design moderne avec",
+                  "paragraph-2-strong": " UX optimisée.",
+                  "paragraph-3": "Développement avec des",
+                  "paragraph-3-strong": " technologies performantes.",
+                  "paragraph-4": "Technologies modernes (React, Next.js, Node.js, etc.).",
+                  "paragraph-5": "Entièrement",
+                  "paragraph-5-strong": " responsive",
+                  "paragraph-5-second": " et",
+                  "paragraph-5-strong-2": " accessible",
+                  "paragraph-5-third": " sur tous les appareils."
+              }
+          },
+          "card_2": {
+              "title": "Solutions Web Sur Mesure",
+              "subtitle": "Fonctionnalités adaptées à votre entreprise",
+              "first-paragraph": "Vous avez besoin d'une fonctionnalité spécifique ? Intégration d'API, ou développement personnalisé ? Je développe des solutions adaptées à votre activité, assurant une intégration fluide dans votre écosystème.",
+              "second-subtitle": "Exemples d'intégrations",
+              "second-paragraph": {
+                  "paragraph-1": "Intégration de bases de données et",
+                  "paragraph-1-strong": " API.",
+                  "paragraph-2": "Outil personnalisé.",
+                  "paragraph-3": "Développement d'applications spécifiques."
+              }
+          },
+          "card_3": {
+              "title": "Performance & Optimisation (SEO & Optimisation de Vitesse)",
+              "subtitle": "Un site rapide, bien référencé et optimisé",
+              "first-paragraph": "Un site lent ou mal optimisé peut faire fuir les visiteurs. J'optimise votre site pour qu'il se charge rapidement, qu'il soit bien positionné sur Google et qu'il offre la meilleure expérience utilisateur possible.",
+              "second-subtitle": "Caractéristiques clés",
+              "second-paragraph": {
+                  "paragraph-1-strong": "Améliorations de la performance",
+                  "paragraph-1": " (vitesse, temps de chargement, code optimisé).",
+                  "paragraph-2-strong": "Optimisation SEO",
+                  "paragraph-2": " pour un meilleur classement dans les moteurs de recherche.",
+                  "paragraph-3": "Expérience utilisateur fluide et",
+                  "paragraph-3-strong": " responsive",
+                  "paragraph-3-second": "et",
+                  "paragraph-3-strong-2": " totalement accessible."
+              }
+          },
+          "card_4": {
+              "title": "Consulting & Support de Projet (Conseils Techniques & Assistance)",
+              "subtitle": "Accompagnement personnalisé pour vos projets numériques",
+              "first-paragraph": "Naviguer dans le monde du développement web peut être complexe. Je vous aide à faire les bons choix techniques, à améliorer la structure de votre projet et à garantir que votre site ou application soit efficace, scalable et bien conçu.",
+              "second-subtitle": "Services proposés",
+              "second-paragraph": {
+                  "paragraph-1": "Audits techniques et recommandations.",
+                  "paragraph-2": "Assistance dans la structuration et l'",
+                  "paragraph-2-strong": "amélioration des projets web.",
+                  "paragraph-3": "Conseils sur les",
+                  "paragraph-3-strong": " meilleures pratiques",
+                  "paragraph-3-second": " et le choix des technologies.",
+                  "paragraph-4": "Support pour le",
+                  "paragraph-4-strong": " débogage, la performance",
+                  "paragraph-4-second": " et",
+                  "paragraph-4-strong-2": " scalabilité",
+                  "paragraph-4-third": " des applications."
+              }
+          }
+      },
+      "faq": {
+        "faq-1": {
+            "title": "Quelles technologies utilisez-vous pour le développement web ?",
+            "paragraph": "Je travaille avec les dernières technologies web telles que React, Next.js, Node.js, Tailwind CSS, et bien d'autres pour garantir des sites modernes, rapides et performants. Je choisis toujours les meilleurs outils pour chaque projet spécifique."
+        },
+        "faq-2": {
+            "title": "Quels types de projets acceptez-vous ?",
+            "paragraph": "J'accepte une large gamme de projets, des sites vitrines simples aux plateformes e-commerce, en passant par des applications web complexes et des solutions personnalisées. Chaque projet est unique et je m'adapte à vos besoins spécifiques."
+        },
+        "faq-3": {
+            "title": "Combien de temps faut-il pour développer un site web ?",
+            "paragraph": "Le délai dépend de la complexité du projet. Un simple site vitrine peut prendre quelques semaines, tandis qu'une application web plus complexe peut nécessiter plusieurs mois. Je vous fournirai un calendrier détaillé lors de la phase de devis."
+        },
+        "faq-4": {
+            "title": "Quel est le coût d'un projet ?",
+            "paragraph": "Le coût varie en fonction du type de projet et des fonctionnalités demandées. Je propose des devis personnalisés en fonction de vos besoins spécifiques. N'hésitez pas à me contacter pour discuter de votre projet et obtenir une estimation précise."
+        },
+        "faq-5": {
+            "title": "Fournissez-vous un support après la livraison du projet ?",
+            "paragraph": "Oui, je propose un support après livraison pour m'assurer que tout fonctionne comme prévu. Cela inclut la correction de petits bugs et un support technique. Des services de maintenance continue sont également disponibles."
+        },
+        "faq-6": {
+            "title": "Mon site sera-t-il adapté aux mobiles ?",
+            "paragraph": "Absolument ! Tous les sites et applications que je développe sont responsive, ce qui signifie qu'ils s'adaptent automatiquement à toutes les tailles d'écran, que ce soit sur un smartphone, une tablette ou un ordinateur de bureau."
+        },
+        "faq-7": {
+            "title": "Quel est le processus pour travailler avec vous ?",
+            "paragraph": "Le processus commence par une discussion pour comprendre vos besoins et objectifs. Ensuite, nous définirons les exigences du projet et je commencerai le développement. Vous recevrez des mises à jour régulières et pourrez fournir des retours à chaque étape."
+        },
+        "faq-8": {
+            "title": "Dois-je fournir le design ou le gérez-vous également ?",
+            "paragraph": "Je peux travailler avec des designs que vous fournissez, ou bien créer un design personnalisé pour votre site basé sur vos préférences et les meilleures pratiques UX/UI. Nous travaillerons ensemble pour définir l'approche visuelle qui vous correspond."
+        },
+        "faq-9": {
+            "title": "Quand est-il préférable de commencer un projet ?",
+            "paragraph": "Le meilleur moment pour commencer est dès que vous avez une vision claire de votre projet. Ne tardez pas trop, car numériser un projet prend du temps et peut nécessiter des ajustements en cours de route."
+        },
+        "faq-10": {
+            "title": "Proposez-vous des services SEO ?",
+            "paragraph": "Oui, le SEO fait partie intégrante de mes services. Je m'assure que votre site est optimisé pour les moteurs de recherche, afin qu'il soit visible dans les résultats et génère du trafic qualifié."
+        }
+    },
+    "talks": {
+        "title": "Discutons",
+        "title-strong": " ensemble !",
+        "description-1": "Que vous ayez une idée précise ou juste l'envie de digitaliser votre entreprise, je suis là pour vous écouter.",
+        "description-2": "Contactez-moi et voyons ensemble comment nous pouvons donner vie à votre projet !"
+    }
+},
+"projects": {
+    "project_1": {
+        "title": "Cinédelices",
+        "description": "Cette application web interactive permet aux utilisateurs d'explorer un vaste catalogue de films et séries tout en découvrant des recettes inspirées des plats vus à l'écran. Les visiteurs peuvent également ajouter leurs propres recettes liées à leurs films favoris, rendant l'expérience encore plus immersive et personnalisée. Avec une interface intuitive et un design responsive, la navigation est fluide sur tous les appareils, offrant ainsi une expérience agréable et engageante.",
+        "enterprise": "Ce projet collaboratif a été réalisé dans le cadre de notre programme de formation en préparation de l'examen final. Ses objectifs principaux étaient d'évaluer nos forces et faiblesses individuelles, d'améliorer nos compétences techniques et de renforcer notre esprit d'équipe et de communication. Il a aussi servi d'opportunité pour consolider notre collaboration et nos capacités de résolution de problèmes dans des conditions réelles.",
+        "role_date": "Design, Développement & Projet Collaboratif - 2024",
+        "short-description": "Une application web interactive permettant aux utilisateurs d'explorer des films et des séries tout en découvrant et en partageant des recettes inspirées des plats à l'écran.",
+      "conclusion": "Ce projet a été une expérience d'apprentissage précieuse, nous permettant d'appliquer nos compétences techniques tout en renforçant notre esprit d'équipe et nos capacités de résolution de problèmes dans un contexte réel. Tout au long du processus de développement, nous avons rencontré plusieurs défis, mais notre capacité à nous adapter et à trouver des solutions nous a permis de les surmonter. En créant une plateforme interactive qui mêle cinéma et cuisine, nous avons non seulement affiné notre expertise, mais aussi favorisé la créativité et la collaboration. Cette initiative a été déterminante dans notre préparation pour l'examen final et pour relever les défis professionnels futurs."
+
+    },
+    "project_2": {
+        "title": "Séquentiel",
+        "description": "Ce projet est un calendrier interactif conçu pour les développeurs, permettant de récupérer les issues de GitLab et de les organiser visuellement via une interface intuitive. Les utilisateurs peuvent glisser-déposer leurs tâches dans le calendrier, suivre précisément le temps passé sur chaque projet ou problème, et créer des blocs de temps personnalisés assignables à des développeurs et des issues spécifiques. Un onglet de résumé quotidien fournit un aperçu des tâches terminées, avec la possibilité de valider les journées de travail. Une amélioration possible serait la génération d'un rapport détaillé montrant le temps passé sur chaque projet et tâche, améliorant ainsi le suivi et la gestion de la productivité.",
+        "enterprise": "Avec plus de 30 ans d'expérience, cette entreprise crée des solutions innovantes et personnalisées pour les PME, grandes entreprises et associations. Lors de mon stage, j'ai observé leur attention portée aux besoins des clients, en livrant des outils efficaces tout en maintenant des relations professionnelles solides.",
+        "role_date": "Implémentation & Développement Complet - 2024",
+        "short-description": "Ce projet est un calendrier interactif pour les développeurs, leur permettant d'organiser leurs tickets GitLab et de suivre le temps passé sur chaque tâche. Il offre une interface intuitive pour gérer les tâches et générer des rapports de productivité détaillés.",
+        "conclusion": "Ce projet m'a permis d'explorer des outils puissants comme Full Calendar et d'acquérir une expérience précieuse dans l'industrie du web, en adoptant une approche orientée client. Les défis techniques, tels que trouver des solutions via la documentation et les forums, ont été une excellente occasion d'apprendre et de développer de nouvelles compétences. L'exploration de nouvelles fonctionnalités m'a constamment poussé à m'améliorer, et bien que les bugs aient été frustrants, ils m'ont aidé à grandir et à affiner mes compétences en développement."
+
+    }
+},
+
+"footer": {
+    "social": {
+        "social": "Réseaux sociaux",
+        "mail": "kzamy.74940@gmail.com",
+        "tel": "+33684722698",
+        "linkedIn": "LinkedIn",
+        "github": "Github"
+    },
+    "links": {
+        "links": "Liens",
+        "home": "Accueil",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "services": {
+        "services": "Services",
+        "first": "Développement de Sites Web",
+        "second": "Solutions Web Sur Mesure",
+        "third": "Performance & Optimisation",
+        "fourth": "Consulting & Mentorat"
+    },
+    "email": "Email",
+    "phone": "Téléphone",
+    "ready": "Prêt à travailler ensemble ?",
+    "contact": "Contactez-moi",
+    "legacy": "Mentions légales",
+    "policy": "Politique de confidentialité"
+},
+
+"contact": {
+    "title": "Démarrons un",
+    "title_1": "projet.",
+    "name": "Nom",
+    "name_placehold": "Comment vous appelez-vous ?",
+    "email": "Adresse email",
+    "email_placehold": "votremail@example.com",
+    "subject": "Objet",
+    "subject_placehold": "De quoi parle votre projet ?",
+    "phone": "Numéro de téléphone",
+    "phone_placehold": "Si vous préférez un appel.",
+    "message": "Message",
+    "message_placehold": "Bonjour Kylian, parlons de la manière dont nous pouvons collaborer.",
+    "connect": "On est partis !",
+    "links": "Liens utiles"
 }
+}
+

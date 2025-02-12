@@ -17,6 +17,7 @@ import { useAnimationGsapService, splitTextIntoWords } from '@/services/animatio
 import Footer from '@/components/Footer';
 import Button from '@/components/ui/button';
 import Magnet from '@/components/ui/magnetic';
+import Link from 'next/link';
 
 // Import de la fonction useTranslation
 import { useTranslation } from 'react-i18next';
@@ -27,7 +28,6 @@ export default function Services() {
     useScrollService();
     useAnimationGsapService();
 
-    // Récupération de la fonction de traduction
     const { t } = useTranslation();
 
     return (
@@ -281,7 +281,7 @@ export default function Services() {
                             <p className='lg:text-2xl'>{t("services-section.talks.description-1")}</p>
                             <p className='lg:text-2xl'>{t("services-section.talks.description-2")}</p>
                         </div>
-                        <div className='my-8'><Magnet><Button>{splitTextIntoWords(t("services-section.contact-button"))}</Button></Magnet> </div>
+                        <Link href="/contact" className='my-8'><Magnet><Button>{splitTextIntoWords(t("services-section.contact-button"))}</Button></Magnet> </Link>
                     </section>
                 </div>
 

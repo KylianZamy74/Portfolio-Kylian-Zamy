@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/router"; 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useModalStore } from "@/store/ModalStore/useModalStore"; 
-import useDirectToProjectService from "@/services/animationServices/useDirectToProjectService";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -13,8 +12,16 @@ export default function Header() {
   const { openModal } = useModalStore(); // Hook pour ouvrir la modale
   const { locale, locales, asPath, push } = useRouter();
   const {t} = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(locale || 'en');
 
-  
+  useEffect(() => {
+    const storedLocale = localStorage.getItem("language");
+    if(storedLocale && storedLocale !== locale) {
+      i18next.changeLanguage(storedLocale);
+      push(asPath, asPath, {locale: storedLocale})
+      setCurrentLanguage(storedLocale)
+    }
+  }, [])
   
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
@@ -22,6 +29,7 @@ export default function Header() {
       i18next.changeLanguage(newLocale);
       push(asPath, asPath, { locale: newLocale });
       localStorage.setItem("language", newLocale)
+      setCurrentLanguage(newLocale)
     }
   };
 
@@ -56,7 +64,7 @@ export default function Header() {
 
       <div className="ml-4">
         <select
-          value={locale || "en"} // Assurez-vous que la langue sélectionnée est correcte au départ
+          value={currentLanguage} // Assurez-vous que la langue sélectionnée est correcte au départ
           onChange={handleLanguageChange} 
           className="bg-transparent border border-anthra text-anthra p-2 rounded"
         >

@@ -189,7 +189,10 @@
             "title": "Cinédelices",
             "description": "This interactive web application allows users to explore a vast catalog of movies and TV shows while discovering recipes inspired by dishes seen on screen. Visitors can also add their own recipes linked to their favorite films, making the experience even more immersive and personalized. With an intuitive interface and responsive design, navigation is seamless across all devices, providing an enjoyable and engaging discovery experience.",
             "enterprise": "This collaborative project was undertaken as part of our training program to prepare for the final exam. Its primary goals were to evaluate our individual strengths and weaknesses, enhance our technical expertise, and foster strong teamwork and communication skills.It also served as an opportunity to strengthen our collaboration and problem-solving abilities under real-world conditions.",
-            "role_date": "Design, Development & Collaboration Project - 2024"
+            "role_date": "Design, Development & Collaboration Project - 2024",
+            "short-description": "An interactive web app that lets users explore movies and TV shows while discovering and sharing recipes inspired by on-screen dishes.",
+            "conclusion": "This project was a valuable learning experience, allowing us to apply our technical skills while strengthening teamwork and problem-solving abilities in a real-world context. Throughout the development process, we faced several challenges, but our ability to adapt and find solutions helped us overcome them. By creating an interactive platform that blends cinema and cuisine, we not only refined our expertise but also fostered creativity and collaboration. This initiative has been instrumental in preparing us for our final exam and future professional challenges."
+        }
         },
         "project_2": {
             "title": "Séquentiel",
@@ -197,8 +200,11 @@
 
             "enterprise": "With over 30 years of experience, this company creates innovative and tailored solutions for SMEs, large enterprises, and associations. During my internship, I observed their focus on client needs, delivering effective tools while maintaining strong, professional relationships.",
 
-            "role_date": "Implementation & Full Development - 2024"
-        }
+            "role_date": "Implementation & Full Development - 2024",
+
+            "short-description": "This project is an interactive calendar for developers, helping them organize their GitLab tickets and track the time spent on each task. It provides an intuitive interface to manage tasks and generate detailed productivity reports.",
+            "conclusion": "This project allowed me to explore powerful tools like Full Calendar and gain valuable experience in the web industry, working with a client-oriented approach. The technical challenges, such as finding solutions through documentation and forums, were a great opportunity to learn and develop new skills. Exploring new features constantly pushed me to improve, and while the bugs were frustrating, they helped me grow and refine my development abilities."
+           
     },
     
     "footer": {
