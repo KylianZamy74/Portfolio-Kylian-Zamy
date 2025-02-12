@@ -50,7 +50,7 @@ export default function Contact() {
         <>
            
             <Inner>
-                <div className="lg:px-24 px-12">
+                <div className="2xl:px-40 lg:px-24 px-4">
                     <div className="flex-col flex justify-center h-screen p-4 intro">
                         <h1 className="text-anthra text-6xl font-semibold">{splitTextIntoChar(t("contact.title"))} <strong className="text-beige">{splitTextIntoChar(t("contact.title_1"))}</strong></h1>
                     </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                     
                             </form>
                         </section>
-                        <section className="text-anthra font-bold px-4">
+                        <section className="text-anthra px-4">
                             <div className="flex-col flex text-lg">
                                 <h3 className="text-anthra mb-2 font-bold">Informations</h3>
                                 <div className="w-full flex-col flex justify">
@@ -96,7 +96,7 @@ export default function Contact() {
                             <div className="mt-8 text-lg">
                                 <h3 className="text-anthra mb-2 font-bold">{t("contact.links")}</h3>
                                 <div className="flex-col flex">
-                                    <button className="text-left"><a className="text-left" href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
+                                    <button className="text-left"><a  href="https://www.linkedin.com/in/kylian-zamy-b0a5ab303">LinkedIn</a></button>
                                     <button className="text-left"><a  href="https://github.com/KylianZamy74">Github</a></button>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import Inner from "@/components/Layout/Inner";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
@@ -68,15 +68,15 @@ export default function Project() {
 
     return (
         <>
-            <Inner>
-                <div className="lg:px-24 px-12">
+            <Header />
+                <div className="lg:px-24 px-4 md:px-12">
                     <div className="mt-24">
-                        <div className="lg:flex lg:w-full space-x-12">
+                        <div className="lg:flex lg:w-full lg:space-x-8">
                             <div className="lg:w-1/3">
-                                <h1 className="text-anthra w-full text-6xl text-center p-8 text-anthra font-bold">
+                                <h1 className="text-anthra w-full text-5xl md:text-6xl lg:text-left text-center text-anthra font-bold">
                                     {t(`projects.project_${id}.title`) || `${project?.title}`} 
                                 </h1>
-                                <div className="flex justify-center pt-12">
+                                <div className="pt-12">
                                     <Image
                                         src={project?.images[0].url || ""}
                                         alt="Project"
@@ -86,9 +86,9 @@ export default function Project() {
                                     />
                                 </div>
                             </div>
-                            <p className="mx-4 my-8 text-xl text-anthra lg:w-2/3 lg:mt-44 font-semibold lg:text-3xl">{t(`projects.project_${id}.short-description`) ||project?.short_description}</p>
+                            <p className="my-8 text-xl text-anthra lg:w-2/3 font-semibold lg:text-3xl flex justify-center items-center">{t(`projects.project_${id}.short-description`) ||project?.short_description}</p>
                         </div>
-                        <div className="pt-12 flex flex-col justify-center items-center trigger fromLeftToRight mx-4">
+                        <div className="pt-12 flex flex-col justify-center items-center trigger fromLeftToRight">
                             <h2 className="text-5xl lg:my-8 lg:text-left text-beige text-anthra text-3xl text-left w-full text-semibold text-center">Description</h2>
                             <div className="lg:flex lg:w-full">
                                 <div className="lg:hidden block flex items-center justify-center ">
@@ -183,9 +183,9 @@ export default function Project() {
                                 </div>
                                 {project?.isLinkExist ? (
                                     <div>
-                                        <Link href={project.project_url || ""}><Magnet><Button>Github</Button></Magnet></Link>
+                                        <Link href={project.project_url || ""}><Magnet><Button>{t('projects.Github')}</Button></Magnet></Link>
                                     </div>
-                                ) : (<span className="text-lg lg:text-3xl md:text-2xl text-anthra">No Github :( </span>)}
+                                ) : (<span className="text-lg lg:text-3xl md:text-2xl text-anthra">{t('projects.noGithub')}</span>)}
                             </div>
                         </div>
                     </section>
@@ -195,8 +195,8 @@ export default function Project() {
                                 <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} />
                             </div>
                                 <div className="lg:w-1/2">
-                                    <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 text-right"></h2>
-                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-right">{t(`projects.project_${id}.conclusion`) || project?.conclusion}</p>
+                                    <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 lg:text-right text-left">Conclusion</h2>
+                                    <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-left lg:text-right">{t(`projects.project_${id}.conclusion`) || project?.conclusion}</p>
                                     <div className="space-x-4 my-8 flex">
                                         <Link href="/"><Button>See another project</Button></Link>
                                         <Link href="/contact">
@@ -210,7 +210,7 @@ export default function Project() {
                     </section>
                 </div>
                 <Footer />
-            </Inner>
+           
             {isOpen && <Menu />}
             {showMenu && (
                 <motion.div

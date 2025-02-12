@@ -42,13 +42,13 @@ export default function Menu() {
                   </Link>
                 </motion.li>
                 <motion.li>
-                  <Link href={"/contact"} onClick={closeModal}>
-                    {t("headers.contact")}
+                  <Link href={"/services"} onClick={closeModal}>
+                    {t("headers.services")}
                   </Link>
                 </motion.li>
                 <motion.li>
-                  <Link href={"/services"} onClick={closeModal}>
-                    {t("headers.services")}
+                  <Link href={"/contact"} onClick={closeModal}>
+                    {t("headers.contact")}
                   </Link>
                 </motion.li>
                 <motion.button onClick={closeModal} className="text-anthra">

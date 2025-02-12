@@ -12,20 +12,20 @@
   "slogan": {
       "first": "Ligne par ligne, je façonne des solutions sur mesure pour propulser votre projet numérique",
       "forward": "vers l'avenir.",
-      "discover": "Découvrez mes réalisations",
+      "discover": "Mes réalisations",
       "services": "Services"
   },
   "presentation": {
       "who": "Qui",
-      "am": "suis-je ?",
+      "am": " suis-je ?",
       "i": "",
       "first": "Je suis un développeur web passionné, désireux de créer des solutions élégantes, performantes et fonctionnelles. Faisons grandir vos idées ensemble et transformons-les en",
       "second": "succès"
   },
 
   "travail": {
-      "my-recent": "Mes récents",
-      "work": "Projets"
+      "my-recent": "Mes Projets",
+      "work": "Récents"
   },
 
   "tailored": {
@@ -181,9 +181,11 @@
     }
 },
 "projects": {
-    
+
     "company-title" : "Entreprise / Organisme",
     "pictures": "Images",
+    "github": "Github",
+    "noGithub": "Pas de Github :(",
     "project_1": {
         "title": "Cinédelices",
         "description": "Cette application web interactive permet aux utilisateurs d'explorer un vaste catalogue de films et séries tout en découvrant des recettes inspirées des plats vus à l'écran. Les visiteurs peuvent également ajouter leurs propres recettes liées à leurs films favoris, rendant l'expérience encore plus immersive et personnalisée. Avec une interface intuitive et un design responsive, la navigation est fluide sur tous les appareils, offrant ainsi une expérience agréable et engageante.",
@@ -232,7 +234,7 @@
     "ready": "Prêt à travailler ensemble ?",
     "contact": "Contactez-moi",
     "legacy": "Mentions légales",
-    "policy": "Politique de confidentialité"
+    "policy": "Mention légales"
 },
 
 "contact": {
@@ -250,6 +252,27 @@
     "message_placehold": "Bonjour Kylian, parlons de la manière dont nous pouvons collaborer.",
     "connect": "On est partis !",
     "links": "Liens utiles"
-}
+},
+    "legacy": {
+            "title": "Mentions Légales",
+            "author-title": "Informations sur l'éditeur du site",
+            "host": "Hébergeur du site",
+            "host-p-1": "Le site est hébergé par : ",
+            "host-p-2": "Front- end : Vercel - www.vercel.com",
+            "host-p-3": "Base de données : Railway - www.railway.app",
+            "property": "Propriété intellectuelle",
+            "property-p-1": "L’ensemble du contenu présent sur ce site (textes, images, code source, etc.) est la propriété exclusive de Kylian ZAMY, sauf mention contraire. Toute reproduction, modification ou distribution sans autorisation préalable est interdite.",
+            "responsability": "Responsabilité",
+            "responsability-p": "Les informations fournies sur ce site le sont à titre indicatif. Kylian ZAMY ne peut être tenu responsable d’éventuelles erreurs ou omissions. De plus, des liens externes peuvent être présents sur le site ; Kylian ZAMY n’exerce aucun contrôle sur leur contenu et décline toute responsabilité à cet égard.",
+            "cookie": "Cookies et données personnelles",
+            "cookie-p-1": "Le site ne stocke aucune donnée utilisateur de manière automatisée.",
+            "cookie-t-1": "Formulaire de contact :",
+            "cookie-p-2": " Les messages envoyés via le formulaire de contact sont directement transmis par e-mail à l’éditeur du site et ne sont ni stockés en base de données ni utilisés à des fins commerciales.",
+            "cookie-t-2": "Cookies et suivi :",
+            "cookie-p-3": "Aucun service de suivi tiers (comme Google Analytics) n’est utilisé.",
+            "contact": "Contact",
+            "contact-p-1": "Pour toute question relative aux mentions légales, vous pouvez me contacter à l’adresse suivante : kzamy.74940@gmail.com"
+            
+        }
 }
 

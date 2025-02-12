@@ -12,15 +12,15 @@
     "slogan": { 
         "first": "Line by line, I craft tailored solutions to drive your digital project",
         "forward": "forward.",
-        "discover": "Discover My Works",
+        "discover": "My Works",
         "services": "Services"
     },
     "presentation": {
         "who": "Who",
         "am": "Am",
-        "i": "I ?",
-        "first": "I'm a passionate web developer eager to craft sleek, elegant, and functional solutions. Let's grow your ideas together and turn them into",
-        "second": " success"
+        "i": "I?",
+        "first": "I'm a passionate web developer eager to craft sleek, elegant, and functional solutions. Let's grow your ideas together and turn them into ",
+        "second": "success"
     },
 
     "travail":{
@@ -188,6 +188,8 @@
 
         "company-title" : "Company / Organization",
         "pictures": "Pictures",
+        "github": "Github",
+        "noGithub": "No github",
         "project_1": {
             "title": "Cinédelices",
             "description": "This interactive web application allows users to explore a vast catalog of movies and TV shows while discovering recipes inspired by dishes seen on screen. Visitors can also add their own recipes linked to their favorite films, making the experience even more immersive and personalized. With an intuitive interface and responsive design, navigation is seamless across all devices, providing an enjoyable and engaging discovery experience.",
@@ -195,8 +197,8 @@
             "role_date": "Design, Development & Collaboration Project - 2024",
             "short-description": "An interactive web app that lets users explore movies and TV shows while discovering and sharing recipes inspired by on-screen dishes.",
             "conclusion": "This project was a valuable learning experience, allowing us to apply our technical skills while strengthening teamwork and problem-solving abilities in a real-world context. Throughout the development process, we faced several challenges, but our ability to adapt and find solutions helped us overcome them. By creating an interactive platform that blends cinema and cuisine, we not only refined our expertise but also fostered creativity and collaboration. This initiative has been instrumental in preparing us for our final exam and future professional challenges."
-        }
         },
+        
         "project_2": {
             "title": "Séquentiel",
             "description": "This project is an interactive calendar designed for developers, allowing them to retrieve their GitLab issues and organize them visually through an intuitive interface. Users can drag and drop their tasks into the calendar, accurately track the time spent on each project or issue, and create custom time blocks that can be assigned to developers as well as specific issues. A daily summary tab provides an overview of completed tasks, with the option to validate workdays. A potential improvement could involve generating a detailed report showing the time spent on each project and task, further enhancing productivity tracking and management.",
@@ -205,7 +207,7 @@
             "role_date": "Implementation & Full Development - 2024",
             "short-description": "This project is an interactive calendar for developers, helping them organize their GitLab tickets and track the time spent on each task. It provides an intuitive interface to manage tasks and generate detailed productivity reports.",
             "conclusion": "This project allowed me to explore powerful tools like Full Calendar and gain valuable experience in the web industry, working with a client-oriented approach. The technical challenges, such as finding solutions through documentation and forums, were a great opportunity to learn and develop new skills. Exploring new features constantly pushed me to improve, and while the bugs were frustrating, they helped me grow and refine my development abilities."
-    },
+    }},
     
     "footer": {
         "social": {
@@ -233,7 +235,7 @@
         "ready": "Ready to work together ?",
         "contact": "Get in touch",
         "legacy": "Legal Notice",
-        "policy": "Privacy policy"
+        "policy": "Legacy notices"
     },
 
     "contact": {
@@ -251,7 +253,29 @@
         "message_placehold": "Hello Kylian, let's talk about how we can work together.",
         "connect": "Let's connect",
         "links": "useful links"
-      }
+      },
+
+      "legacy": {
+        "title": "Legal Notices",
+        "author-title": "Information about the site editor",
+        "host": "Site Hosting",
+        "host-p-1": "The site is hosted by:",
+        "host-p-2": "Front-end: Vercel - www.vercel.com",
+        "host-p-3": "Database: Railway - www.railway.app",
+        "property": "Intellectual Property",
+        "property-p-1": "All content on this site (texts, images, source code, etc.) is the exclusive property of Kylian ZAMY, unless otherwise stated. Any reproduction, modification, or distribution without prior authorization is prohibited.",
+        "responsability": "Liability",
+        "responsability-p": "The information provided on this site is for informational purposes only. Kylian ZAMY cannot be held responsible for any errors or omissions. Additionally, external links may be present on the site; Kylian ZAMY has no control over their content and disclaims any responsibility for them.",
+        "cookie": "Cookies and Personal Data",
+        "cookie-p-1": "The site does not store any user data automatically.",
+        "cookie-t-1": "Contact Form:",
+        "cookie-p-2": "Messages sent via the contact form are directly transmitted by email to the site editor and are neither stored in a database nor used for commercial purposes.",
+        "cookie-t-2": "Cookies and Tracking:",
+        "cookie-p-3": "No third-party tracking service (such as Google Analytics) is used.",
+        "contact": "Contact",
+        "contact-p-1": "For any questions regarding the legal notices, you can contact me at the following address: kzamy.74940@gmail.com"
+    }
+
 
 }
 

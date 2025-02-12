@@ -43,7 +43,7 @@ export default function Footer() {
                 <p>&copy; 2025 Kylian Zamy. All rights reserved.</p>
                 <p>Siret : 94069262700018</p>
                 <div className="flex justify-center mt-4 space-x-8">
-                    <Link href="/politique-confidentialite">{t("footer.policy")}</Link>             
+                    <Link href="/legacy">{t("footer.policy")}</Link>             
                 </div>
             </div>
         </footer>
