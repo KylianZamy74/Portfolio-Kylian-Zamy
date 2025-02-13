@@ -1,5 +1,7 @@
 
 import Inner from '@/components/Layout/Inner';
+import Head from "next/head";
+
 import {
     Accordion,
     AccordionContent,
@@ -32,6 +34,17 @@ export default function Services() {
 
     return (
         <>
+         <Head>
+                <title>{t("Seo.title-services")}</title>  
+                <meta name="description" content={t('Seo.description-services')}/> 
+                <meta name="keywords" content="développeur, freelance, fullstack, react, next.js, node.js, développement web, postgresql, prisma, sequelize, express.js" /> 
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content="Bienvenue sur mon site - Kylian ZAMY" /> 
+                <meta property="og:description" content="Je suis un développeur Fullstack Freelance spécialisé en React, Next.js, Node.js, et plus encore." /> 
+                <meta property="og:image" content="/images/mon-image.jpg" /> 
+                <meta property="og:url" content="https://www.monsite.com" /> 
+                
+        </Head>
             <Inner>
                 <div className='lg:px-24 px-4 md:px-12'>
                     <section className='flex flex-col justify-center gap-y-4 p-4 my-12 '>

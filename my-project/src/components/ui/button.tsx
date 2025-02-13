@@ -2,7 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/button.module.scss";
 import gsap from "gsap";
 
-export default function Button({ children, backgroundColor = "none", className = "", ...attributes }) {
+interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode;
+    backgroundColor?: string;
+    className?: string;
+    type?: "button" | "submit" | "reset";
+  }
+
+export default function Button({ 
+    children, 
+    backgroundColor = "none", 
+    className = "", 
+    ...attributes 
+  }: ButtonProps) {
     const circle = useRef<HTMLDivElement | null>(null);
     const timeline = useRef<gsap.core.Timeline | null>(null);
     const [isHovered, setIsHovered] = useState(false);

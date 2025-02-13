@@ -27,14 +27,15 @@ export default function Home() {
     return (
         <>
         <Head>
-                <title>Bienvenue sur mon site - Kylian ZAMY</title>  
-                <meta name="description" content="Je suis un développeur Fullstack Freelance passionné, spécialisé en React, Next.js, Node.js, et plus encore." /> 
+                <title>{t("Seo.title")}</title>  
+                <meta name="description" content={t('Seo.description')}/> 
                 <meta name="keywords" content="développeur, freelance, fullstack, react, next.js, node.js, développement web, postgresql, prisma, sequelize, express.js" /> 
                 <meta name="robots" content="index, follow" />
                 <meta property="og:title" content="Bienvenue sur mon site - Kylian ZAMY" /> 
                 <meta property="og:description" content="Je suis un développeur Fullstack Freelance spécialisé en React, Next.js, Node.js, et plus encore." /> 
                 <meta property="og:image" content="/images/mon-image.jpg" /> 
                 <meta property="og:url" content="https://www.monsite.com" /> 
+                
         </Head>
             <Inner>
                 <div className="lg:px-24 px-4 md:px-12">

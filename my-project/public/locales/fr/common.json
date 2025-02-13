@@ -272,7 +272,17 @@
             "cookie-p-3": "Aucun service de suivi tiers (comme Google Analytics) n’est utilisé.",
             "contact": "Contact",
             "contact-p-1": "Pour toute question relative aux mentions légales, vous pouvez me contacter à l’adresse suivante : kzamy.74940@gmail.com"
-            
-        }
+        },
+
+    "Seo": {
+        "title": "Bienvenue sur mon site - Kylian ZAMY",
+        "description": "Je suis un développeur Fullstack Freelance passionné, spécialisé en React, Next.js, Node.js, et plus encore.",
+        "title-contact": "Page de contact - Kylian ZAMY",
+        "description-contact": "Voici un formulaire de contact pour ceux souhaitant travailler avec moi",
+        "title-services": "Page de services - Kylian ZAMY",
+        "description-services": "Ici je vous présente les différents services que je propose, allant d'un simple site vitrine à une application sur mesure, le tout avec un suivi et des conseils pour concrétiser votre projet.",
+        "title-project": "Page d'un Projet - Kylian ZAMY",
+        "description-project": "Ici je vous présente un projet sur lequel j'ai pu travailler seul ou en collaboration. Cela comprend quelques descriptions de ce dernier ainsi que les différents défis que j'ai pu rencontrer, quelques images et une conclusion."
+    }
 }
 

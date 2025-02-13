@@ -20,6 +20,8 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Button from "@/components/ui/button";
 import Magnet from "@/components/ui/magnetic";
+import Head from "next/head";
+
 
 
 export default function Project() {
@@ -68,6 +70,17 @@ export default function Project() {
 
     return (
         <>
+         <Head>
+                <title>{t("Seo.title-project")}</title>  
+                <meta name="description" content={t('Seo.description-project')}/> 
+                <meta name="keywords" content="développeur, freelance, fullstack, react, next.js, node.js, développement web, postgresql, prisma, sequelize, express.js" /> 
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content="Bienvenue sur mon site - Kylian ZAMY" /> 
+                <meta property="og:description" content="Je suis un développeur Fullstack Freelance spécialisé en React, Next.js, Node.js, et plus encore." /> 
+                <meta property="og:image" content="/images/mon-image.jpg" /> 
+                <meta property="og:url" content="https://www.monsite.com" /> 
+                
+        </Head>
             <Header />
                 <div className="lg:px-24 px-4 md:px-12">
                     <div className="mt-24">
@@ -183,7 +196,7 @@ export default function Project() {
                                 </div>
                                 {project?.isLinkExist ? (
                                     <div>
-                                        <Link href={project.project_url || ""}><Magnet><Button>{t('projects.Github')}</Button></Magnet></Link>
+                                        <Link href={project.project_url || ""}><Magnet><Button>{t('projects.github')}</Button></Magnet></Link>
                                     </div>
                                 ) : (<span className="text-lg lg:text-3xl md:text-2xl text-anthra">{t('projects.noGithub')}</span>)}
                             </div>
@@ -192,7 +205,7 @@ export default function Project() {
                     <section className="my-8">
                         <div className="lg:flex">
                             <div className=" flex justify-center items-center mb-12 lg:w-1/2">
-                                <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} />
+                                <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} layout="responsive"/>
                             </div>
                                 <div className="lg:w-1/2">
                                     <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 lg:text-right text-left">Conclusion</h2>

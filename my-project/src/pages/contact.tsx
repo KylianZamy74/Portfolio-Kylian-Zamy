@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+
 import { useModalStore } from "@/store/ModalStore/useModalStore";
 import Menu from "@/components/Modal/MenuModal";
 import { useScrollMenuStore } from "@/store/ModalStore/useScrollMenuStore";
@@ -48,6 +50,17 @@ export default function Contact() {
 
     return (
         <>
+         <Head>
+                <title>{t("Seo.title-contact")}</title>  
+                <meta name="description" content={t('Seo.description-contact')}/> 
+                <meta name="keywords" content="développeur, freelance, fullstack, react, next.js, node.js, développement web, postgresql, prisma, sequelize, express.js" /> 
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content="Bienvenue sur mon site - Kylian ZAMY" /> 
+                <meta property="og:description" content="Je suis un développeur Fullstack Freelance spécialisé en React, Next.js, Node.js, et plus encore." /> 
+                <meta property="og:image" content="/images/mon-image.jpg" /> 
+                <meta property="og:url" content="https://www.monsite.com" /> 
+                
+        </Head>
            
             <Inner>
                 <div className="2xl:px-40 lg:px-24 px-4">

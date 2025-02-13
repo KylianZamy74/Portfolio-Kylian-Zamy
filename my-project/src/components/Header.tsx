@@ -50,23 +50,27 @@ export default function Header() {
         </button>
       </nav>
 
-      <nav className="hidden lg:flex gap-8 text-anthra font-bold list-none">
-        <li>
-          <Link href="/" >{t("headers.home")}</Link>
-        </li>
-        <li>
-          <Link href="/services" >{t("headers.services")}</Link>
-        </li>
-        <li>
-          <Link href="/contact" >{t("headers.contact")}</Link>
-        </li>
+      <nav className="hidden lg:flex  text-anthra font-bold list-none">
+        <ul className="lg:flex gap-8">
+          <li>
+            <Link href="/" >{t("headers.home")}</Link>
+          </li>
+          <li>
+            <Link href="/services" >{t("headers.services")}</Link>
+          </li>
+          <li>
+            <Link href="/contact" >{t("headers.contact")}</Link>
+          </li>
+        </ul>
       </nav>
 
       <div className="ml-4">
+        
         <select
           value={currentLanguage} // Assurez-vous que la langue sélectionnée est correcte au départ
           onChange={handleLanguageChange} 
           className="bg-transparent border border-anthra text-anthra p-2 rounded"
+          aria-label="choisir une langue"
         >
           {locales?.map((lng) => (
             <option key={lng} value={lng}>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 interface MagnetProps {
-  children: React.ReactElement;
+  children: React.ReactElement<{ ref?: React.Ref<HTMLDivElement> }>; // Assure que l'enfant accepte une ref
 }
 
 export default function Magnet({ children }: MagnetProps) {
@@ -13,7 +13,6 @@ export default function Magnet({ children }: MagnetProps) {
     useEffect(() => {
         if (!magnetic.current) return;
 
-        // Initialisation de GSAP après le montage
         xTo.current = gsap.quickTo(magnetic.current, "x", { duration: 1, ease: "elastic.out(1, 0.3)" });
         yTo.current = gsap.quickTo(magnetic.current, "y", { duration: 1, ease: "elastic.out(1, 0.3)" });
 
@@ -22,7 +21,7 @@ export default function Magnet({ children }: MagnetProps) {
 
             const { clientX, clientY } = e;
             const { width, height, left, top } = magnetic.current.getBoundingClientRect();
-            const x = (clientX - (left + width / 2)) * 0.5; // Calcul du déplacement
+            const x = (clientX - (left + width / 2)) * 0.5;
             const y = (clientY - (top + height / 2)) * 0.5;
 
             xTo.current(x);
