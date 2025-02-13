@@ -190,6 +190,7 @@
         "pictures": "Pictures",
         "github": "Github",
         "noGithub": "No github",
+        "another": "See another project",
         "project_1": {
             "title": "Cinédelices",
             "description": "This interactive web application allows users to explore a vast catalog of movies and TV shows while discovering recipes inspired by dishes seen on screen. Visitors can also add their own recipes linked to their favorite films, making the experience even more immersive and personalized. With an intuitive interface and responsive design, navigation is seamless across all devices, providing an enjoyable and engaging discovery experience.",
@@ -278,7 +279,7 @@
 
     "Seo": {
     "title": "Welcome to my website - Kylian ZAMY",
-    "description": "I am a passionate Fullstack Freelance Developer, specializing in React, Next.js, Node.js, and more.",
+    "description": "I am a passionate Fullstack Freelance Developer based in Annecy in Haute-Savoie, specializing in React, Next.js, Node.js, and more.",
     "title-contact": "Contact Page - Kylian ZAMY",
     "description-contact": "Here is a contact form for those who wish to work with me.",
     "title-services": "Services Page - Kylian ZAMY",

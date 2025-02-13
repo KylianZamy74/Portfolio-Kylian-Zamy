@@ -21,6 +21,10 @@ import Link from "next/link";
 import Button from "@/components/ui/button";
 import Magnet from "@/components/ui/magnetic";
 import Head from "next/head";
+import { useExtendImageStore } from "@/store/ModalStore/useExtendImageStore"; // Assure-toi que le chemin est correct
+import ImageModal from "@/components/Modal/ImageModal"; 
+
+
 
 
 
@@ -162,11 +166,13 @@ export default function Project() {
                                             alt={`Project image ${index + 1}`}
                                             width={400}
                                             height={300}
+                                            onClick={() => useExtendImageStore.getState().openExtendImageModal(img.url)}
                                         />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
                         </motion.div>
+                        <ImageModal />
                     </section>
                     <section className="flex justify-between items-center flex-col text-center pt-12">
                         <div className="w-full">
@@ -211,7 +217,7 @@ export default function Project() {
                                     <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 lg:text-right text-left">Conclusion</h2>
                                     <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-left lg:text-right">{t(`projects.project_${id}.conclusion`) || project?.conclusion}</p>
                                     <div className="space-x-4 my-8 flex">
-                                        <Link href="/"><Button>See another project</Button></Link>
+                                        <Link href="/"><Button>{t(`projects.another`)}</Button></Link>
                                         <Link href="/contact">
                                             <Magnet><Button>Contact</Button></Magnet>
                                         </Link>
