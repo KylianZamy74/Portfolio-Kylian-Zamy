@@ -3,7 +3,7 @@ import Cors from 'cors';
 
 const cors = Cors({
   origin: process.env.NODE_ENV === 'production'
-    ? ['https://kylian-zamy.dev', 'https://www.kylian-zamy.dev']
+    ? ['https://kylian-zamy.dev/api', 'https://www.kylian-zamy.dev/api']
     : ['http://localhost:3000'], // En production, autoriser l'URL du site de prod, en dev l'URL localhost
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
