@@ -55,6 +55,7 @@ export const useGetProjectsStore = create<getProjectsStore>((set) => ({
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
+              "Access-control": "allow-origin"
             },
             credentials: "include",
           });
