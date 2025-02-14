@@ -1,28 +1,29 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import Cors from 'cors';
+import { NextRequest, NextResponse } from 'next/server';
 
-const cors = Cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://kylian-zamy.dev', 'https://www.kylian-zamy.dev']
-    : ['http://localhost:3000'], // En production, autoriser l'URL du site de prod, en dev l'URL localhost
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-});
+export function middleware(req: NextRequest) {
+  // Définir les origines autorisées
+  const allowedOrigins = [
+    "http://localhost:3000", // En développement
+    "https://kylian-zamy.dev", // Ton domaine en production
+    "https://www.kylian-zamy.dev", // Si tu utilises la version www
+  ];
 
-const runMiddleware = (
-  req: NextApiRequest,
-  res: NextApiResponse,
-  fn: (req: NextApiRequest, res: NextApiResponse, next: () => void) => void
-): Promise<void> => {
-  return new Promise((resolve) => {
-    fn(req, res, () => resolve());
-  });
-};
+  const origin = req.headers.get('origin');
+  
+  if (allowedOrigins.includes(origin || '')) {
+    const response = NextResponse.next();
+    
+    // Ajouter les en-têtes CORS
+    response.headers.set('Access-Control-Allow-Origin', origin || '*');
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Applique le middleware CORS
-  await runMiddleware(req, res, cors);
+  // Si la méthode est OPTIONS, répond directement avec un statut 200
+  if (req.method === 'OPTIONS') {
+    return new NextResponse(null, { status: 200 });
+  }
 
-  // Ton code de traitement des données
-  res.status(200).json({ message: 'Projets récupérés' });
+  // Retourner la réponse
+  return NextResponse.next();
 }
