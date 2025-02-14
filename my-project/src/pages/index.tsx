@@ -41,7 +41,7 @@ export default function Home() {
                 <div className="lg:px-24 px-4 md:px-12">
                     <section className="lg:my-32" aria-labelledby="intro-section">
                         <div className="intro flex-col flex justify-center mb-32 p-4 my-32">
-                            <h1 id="intro-section" className="text-anthra font-bold text-6xl lg:w-1/2">
+                            <h1 id="intro-section" className="text-anthra font-bold text-5xl lg:w-1/2 ">
                                 {splitTextIntoChar(t("title.main"))}
                             </h1>
                             <em className="text-beige text-3xl font-bold">
@@ -67,12 +67,12 @@ export default function Home() {
                     <div className="w-full">
                         <section className="lg:h-2/3 text-3xl flex justify-center items-center flex-col fromBotToTop lg:flex lg:flex-row lg:space-x-48 mx-4 lg:mx-0">
                             <div>
-                                <h2 className="text-5xl text-anthra font-semibold py-12 trigger m-auto text-center lg:text-left" id="who-am-i">
+                                <h2 className="text-5xl text-anthra font-semibold py-12 m-auto text-center lg:text-left" id="who-am-i">
                                     {splitTextIntoWords(t("presentation.who"))} 
                                     <strong className="text-beige">{splitTextIntoWords(t("presentation.am"))}</strong> 
                                     <strong className="text-beige">{splitTextIntoWords(t("presentation.i"))}</strong>
                                 </h2>
-                                <div className="trigger text-anthra lg:mx-0 lg:text-2xl">
+                                <div className="text-anthra lg:mx-0 lg:text-2xl">
                                     <p>{splitTextIntoWords(t("presentation.first"))}
                                         <strong className="text-beige">{splitTextIntoWords(t("presentation.second"))}.</strong>
                                     </p>
@@ -130,7 +130,7 @@ export default function Home() {
                             </div>
                         </section>
                         <section className="flex flex-col items-center mx-4 mb-24" aria-labelledby="build-together">
-                            <h2 id="build-together" className="text-6xl text-center my-12 lg:w-1/2">
+                            <h2 id="build-together" className="text-5xl text-center my-12 lg:w-1/2">
                                 {splitTextIntoWords(t("build-section.build"))}
                                 <strong className="text-beige">{splitTextIntoWords(t("build-section.together"))}</strong>
                             </h2>

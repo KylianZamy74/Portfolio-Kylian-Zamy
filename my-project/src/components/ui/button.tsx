@@ -45,7 +45,7 @@ export default function Button({
 
     return (
         <div
-            className={`relative overflow-hidden flex items-center justify-center border-2 border-beige rounded-md transition-colors duration-300 text-anthra p-4 lg:text-3xl text-xl font-semibold cursor-pointer ${className}`}
+            className={`relative overflow-hidden flex items-center justify-center border-2 border-beige rounded-md transition-colors duration-300 text-anthra p-4 lg:text-3xl text-base font-semibold cursor-pointer ${className}`}
             {...attributes}
             style={{ backgroundColor, overflow: "hidden" }}
             onMouseEnter={manageMouseEnter}

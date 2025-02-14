@@ -278,15 +278,16 @@
     },
 
     "Seo": {
-    "title": "Welcome to my website - Kylian ZAMY",
-    "description": "I am a passionate Fullstack Freelance Developer based in Annecy in Haute-Savoie, specializing in React, Next.js, Node.js, and more.",
-    "title-contact": "Contact Page - Kylian ZAMY",
-    "description-contact": "Here is a contact form for those who wish to work with me.",
-    "title-services": "Services Page - Kylian ZAMY",
-    "description-services": "Here, I present the various services I offer, ranging from a simple showcase website to a custom application, all with support and advice to turn your vision into reality.",
-    "title-project": "Project Page - Kylian ZAMY",
-    "description-project": "Here, I present a project I have worked on, either alone or in collaboration. This includes a description of the project, the challenges I encountered, some images, and a conclusion."
+    "title": "Fullstack Freelance Developer - Kylian ZAMY",
+    "description": "Freelance Fullstack developer in Annecy, specialized in React, Next.js, and Node.js. Creating high-performance websites and custom applications.",
+    "title-contact": "Contact Me - Kylian ZAMY",
+    "description-contact": "Need a website or an app? Fill out my contact form and let's discuss your project.",
+    "title-services": "Web Development Services - Kylian ZAMY",
+    "description-services": "Custom development: showcase websites, web applications, guidance, and consulting to bring your digital project to life.",
+    "title-project": "Web Project - Kylian ZAMY",
+    "description-project": "Discover one of my projects: development details, technical challenges, solutions implemented, and a visual overview."
 }
+
 
 }
 

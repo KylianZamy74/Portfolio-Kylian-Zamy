@@ -49,7 +49,7 @@ export default function Services() {
                 <div className='lg:px-24 px-4 md:px-12'>
                     <section className='flex flex-col justify-center gap-y-4 p-4 my-12 '>
                         <div className='lg:w-3/5 trigger lg:my-32'>
-                            <h1 className='text-6xl font-bold text-anthra'>{splitTextIntoWords(t("services-section.catch-phrase"))}</h1>
+                            <h1 className='text-5xl font-bold text-anthra'>{splitTextIntoWords(t("services-section.catch-phrase"))}</h1>
                         </div>
                         <div className='lg:flex lg:justify-between lg:mx-12 lg:space-x-12'>
                             <div className='lg:w-1/3'>
@@ -57,7 +57,6 @@ export default function Services() {
                             </div>
                             <div className='lg:flex flex items-center justify-center flex-col lg:w-2/3'>
                                 <h2 className='text-3xl  lg:text-5xl font-semibold text-anthra trigger'>{splitTextIntoWords(t("services-section.second-catch-phrase-title"))}<p>{splitTextIntoWords(t("services-section.second-catch-phrase-subtitle"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.second-catch-phrase-strong"))}</strong></p></h2>
-
                             </div>
                         </div>
                     </section>
