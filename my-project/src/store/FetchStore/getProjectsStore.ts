@@ -32,6 +32,7 @@ export const useGetProjectsStore = create<getProjectsStore>((set) => ({
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}projects`);
             const data = await response.json();
             set({ projects: data });
+            console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
         } catch (error) {
             console.error("Nous n'avons pas pu récuperer vos projets :", error);
         }
