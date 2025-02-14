@@ -46,9 +46,9 @@ export default function Services() {
                 
         </Head>
             <Inner>
-                <div className='lg:px-24 px-4 md:px-12'>
-                    <section className='flex flex-col justify-center gap-y-4 p-4 my-12 '>
-                        <div className='lg:w-3/5 trigger lg:my-32'>
+                <div className='lg:px-24 px-4 md:px-12 lg:my-32'>
+                    <section className='flex flex-col justify-center gap-y-4 my-32'>
+                        <div className='lg:w-3/5 trigger lg:mb-32'>
                             <h1 className='text-5xl font-bold text-anthra'>{splitTextIntoWords(t("services-section.catch-phrase"))}</h1>
                         </div>
                         <div className='lg:flex lg:justify-between lg:mx-12 lg:space-x-12'>
@@ -63,7 +63,7 @@ export default function Services() {
                     <section className="mt-12 space-y-12 mx-4">
                         <h2 className='text-5xl lg:text-left mb-12 font-semibold text-center'>{splitTextIntoWords(t("services-section.services.main-title"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.services.main-title-strong"))}</strong>  </h2>
                         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-8">
-                            <article className="border-b-2 lg:border-b-0 lg:border-r-2 pr-8 pb-12 pt-8 mt-8">
+                            <article className="border-b-2 lg:border-b-0 lg:border-r-2 pr-8 pb-12 pt-8">
                                 <h3 className="text-beige text-anthra text-3xl font-bold">
                                     {splitTextIntoWords(t("services-section.services.card_1.title"))}
                                 </h3>

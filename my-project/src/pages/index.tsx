@@ -38,8 +38,8 @@ export default function Home() {
                 
         </Head>
             <Inner>
-                <div className="lg:px-24 px-4 md:px-12">
-                    <section className="lg:my-32" aria-labelledby="intro-section">
+                <div className="lg:px-24 px-4 md:px-12 lg:my-32">
+                    <section className="" aria-labelledby="intro-section">
                         <div className="intro flex-col flex justify-center mb-32 p-4 my-32">
                             <h1 id="intro-section" className="text-anthra font-bold text-5xl lg:w-1/2 ">
                                 {splitTextIntoChar(t("title.main"))}
