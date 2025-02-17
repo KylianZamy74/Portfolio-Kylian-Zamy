@@ -25,9 +25,6 @@ import { useExtendImageStore } from "@/store/ModalStore/useExtendImageStore"; //
 import ImageModal from "@/components/Modal/ImageModal"; 
 
 
-
-
-
 export default function Project() {
     const { isOpen } = useModalStore();
     const showMenu = useScrollMenuStore((state) => state.showMenu);
@@ -70,7 +67,7 @@ export default function Project() {
         }
     }, [isInView, controls]);
 
-    // Tri des images avant de les utiliser (par ID ou URL selon ton besoin)
+
     const sortedImages = project?.images?.sort((a, b) => a.id - b.id) || [];
 
     return (
