@@ -53,7 +53,7 @@ export default function Services() {
                         </div>
                         <div className='lg:flex lg:justify-between lg:mx-12 lg:space-x-12'>
                             <div className='lg:w-1/3'>
-                                <Image src="/images/tailor.svg" width={420} height={280} alt='Image tailored' />
+                                <Image src="/Images/tailor.svg" width={420} height={280} alt='Image tailored' />
                             </div>
                             <div className='lg:flex flex items-center justify-center flex-col lg:w-2/3'>
                                 <h2 className='text-3xl  lg:text-5xl font-semibold text-anthra trigger'>{splitTextIntoWords(t("services-section.second-catch-phrase-title"))}<p>{splitTextIntoWords(t("services-section.second-catch-phrase-subtitle"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.second-catch-phrase-strong"))}</strong></p></h2>
