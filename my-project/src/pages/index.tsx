@@ -80,7 +80,7 @@ export default function Home() {
                                 <div className="flex justify-center m-8 gap-x-2 border-t-2 border-b-2 py-4">
                                     {["react", "next", "tailwind", "sass", "prisma", "sequelize", "postgres", "node", "express"].map((tech, index) => (
                                         <div key={index} className="relative group" aria-label={tech}>
-                                            <Image src={`/Images/${tech}.png`} width={33} height={33} alt={tech} />
+                                            <Image src={`/images/${tech}.png`} width={33} height={33} alt={tech} />
                                             <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-sm p-2 rounded-lg">
                                                 {tech.charAt(0).toUpperCase() + tech.slice(1)}
                                             </div>
@@ -89,7 +89,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <div>
-                                <Image src="/Images/linkedinImage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" layout="responsive" />
+                                <Image src="/images/linkedinImage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" layout="responsive" />
                             </div>
                         </section>
                         <Article />
@@ -103,7 +103,7 @@ export default function Home() {
                                     </h2>
                                 </div>
                                 <div>
-                                    <Image src="/Images/collab-2.svg" width={354} height={354} className="w-full" alt="Image tailored solutions"/>
+                                    <Image src="/images/collab-2.svg" width={354} height={354} className="w-full" alt="Image tailored solutions"/>
                                 </div>
                             </div>
                             <div className="flex flex-col text-anthra gap-y-4 mx-4 my-12 lg:my-0 md:text-2xl lg:text-2xl lg:w-2/3">
@@ -125,7 +125,7 @@ export default function Home() {
                                     </h2>
                                 </div>
                                 <div>
-                                    <Image src="/Images/collab-2.svg" width={354} height={354} className="w-full" alt="Image tailored solutions"/>
+                                    <Image src="/images/collab-2.svg" width={354} height={354} className="w-full" alt="Image tailored solutions"/>
                                 </div>
                             </div>
                         </section>

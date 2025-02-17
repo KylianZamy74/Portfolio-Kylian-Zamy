@@ -109,7 +109,7 @@ export default function Project() {
                             <h2 className="text-5xl lg:my-8 lg:text-left text-beige text-anthra text-3xl text-left w-full text-semibold text-center">Description</h2>
                             <div className="lg:flex lg:w-full">
                                 <div className="lg:hidden block flex items-center justify-center ">
-                                    <Image src="/Images/creative.svg" width={295} height={295} alt="creative people"></Image>
+                                    <Image src="images/creative.svg" width={295} height={295} alt="creative people"></Image>
                                 </div>
                                 <div className="lg:w-1/2">
                                     {splitParagraph(
@@ -124,7 +124,7 @@ export default function Project() {
                                     ))}
                                 </div>
                                 <div className="lg:block hidden lg:w-1/2">
-                                    <Image src="/Images/creative.svg" width={295} height={295} alt="creative people" layout="responsive"></Image>
+                                    <Image src="/images/creative.svg" width={295} height={295} alt="creative people" layout="responsive"></Image>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@ export default function Project() {
                     <section className="my-8">
                         <div className="lg:flex">
                             <div className=" flex justify-center items-center mb-12 lg:w-1/2">
-                                <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} layout="responsive"/>
+                                <Image src="/images/reading.svg" alt="Image de conclusion" width={284} height={284} layout="responsive"/>
                             </div>
                                 <div className="lg:w-1/2">
                                     <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 lg:text-right text-left">Conclusion</h2>

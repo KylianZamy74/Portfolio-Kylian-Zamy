@@ -56,7 +56,7 @@ export default function Article() {
             </h2>
             <div className=" flex flex-col items-center lg:px-24 lg:flex-row lg:space-x-24 ">
                 <div>
-                    <Image src="/Images/Programming-2.svg" width={384} height={384} alt="Image d'un programmeur" layout="responsive" />
+                    <Image src="/images/Programming-2.svg" width={384} height={384} alt="Image d'un programmeur" layout="responsive" />
                 </div>
                 <div className="lg:flex-col lg:flex lg:w-1/2 ">
                     {projects.map((project) => (
