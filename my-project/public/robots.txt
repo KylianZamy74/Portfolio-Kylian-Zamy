@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kylian-zamy.dev
+
+# Sitemaps
+Sitemap: https://kylian-zamy.dev/sitemap.xml
