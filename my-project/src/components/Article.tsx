@@ -102,6 +102,7 @@ export default function Article() {
                                                     height={200}
                                                     alt={`Hover ${project.title}`}
                                                     className="rounded-lg shadow-lg"
+                                                    unoptimized={true}
                                                 />
                                             </Link>
                                         </motion.div>
