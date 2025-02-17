@@ -12,7 +12,7 @@ export default function MenuOpen() {
         <>
             <Magnet>
                 <motion.button
-                    className="fixed top-20 right-0 bg-[#333333] p-4 rounded-full border border-[#D9B08C] lg:p-8 "
+                    className="fixed top-20 right-5 bg-[#333333] p-4 rounded-full border border-[#D9B08C] lg:p-8 "
                     onClick={openModal}
                     initial={{ opacity: 0, scale: 1.5 }}
                     animate={{ opacity: 1, scale: 1 }}
