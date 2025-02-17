@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
     <Head>
+      <meta name="google-site-verification" content="prBJbyxtjy02wCj5gvdsp0b6z6oVNAIPwt-1Ij9QO2w" />
       <link rel="icon" href="/Images/kz.svg" />
     </Head>
     <SessionProvider session={pageProps.session}>
