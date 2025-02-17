@@ -199,7 +199,7 @@
 
     },
     "project_2": {
-        "title": "Séquentiel",
+        "title": "Sequentiel",
         "description": "Ce projet est un calendrier interactif conçu pour les développeurs, permettant de récupérer les issues de GitLab et de les organiser visuellement via une interface intuitive. Les utilisateurs peuvent glisser-déposer leurs tâches dans le calendrier, suivre précisément le temps passé sur chaque projet ou problème, et créer des blocs de temps personnalisés assignables à des développeurs et des issues spécifiques. Un onglet de résumé quotidien fournit un aperçu des tâches terminées, avec la possibilité de valider les journées de travail. Une amélioration possible serait la génération d'un rapport détaillé montrant le temps passé sur chaque projet et tâche, améliorant ainsi le suivi et la gestion de la productivité.",
         "enterprise": "Avec plus de 30 ans d'expérience, cette entreprise crée des solutions innovantes et personnalisées pour les PME, grandes entreprises et associations. Lors de mon stage, j'ai observé leur attention portée aux besoins des clients, en livrant des outils efficaces tout en maintenant des relations professionnelles solides.",
         "role_date": "Implémentation & Développement Complet - 2024",
