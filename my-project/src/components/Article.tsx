@@ -31,6 +31,10 @@ export default function Article() {
         setIsHovering(false);
     };
 
+    projects.map((project) => {
+        console.log(project.images)
+    })
+
     const hoverVariants = {
         initial: { scale: 0, opacity: 0 },
         animate: {
@@ -56,7 +60,7 @@ export default function Article() {
             </h2>
             <div className=" flex flex-col items-center lg:px-24 lg:flex-row lg:space-x-24 ">
                 <div>
-                    <Image src="/images/Programming-2.svg" width={384} height={384} alt="Image d'un programmeur" layout="responsive" />
+                    <Image src="/images/Programming-2.svg" width={384} height={384} alt="Image d'un programmeur" layout="responsive"  />
                 </div>
                 <div className="lg:flex-col lg:flex lg:w-1/2 ">
                     {projects.map((project) => (
@@ -68,11 +72,12 @@ export default function Article() {
                                 onMouseLeave={handleMouseLeave}
                             >
                                 <Image
-                                    src={project.images?.[0]?.url}
+                                    src={project.images?.sort((a, b) => a.id - b.id)[0]?.url}
                                     width={350}
                                     height={200}
                                     alt={`Image de ${project.title}`}
                                     className="lg:hidden rounded-lg shadow-lg"
+                                    
                                 />
                                 <AnimatePresence mode="wait">
                                     {hoveredProjectId === project.id && isHovering && (
@@ -92,7 +97,7 @@ export default function Article() {
                                         >
                                             <Link href={`/Project/${project.id}`}>
                                                 <Image
-                                                    src={project.images?.[0]?.url}
+                                                    src={project.images?.sort((a, b) => a.id - b.id)[0]?.url}
                                                     width={350}
                                                     height={200}
                                                     alt={`Hover ${project.title}`}
