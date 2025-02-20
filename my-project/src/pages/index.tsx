@@ -32,10 +32,11 @@ export default function Home() {
                 <meta name="keywords" content="développeur, freelance, fullstack, react, next.js, node.js, développement web, postgresql, prisma, sequelize, express.js" /> 
                 <meta name="robots" content="index, follow" />
                 <meta property="og:title" content="Bienvenue sur mon site - Kylian ZAMY" /> 
-                <meta property="og:description" content="Je suis un développeur Fullstack Freelance spécialisé en React, Next.js, Node.js, et plus encore." /> 
-                <meta property="og:image" content="/images/mon-image.jpg" /> 
-                <meta property="og:url" content="https://www.monsite.com" /> 
-                
+                <meta property="og:description" content="Développeur Web Freelance à Annecy | Des sites sur mesure, rapides, performants, optimisés SEO et conçus pour évoluer avec vous" /> 
+                <meta property="og:image" content="/Images/Landing.jpg" /> 
+                <meta property="og:url" content="https://kylian-zamy.dev" /> 
+                <link rel="alternate" href="https://kylian-zamy.dev/fr" hrefLang="fr-fr" />
+                <link rel="alternate" href="https://kylian-zamy.dev/en" hrefLang="en" />
         </Head>
             <Inner>
                 <div className="lg:px-24 px-4 md:px-12 lg:my-32">

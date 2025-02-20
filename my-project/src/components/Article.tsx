@@ -31,10 +31,6 @@ export default function Article() {
         setIsHovering(false);
     };
 
-    projects.map((project) => {
-        console.log(project.images)
-    })
-
     const hoverVariants = {
         initial: { scale: 0, opacity: 0 },
         animate: {

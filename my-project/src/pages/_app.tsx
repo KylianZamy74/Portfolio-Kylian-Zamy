@@ -5,6 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { I18nextProvider } from 'react-i18next'; 
 import i18next from '../../i18n'; 
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "@/styles/global.css"; 
 import '../styles/font.scss';
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <I18nextProvider i18n={i18next}> 
         <AnimatePresence mode="wait">  
           <Component key={router.route} {...pageProps} />  
+          <SpeedInsights />
         </AnimatePresence>
       </I18nextProvider>
     </SessionProvider>

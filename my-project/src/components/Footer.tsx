@@ -19,7 +19,6 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h2><strong>{t("footer.links.links")}</strong></h2>
                     <ul>
                         <li><Link href="/">{t("footer.links.home")}</Link></li>
                         <li><Link href="/services">{t("footer.links.services")}</Link></li>
