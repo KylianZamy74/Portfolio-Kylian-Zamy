@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+
 import Head from "next/head";
 
 import { useModalStore } from "@/store/ModalStore/useModalStore";
@@ -30,10 +31,12 @@ export default function Contact() {
         setSubject,
         setMessage,
         sendMail,
+        setIsAuthorized
     } = useContactStore();
 
     const { t } = useTranslation();
     const router = useRouter();
+   
 
     const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -42,7 +45,7 @@ export default function Contact() {
             throw new Error("Veuillez remplir les champs requis")
         }
         sendMail();
-
+        setIsAuthorized(true)
         router.push("/mailSent");
     }
 

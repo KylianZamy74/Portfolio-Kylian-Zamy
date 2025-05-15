@@ -1,24 +1,20 @@
 import { GrValidate } from "react-icons/gr";
 import Inner from "@/components/Layout/Inner";
 import Link from "next/link";
-import Head from "next/head";
+import { ForbiddenRoutes } from "@/components/ForbiddenRoute/Forbidden";
+import { useContactStore } from "@/store/ContactStore/useContactService";
 
 
 
-export default function addProjectValidated() {
+export default function AddProjectValidated() {
+    const {
+        isAuthorized
+    } = useContactStore();
+
     return (
         <>
-        <Head>
-                <title>Bienvenue sur mon site - Kylian ZAMY</title>  
-                <meta name="description" content="Je suis un développeur Fullstack Freelance passionné, spécialisé en React, Next.js, Node.js, et plus encore." /> 
-                <meta name="keywords" content="développeur, freelance, fullstack, react, next.js, node.js, développement web, postgresql, prisma, sequelize, express.js" /> 
-                <meta name="robots" content="index, follow" />
-                <meta property="og:title" content="Bienvenue sur mon site - Kylian ZAMY" /> 
-                <meta property="og:description" content="Je suis un développeur Fullstack Freelance spécialisé en React, Next.js, Node.js, et plus encore." /> 
-                <meta property="og:image" content="/images/mon-image.jpg" /> 
-                <meta property="og:url" content="https://www.monsite.com" /> 
-        </Head>
-            <Inner>       
+            <Inner>  
+                <ForbiddenRoutes isAuthorized={isAuthorized}>
                 <div className="flex flex-col justify-center items-center h-screen">
                     <h1 className="text-2xl font-semibold mb-6 text-anthra">Votre mail a été envoyé avec succès</h1>
                     <div className="h-40 w-40 flex justify-center items-center bg-[#93D660] rounded-full">
@@ -27,7 +23,8 @@ export default function addProjectValidated() {
                     <button className="text-anthra text-sm mt-6 cursor-pointer">
                         <Link href={"/"} >Retourner sur la page d&apos;accueil</Link>
                     </button>
-                </div>               
+                </div>        
+                </ForbiddenRoutes>            
             </Inner>
         </>
     );

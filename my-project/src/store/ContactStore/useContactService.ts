@@ -7,6 +7,8 @@ interface contactStore{
     subject: string,
     phone: string,
     message: string,
+    isAuthorized: boolean,
+    setIsAuthorized: (isAuthorized: boolean) => void;
 
     setName: (name: string) => void;
     setEmail: (email: string) => void;
@@ -14,6 +16,7 @@ interface contactStore{
     setSubject: (subject: string) => void;
     setPhone: (phone:string) => void;
     setMessage: (message: string) => void;
+
     sendMail: () => void;
 }   
 
@@ -24,6 +27,7 @@ export const useContactStore = create<contactStore>((set) => ({
     subject: "",
     phone: "",
     message: "",
+    isAuthorized: false,
 
     setName: (name:string) => set({name}),
     setEmail: (email:string) => set({email}),
@@ -31,6 +35,7 @@ export const useContactStore = create<contactStore>((set) => ({
     setSubject: (subject:string) => set({subject}),
     setPhone: (phone:string) => set({phone}),
     setMessage: (message:string) => set({message}),
+    setIsAuthorized:(isAuthorized:boolean) => set({isAuthorized}),
 
     sendMail: async () => {
 
