@@ -65,7 +65,7 @@ export default function Contact() {
 
             <Inner>
                 <div className="2xl:px-40 lg:px-24 px-4">
-                    <div className="flex-col flex justify-center h-screen p-4 intro">
+                    <div className="flex-col flex justify-center h-[60vh] p-4 intro">
                         <h1 className="text-anthra text-6xl font-semibold">{splitTextIntoChar(t("contact.title"))} <strong className="text-beige">{splitTextIntoChar(t("contact.title_1"))}</strong></h1>
                     </div>
 

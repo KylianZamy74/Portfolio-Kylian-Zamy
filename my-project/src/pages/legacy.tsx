@@ -23,8 +23,8 @@ export default function Legacy() {
                 <link rel="alternate" href="https://kylian-zamy.dev/en" hrefLang="en" />
         </Head>
         <Inner>
-        <div className="px-4 md:px-12 lg:px-24 text-anthra space-y-12 my-12">
-            <div>
+        <div className="max-w-screen-2xl mx-auto px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-44 my-32">
+            <div >
                 <h1 className="text-beige text-6xl my-4">{t("legacy.title")}</h1>
                 <ul>
                     <li>Kylian ZAMY</li>

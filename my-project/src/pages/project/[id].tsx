@@ -83,7 +83,7 @@ export default function Project() {
                 <meta property="og:url" content="https://www.monsite.com" />
             </Head>
             <Header />
-            <div className="px-4 md:px-12 lg:px-24 max-w-screen-xl mx-auto">
+            <div className="max-w-screen-2xl mx-auto px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-44">
                 <div className="mt-24">
                     <div className="lg:flex lg:w-full lg:space-x-24">
                         <div className="lg:w-1/3">

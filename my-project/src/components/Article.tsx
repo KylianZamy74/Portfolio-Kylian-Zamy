@@ -51,14 +51,14 @@ export default function Article() {
             id="my-work"
             className="text-left text-5xl pt-8 lg:pb-24 text-anthra w-full"
         >
-            <h2 className="text-5xl w-full font-semibold trigger text-center lg:text-left lg:w-1/2 mt-24">
+            <h2 className="text-5xl lg:text-6xl 2xl:text-7xl w-full font-semibold trigger text-center lg:text-left lg:w-1/2 mt-24">
                 {splitTextIntoWords(t("travail.my-recent"))} <strong className="text-beige">{splitTextIntoWords(t("travail.work"))}</strong>
             </h2>
             <div className=" flex flex-col items-center lg:px-24 lg:flex-row lg:space-x-24 ">
                 <div>
                     <Image src="/Images/Programming-2.svg" width={384} height={384} alt="Image d'un programmeur" layout="responsive"  />
                 </div>
-                <div className="lg:flex-col lg:flex lg:w-1/2 ">
+                <div className="lg:flex-col lg:flex lg:w-1/2">
                     {projects.map((project) => (
                         <Link href={`/project/${project.id}`} key={project.id}>
                             <motion.article
