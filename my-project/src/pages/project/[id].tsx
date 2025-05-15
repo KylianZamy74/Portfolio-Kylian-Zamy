@@ -83,7 +83,7 @@ export default function Project() {
                 <meta property="og:url" content="https://www.monsite.com" />
             </Head>
             <Header />
-            <div className="lg:px-24 px-4 md:px-12">
+            <div className="px-4 md:px-12 lg:px-24 max-w-screen-xl mx-auto">
                 <div className="mt-24">
                     <div className="lg:flex lg:w-full lg:space-x-24">
                         <div className="lg:w-1/3">
@@ -137,17 +137,14 @@ export default function Project() {
                     </div>
                 </section>
 
-                <section className="hidden md:block h-[80vh]">
+                <section className="hidden md:block">
                     <div className="w-full text-left mt-32 text-3xl text-[#FDFAD5]">
                         <h2 className="text-beige text-center lg:text-left my-8 lg:text-5xl font-semibold">
                            {t('projects.pictures')}
                         </h2>
                     </div>
-                    <motion.div
-                        className=" h-[80vh] flex justify-center items-center bg-sand lg:px-8 drop-shadow-600 rounded px-4"
-                        ref={carouselRef}
-                        animate={controls}
-                        initial={{ scale: 0.5 }}
+                    <div
+                        className=" h-[50vh] flex justify-center items-center bg-sand lg:px-8 drop-shadow-600 rounded px-4"
                     >
                         <Swiper
                             spaceBetween={50}
@@ -164,11 +161,12 @@ export default function Project() {
                                         width={400}
                                         height={300}
                                         onClick={() => useExtendImageStore.getState().openExtendImageModal(img.url)}
+                                        layout="responsive"
                                     />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                    </motion.div>
+                    </div>
                     <ImageModal />
                 </section>
                 <section className="flex justify-between items-center flex-col text-center pt-12">
