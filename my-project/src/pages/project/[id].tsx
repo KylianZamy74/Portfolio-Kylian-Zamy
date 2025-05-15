@@ -102,7 +102,7 @@ export default function Project() {
                         <p className="my-8 text-xl text-anthra lg:w-2/3 font-semibold lg:text-2xl flex justify-center items-center">{t(`projects.project_${id}.short-description`) || project?.short_description}</p>
                     </div>
                     <div className="pt-12 flex flex-col justify-center items-center trigger fromLeftToRight">
-                        <h2 className="text-3xl lg:my-8 my-8 lg:text-left text-beige text-anthra lg:text-5xl text-left w-full text-semibold text-center">Description</h2>
+                        <h2 className="text-5xl 2xl:text-6xl lg:my-8 my-8 lg:text-left text-beige text-anthra lg:text-5xl text-left w-full text-semibold text-center">Description</h2>
                         <div className="lg:flex lg:w-full">
                             <div className="lg:hidden block flex items-center justify-center ">
                                 <Image src="/Images/creative.svg" width={295} height={295} alt="creative people"></Image>
@@ -126,12 +126,12 @@ export default function Project() {
                     </div>
                 </div>
 
-                <section className="md:hidden min-h-screen flex justify-center items-center flex-col">
-                    <h2 className="text-3xl text-beige text-center font-semibold pb-4 text-left w-full my-4 pt-4 ">{t("projects.pictures")}</h2>
+                <section className="md:hidden flex justify-center items-center flex-col">
+                    <h2 className="text-5xl 2xl:text-6xl text-beige text-center font-semibold pb-4 text-left w-full my-4 pt-4 ">{t("projects.pictures")}</h2>
                     <div className="bg-sand p-8 rounded drop-shadow-600">
                         {sortedImages.map((image, index) => (
                             <div className="py-4" key={index}>
-                                <Image src={image.url} alt="Project" width={1200} height={800} />
+                                <Image src={image.url} alt="Project" width={1200} height={800} layout="responsive" />
                             </div>
                         ))}
                     </div>
@@ -139,12 +139,12 @@ export default function Project() {
 
                 <section className="hidden md:block">
                     <div className="w-full text-left mt-32 text-3xl text-[#FDFAD5]">
-                        <h2 className="text-beige text-center lg:text-left my-8 lg:text-5xl font-semibold">
+                        <h2 className="text-beige text-center lg:text-left my-8 text-5xl 2xl:text-6xl font-semibold">
                            {t('projects.pictures')}
                         </h2>
                     </div>
                     <div
-                        className=" h-[50vh] flex justify-center items-center bg-sand lg:px-8 drop-shadow-600 rounded px-4"
+                        className="h-[50vh] flex justify-center items-center bg-sand lg:px-8 drop-shadow-600 rounded px-4"
                     >
                         <Swiper
                             spaceBetween={50}
@@ -171,7 +171,7 @@ export default function Project() {
                 </section>
                 <section className="flex justify-between items-center flex-col text-center pt-12">
                     <div className="w-full">
-                        <h2 className="font-semibold text-center lg:text-left text-3xl pt-20 text-beige lg:text-5xl font-semibold">{t('projects.company-title')}</h2>
+                        <h2 className="font-semibold text-center lg:text-left text-5xl 2xl:text-6xl pt-20 text-beige lg:text-5xl font-semibold">{t('projects.company-title')}</h2>
 
                         <div className="my-8">
                             {splitParagraph(
@@ -188,7 +188,7 @@ export default function Project() {
 
                         <div className="flex justify-between items-center w-full">
                             <div className="flex-col flex my-8 text-left w-full ">
-                                <h2 className="font-semibold text-anthra text-3xl lg:text-5xl py-4 text-beige">Stack</h2>
+                                <h2 className="font-semibold text-anthra text-3xl text-5xl 2xl:text-6xl py-4 text-beige">Stack</h2>
                                 {project?.stacks?.map((stack, index) => (
                                     <ul key={index}>
                                         <li className="text-lg lg:text-2xl md:text-2xl text-anthra ">{stack.name}</li>
@@ -209,7 +209,7 @@ export default function Project() {
                             <Image src="/Images/reading.svg" alt="Image de conclusion" width={284} height={284} layout="responsive"/>
                         </div>
                         <div className="lg:w-1/2">
-                            <h2 className="text-beige text-3xl lg:text-5xl font-semibold my-4 lg:text-right text-center">Conclusion</h2>
+                            <h2 className="text-beige text-3xl text-5xl 2xl:text-6xl font-semibold my-4 lg:text-right text-center">Conclusion</h2>
                             <p className="text-xl md:text-2xl lg:text-2xl text-anthra text-left lg:text-right">{t(`projects.project_${id}.conclusion`) || project?.conclusion}</p>
                             <div className="space-x-4 my-8 flex">
                                 <Link href="/"><Button>{t(`projects.another`)}</Button></Link>

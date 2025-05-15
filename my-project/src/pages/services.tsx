@@ -49,14 +49,14 @@ export default function Services() {
                 <div className='max-w-screen-2xl mx-auto px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-44'>
                     <section className='flex flex-col justify-center gap-y-4 my-32'>
                         <div className='lg:w-3/5 trigger lg:mb-32'>
-                            <h1 className='text-5xl font-bold text-anthra'>{splitTextIntoWords(t("services-section.catch-phrase"))}</h1>
+                            <h1 className='text-5xl 2xl:text-6xl font-bold text-anthra'>{splitTextIntoWords(t("services-section.catch-phrase"))}</h1>
                         </div>
                         <div className='lg:flex lg:justify-between lg:mx-12 lg:space-x-12'>
                             <div className='lg:w-1/3'>
                                 <Image src="/Images/tailor.svg" width={420} height={280} alt='Image tailored' />
                             </div>
                             <div className='lg:flex flex items-center justify-center flex-col lg:w-2/3'>
-                                <h2 className='text-3xl  lg:text-5xl font-semibold text-anthra trigger'>{splitTextIntoWords(t("services-section.second-catch-phrase-title"))}<p>{splitTextIntoWords(t("services-section.second-catch-phrase-subtitle"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.second-catch-phrase-strong"))}</strong></p></h2>
+                                <h2 className='text-3xl lg:text-5xl 2xl:text-6xl font-semibold text-anthra trigger'>{splitTextIntoWords(t("services-section.second-catch-phrase-title"))}<p>{splitTextIntoWords(t("services-section.second-catch-phrase-subtitle"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.second-catch-phrase-strong"))}</strong></p></h2>
                             </div>
                         </div>
                     </section>
@@ -220,7 +220,7 @@ export default function Services() {
                         <div>
                             <Image src="/Images/faq.svg" alt="Image faq" width={350} height={350} />
                         </div>
-                        <h2 className='text-5xl my-4 font-semibold'>FAQ</h2>
+                        <h2 className='text-5xl 2xl:text-6xl my-4 font-semibold'>FAQ</h2>
                         <Accordion type="single" collapsible className="w-full text-anthra">
                             <AccordionItem value="item-1">
                                 <AccordionTrigger>{t("services-section.faq.faq-1.title")}</AccordionTrigger>
@@ -288,7 +288,7 @@ export default function Services() {
                         <div>
                             <Image src="/Images/talking.svg" width={402} height={402} alt='image of peoples talkings together'/>
                         </div>
-                        <h2 className='text-5xl text-center mt-12'>{t("services-section.talks.title")}<strong className='text-beige'>{t("services-section.talks.title-strong")}</strong></h2>
+                        <h2 className='text-5xl 2xl:text-6xl text-center mt-12'>{t("services-section.talks.title")}<strong className='text-beige'>{t("services-section.talks.title-strong")}</strong></h2>
                         <div className='my-8 mx-4'>
                             <p className='lg:text-2xl'>{t("services-section.talks.description-1")}</p>
                             <p className='lg:text-2xl'>{t("services-section.talks.description-2")}</p>

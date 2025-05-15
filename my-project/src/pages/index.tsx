@@ -43,7 +43,7 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-44">
           <section aria-labelledby="intro-section">
             <div className="intro flex-col flex justify-center mb-32 my-32 px-4">
-              <h1 id="intro-section" className="text-anthra font-bold text-5xl lg:text-6xl 2xl:text-7xl lg:w-1/2">
+              <h1 id="intro-section" className="text-anthra font-bold text-5xl 2xl:text-6xl lg:w-1/2">
                 {splitTextIntoChar(t("title.main"))}
               </h1>
               <em className="text-beige text-3xl lg:text-4xl 2xl:text-5xl font-bold">
@@ -69,7 +69,7 @@ export default function Home() {
 
           <section className="flex flex-col lg:flex-row items-center justify-center fromBotToTop gap-y-12 lg:gap-x-24 xl:gap-x-32 2xl:gap-x-48 mx-4 lg:mx-0 mb-32">
             <div className="flex-1">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl text-anthra font-semibold py-12 text-center lg:text-left" id="who-am-i">
+              <h2 className="text-5xl 2xl:text-6xl text-anthra font-semibold py-12 text-center lg:text-left" id="who-am-i">
                 {splitTextIntoWords(t("presentation.who"))}
                 <strong className="text-beige">{splitTextIntoWords(t("presentation.am"))}</strong>
                 <strong className="text-beige">{splitTextIntoWords(t("presentation.i"))}</strong>
@@ -101,10 +101,10 @@ export default function Home() {
 
           <Article />
 
-          <section className="flex flex-col lg:flex-row justify-center items-center my-12">
+          <section className="flex flex-col lg:flex-row my-12">
             {/* Mobile / Tablet first block */}
             <div className="lg:hidden space-y-12">
-              <h2 id="tailored-solutions" className="text-5xl lg:text-6xl 2xl:text-7xl text-center font-semibold text-anthra py-12 sm:py-0">
+              <h2 id="tailored-solutions" className="text-5xl 2xl:text-6xl text-center font-semibold text-anthra py-12 sm:py-0">
                 {splitTextIntoWords(t("tailored.tailored"))}
                 {splitTextIntoWords(t("tailored.web"))}
                 <strong className="text-beige">{splitTextIntoWords(t("tailored.solutions"))}</strong>
@@ -126,7 +126,7 @@ export default function Home() {
 
             {/* Desktop illustration */}
             <div className="hidden lg:block lg:w-1/3 space-y-12">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-semibold text-anthra text-center lg:text-right py-12">
+              <h2 className="text-5xl 2xl:text-6xl font-semibold text-anthra text-center lg:text-right py-12 sm:py-0">
                 {splitTextIntoWords(t("tailored.tailored"))}
                 {splitTextIntoWords(t("tailored.web"))}
                 <strong className="text-beige">{splitTextIntoWords(t("tailored.solutions"))}</strong>
@@ -136,7 +136,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center mx-4 mb-24">
-            <h2 id="build-together" className="text-5xl lg:text-6xl 2xl:text-7xl lg:text-6xl 2xl:text-7xl text-center my-12 lg:w-1/2">
+            <h2 id="build-together" className="text-5xl 2xl:text-6xl text-center my-12 lg:w-1/2">
               {splitTextIntoWords(t("build-section.build"))}
               <strong className="text-beige">{splitTextIntoWords(t("build-section.together"))}</strong>
             </h2>
