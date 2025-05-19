@@ -49,7 +49,7 @@ export default function Article() {
     return (
         <section
             id="my-work"
-            className="text-left text-5xl pt-8 lg:pb-24 text-anthra w-full"
+            className="text-left text-5xl lg:pb-24 text-anthra w-full"
         >
             <h2 className="text-5xl lg:text-6xl 2xl:text-7xl w-full font-semibold trigger text-center lg:text-left lg:w-1/2 mt-24">
                 {splitTextIntoWords(t("travail.my-recent"))} <strong className="text-beige">{splitTextIntoWords(t("travail.work"))}</strong>

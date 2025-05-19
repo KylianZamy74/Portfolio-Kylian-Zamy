@@ -51,7 +51,7 @@ export default function Home() {
               </em>
             </div>
 
-            <div className="text-right font-semibold text-3xl lg:text-5xl 2xl:text-6xl lg:ml-24 p-4 pb-24 text-anthra">
+            <div className="text-right font-semibold text-3xl lg:text-5xl 2xl:text-6xl lg:ml-24 p-4 text-anthra">
               <p className="trigger lg:my-4">
                 <span>{splitTextIntoWords(t("slogan.first"))}</span>
                 <span className="text-beige"> {splitTextIntoWords(t("slogan.forward"))}</span>
@@ -67,7 +67,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="flex flex-col lg:flex-row items-center justify-center fromBotToTop gap-y-12 lg:gap-x-24 xl:gap-x-32 2xl:gap-x-48 mx-4 lg:mx-0 mb-32">
+          <section className="flex flex-col lg:flex-row items-center justify-center fromBotToTop gap-y-12 lg:gap-x-24 xl:gap-x-32 2xl:gap-x-48 mx-4 lg:mx-0">
             <div className="flex-1">
               <h2 className="text-5xl 2xl:text-6xl text-anthra font-semibold py-12 text-center lg:text-left" id="who-am-i">
                 {splitTextIntoWords(t("presentation.who"))}
