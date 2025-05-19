@@ -136,7 +136,7 @@ export default function Home() {
           </section>
 
           <section className="flex flex-col items-center mx-4 mb-24">
-            <h2 id="build-together" className="text-5xl 2xl:text-6xl text-center my-12 lg:w-1/2">
+            <h2 id="build-together" className=" font-semibold text-5xl 2xl:text-6xl text-center my-12 lg:w-1/2">
               {splitTextIntoWords(t("build-section.build"))}
               <strong className="text-beige">{splitTextIntoWords(t("build-section.together"))}</strong>
             </h2>

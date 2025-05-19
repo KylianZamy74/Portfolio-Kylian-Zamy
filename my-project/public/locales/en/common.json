@@ -2,7 +2,8 @@
     "headers": {
         "home": "Home",
         "services": "Services",
-        "contact": "Contact"
+        "contact": "Contact",
+        "close": "Close"
     },
 
     "title": {

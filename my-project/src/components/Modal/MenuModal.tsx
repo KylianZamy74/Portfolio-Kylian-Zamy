@@ -52,7 +52,7 @@ export default function Menu() {
                   </Link>
                 </motion.li>
                 <motion.button onClick={closeModal} className="text-anthra">
-                  Close
+                  {t("headers.close")}
                 </motion.button>
               </div>
             </motion.div>

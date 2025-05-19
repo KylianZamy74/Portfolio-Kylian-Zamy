@@ -2,7 +2,8 @@
   "headers": {
       "home": "Accueil",
       "services": "Services",
-      "contact": "Contact"
+      "contact": "Contact",
+      "close": "Fermer"
   },
 
   "title": {
