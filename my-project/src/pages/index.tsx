@@ -95,7 +95,7 @@ export default function Home() {
             </div>
 
             <div className="flex-1 max-w-md xl:max-w-lg 2xl:max-w-xl">
-              <Image src="/Images/linkedinImage.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" layout="responsive" />
+              <Image src="/Images/Kylian.webp" width={282} height={205} className="rounded shadow-lg" alt="Image Kylian" layout="responsive" />
             </div>
           </section>
 
