@@ -62,7 +62,7 @@ export default function Services() {
                     </section>
                     <section className="mt-12 space-y-12 mx-4">
                         <h2 className='text-5xl lg:text-left mb-12 font-semibold text-center'>{splitTextIntoWords(t("services-section.services.main-title"))}<strong className='text-beige'>{splitTextIntoWords(t("services-section.services.main-title-strong"))}</strong>  </h2>
-                        <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-8">
+                        <div className="lg:grid lg:grid-cols-2 lg:gap-x-8">
                             <article className="border-b-2 lg:border-b-0 lg:border-r-2 pr-8 pb-12 pt-8">
                                 <h3 className="text-beige text-anthra text-3xl font-bold">
                                     {splitTextIntoWords(t("services-section.services.card_1.title"))}
