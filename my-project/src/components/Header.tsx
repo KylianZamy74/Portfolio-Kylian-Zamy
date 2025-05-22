@@ -39,7 +39,7 @@ export default function Header() {
       <div className="flex items-center gap-4">
       
         <Link href="/" >
-          <span className="text-anthra font-bold text-4xl">Kylian<span className="text-beige">Zamy</span></span>
+          <span className="text-anthra font-bold text-4xl">Kylian<span className="text-beige"> Zamy</span></span>
         </Link>
       </div>
 
